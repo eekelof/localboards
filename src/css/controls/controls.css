@@ -1,6 +1,6 @@
 @import "people/person_creator.css";
-@import "tree/tree_creator.css";
-@import "tree/tree_selector.css";
+@import "board/board_creator.css";
+@import "board/board_selector.css";
 
 .controlsInput {
     width: calc(100% - 20px);

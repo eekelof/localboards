@@ -1,4 +1,4 @@
-#treeSelector {
+#boardSelector {
     position: absolute;
     left: 0px;
     top: 152px;
@@ -14,17 +14,17 @@
     border-radius: var(--borderRadius);
 }
 
-.treeCard {
+.boardCard {
     position: relative;
     width: calc(100% - 20px);
     text-align: left;
 }
 
-.treeCardSelected {
+.boardCardSelected {
     background: var(--btnBg2);
     background-size: 200% auto;
 }
 
-.treeCardSelected:hover {
+.boardCardSelected:hover {
     background-position: right center;
 }

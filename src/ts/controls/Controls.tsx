@@ -1,14 +1,14 @@
 import { App_I } from '../App';
+import BoardCreator from './board/BoardCreator';
 import PersonCreator from './people/PersonCreator';
-import TreeCreator from './tree/TreeCreator';
 
 export default class Controls {
     static init(app: App_I) {
-        const treeCreator = TreeCreator.init(app);
+        const boardCreator = BoardCreator.init(app);
         const personCreator = PersonCreator.init(app);
 
         return <div class="controls">
-            {treeCreator}
+            {boardCreator}
             {personCreator}
         </div>;
     }

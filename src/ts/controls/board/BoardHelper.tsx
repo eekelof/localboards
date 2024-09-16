@@ -1,34 +1,34 @@
-import { Tree_I } from '../../App';
+import { Board_I } from '../../App';
 
-export default class TreeHelper {
-    static LOCAL_STORAGE_PREFIX = "tree-";
+export default class BoardHelper {
+    static LOCAL_STORAGE_PREFIX = "board-";
 
-    static getAllTreeIDs() {
-        const ids = Object.keys(localStorage).filter(k => k.startsWith(TreeHelper.LOCAL_STORAGE_PREFIX));
-        const res = ids.map(k => k.slice(TreeHelper.LOCAL_STORAGE_PREFIX.length));
+    static getAllBoardIDs() {
+        const ids = Object.keys(localStorage).filter(k => k.startsWith(BoardHelper.LOCAL_STORAGE_PREFIX));
+        const res = ids.map(k => k.slice(BoardHelper.LOCAL_STORAGE_PREFIX.length));
         return res;
     }
-    static saveTree(tree: Tree_I) {
-        if (tree)
-            localStorage.setItem(TreeHelper.LOCAL_STORAGE_PREFIX + tree.id, JSON.stringify(tree));
+    static saveBoard(board: Board_I) {
+        if (board)
+            localStorage.setItem(BoardHelper.LOCAL_STORAGE_PREFIX + board.id, JSON.stringify(board));
     }
-    static loadTree(id: string) {
-        const tree = localStorage.getItem(TreeHelper.LOCAL_STORAGE_PREFIX + id);
-        const parsed = tree ? JSON.parse(tree) : null;
+    static loadBoard(id: string) {
+        const board = localStorage.getItem(BoardHelper.LOCAL_STORAGE_PREFIX + id);
+        const parsed = board ? JSON.parse(board) : null;
         if (parsed)
-            localStorage.setItem("selectedTree", parsed.id);
+            localStorage.setItem("selectedBoard", parsed.id);
 
         return parsed;
     }
-    static getTreeOnStart() {
-        const selected = localStorage.getItem("selectedTree")!;
-        const tree = TreeHelper.loadTree(selected) || TreeHelper.#getExampleTree();
-        TreeHelper.saveTree(tree);
-        return tree;
+    static getBoardOnStart() {
+        const selected = localStorage.getItem("selectedBoard")!;
+        const board = BoardHelper.loadBoard(selected) || BoardHelper.#getExampleBoard();
+        BoardHelper.saveBoard(board);
+        return board;
     }
-    static #getExampleTree() {
+    static #getExampleBoard() {
         return {
-            id: "Example Tree",
+            id: "Example Board",
             people: [{
                 id: "1",
                 info: {

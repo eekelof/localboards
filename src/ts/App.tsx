@@ -1,19 +1,26 @@
+import BoardHelper from './controls/board/BoardHelper';
 import Controls from './controls/Controls';
-import TreeHelper from './controls/tree/TreeHelper';
-import { Person_I } from './tree/Person';
 
-export interface Tree_I {
+export interface Card_I {
     id: string;
-    people: Person_I[];
+    title: string;
+}
+export interface List_I {
+    id: string;
+    cards: Card_I[];
+}
+export interface Board_I {
+    id: string;
+    lists: List_I[];
 }
 export interface App_I {
-    tree: Tree_I
+    board: Board_I
 }
 
 export default class App {
     static init() {
         const app: App_I = {
-            tree: TreeHelper.getTreeOnStart()
+            board: BoardHelper.getBoardOnStart()
         };
         const controls = Controls.init(app);
 
