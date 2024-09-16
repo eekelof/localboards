@@ -1,0 +1,1 @@
+# SoloJSX-template-ts-minimal
