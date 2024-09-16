@@ -17,14 +17,14 @@
 .treeCard {
     position: relative;
     width: calc(100% - 20px);
-    text-align: left !important;
+    text-align: left;
 }
 
 .treeCardSelected {
-    background: var(--btnBg2) !important;
-    background-size: 200% auto !important;
+    background: var(--btnBg2);
+    background-size: 200% auto;
 }
 
 .treeCardSelected:hover {
-    background-position: right center !important;
+    background-position: right center;
 }

@@ -23,13 +23,10 @@
 .personCreatorBtn {
     position: relative;
     width: calc(100% - 20px);
+    background: var(--btnBg2);
+    background-size: 200% auto;
 }
 
-.personCreatorBtnAdd {
-    background: var(--btnBg2) !important;
-    background-size: 200% auto !important;
-}
-
-.personCreatorBtnAdd:hover {
-    background-position: right center !important;
+.personCreatorBtn:hover {
+    background-position: right center;
 }

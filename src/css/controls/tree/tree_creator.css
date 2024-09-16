@@ -9,10 +9,10 @@
 .treeCreatorBtn {
     position: relative;
     width: calc(100% - 20px);
-    background: var(--btnBg3) !important;
-    background-size: 200% auto !important;
+    background: var(--btnBg3);
+    background-size: 200% auto;
 }
 
 .treeCreatorBtn:hover {
-    background-position: right center !important;
+    background-position: right center;
 }
