@@ -1,0 +1,21 @@
+@import "people/person_creator.css";
+@import "tree/tree_creator.css";
+@import "tree/tree_selector.css";
+
+.controlsInput {
+    width: calc(100% - 20px);
+    position: relative;
+    background-color: #fff1;
+    color: #fff;
+    border: var(--border);
+    border-radius: var(--borderRadius);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.controlsInput:hover {
+    background-color: #fff2;
+    border: var(--border);
+}

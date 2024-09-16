@@ -1,0 +1,30 @@
+#treeSelector {
+    position: absolute;
+    left: 0px;
+    top: 152px;
+    width: 100%;
+    height: calc(100% - 152px - 32px);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    background: var(--boxBg);
+    border: var(--border);
+    border-radius: var(--borderRadius);
+}
+
+.treeCard {
+    position: relative;
+    width: calc(100% - 20px);
+    text-align: left !important;
+}
+
+.treeCardSelected {
+    background: var(--btnBg2) !important;
+    background-size: 200% auto !important;
+}
+
+.treeCardSelected:hover {
+    background-position: right center !important;
+}

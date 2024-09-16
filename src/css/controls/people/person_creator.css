@@ -1,0 +1,35 @@
+.personCreator {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    width: 256px;
+}
+
+.personCreator:hover #personCreatorInner {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+#personCreatorInner {
+    background: var(--boxBg);
+    border-radius: var(--borderRadius);
+    padding-top: 6px;
+    transition: 0.5s;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+.personCreatorBtn {
+    position: relative;
+    width: calc(100% - 20px);
+}
+
+.personCreatorBtnAdd {
+    background: var(--btnBg2) !important;
+    background-size: 200% auto !important;
+}
+
+.personCreatorBtnAdd:hover {
+    background-position: right center !important;
+}

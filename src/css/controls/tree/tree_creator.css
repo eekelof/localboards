@@ -1,0 +1,18 @@
+.treeCreator {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 256px;
+    height: calc(100% - 32px);
+}
+
+.treeCreatorBtn {
+    position: relative;
+    width: calc(100% - 20px);
+    background: var(--btnBg3) !important;
+    background-size: 200% auto !important;
+}
+
+.treeCreatorBtn:hover {
+    background-position: right center !important;
+}

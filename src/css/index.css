@@ -1,18 +1,104 @@
+@import "controls/controls.css";
+
 :root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     color: #fff;
-    font-family: sans-serif;
-    background-color: #242424;
+    letter-spacing: 1px;
+
+    --iconColor: #fff;
+    --bg: #111;
+    --boxBg: linear-gradient(0deg, #fff1, #fff2);
+    --borderRadius: 14px;
+    --border: 0px solid #fff;
+
+    --btnBg: linear-gradient(to right, #444 0%, #999 51%, #444 100%);
+    --btnBg2: linear-gradient(to right, #058 0%, #1cf 51%, #058 100%);
+    --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg);
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.icon {
+    fill: var(--iconColor);
+    vertical-align: middle;
+    height: 64px;
+}
+
+.btn {
+    background: var(--btnBg);
+    transition: 0.4s;
+    background-size: 200% auto;
+    color: #fff;
+    border-radius: var(--borderRadius);
+    border: var(--border);
+    padding: 8px;
+    margin: 10px;
+    cursor: pointer;
     text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px 0px #0004;
+    text-shadow: 0px 0px 8px #0004;
+    user-select: none;
+    width: 80px;
 }
 
-h1 {
-    font-size: 2rem;
-    margin: 0;
-    padding: 0;
+.btn:hover {
+    transform: scale(1.05);
+    /* background: var(--btnBg2);
+    background-size: 200% auto; */
+    background-position: right center;
 }
 
-p {
-    font-size: 1rem;
+#app {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     margin: 0;
-    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.person {
+    position: relative;
+    height: 300px;
+    width: 200px;
+    border: var(--border);
+    border-radius: var(--borderRadius);
+    background: linear-gradient(00deg, #880000aa, #000000aa);
+}
+
+/* Scrollbar styles CHROME */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #fff4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fff8;
+}
+
+/* Scrollbar stylesFF */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #fff4 transparent;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    scrollbar-color: #fff8 transparent;
 }
