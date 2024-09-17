@@ -1,4 +1,4 @@
-import { mdiPlusBoxOutline } from '@mdi/js';
+import { mdiDownloadBoxOutline, mdiPlusBoxOutline, mdiUploadBoxOutline } from '@mdi/js';
 import { App_I } from '../../App';
 import LSHelper from '../../data/LSHelper';
 import { Board_I } from '../board/Board';
@@ -7,7 +7,7 @@ import BoardSelector from './BoardSelector';
 export default class BoardCreator {
     static init(app: App_I): HTMLElement {
         const boardSelector = BoardSelector.init(app);
-        const input = <input class="sidebarInput" type="text" placeholder="New board" />;
+        const input = <input class="boardCreatorInput" type="text" placeholder="New board" />;
 
         const onclick = () => {
             const board = BoardCreator.createBoard(input.value);
@@ -22,15 +22,25 @@ export default class BoardCreator {
         BoardCreator.#setCreateBtnOpacity(btn, false);
 
         input.onkeydown = () => {
-            setTimeout(() => {
-                BoardCreator.#setCreateBtnOpacity(btn, input.value.length > 0);
-            });
+            setTimeout(() => BoardCreator.#setCreateBtnOpacity(btn, input.value.length > 0));
         };
 
-        return <div class="boardCreator">
-            {input}
-            {btn}
+
+        const uploadBtn = <div class="btn boardCreatorBtn boardCreatorUploadBtn" onclick={onclick}>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiUploadBoxOutline} /></svg>
+        </div>;
+        const downloadBtn = <div class="btn boardCreatorBtn boardCreatorDownloadBtn" onclick={onclick}>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiDownloadBoxOutline} /></svg>
+        </div>;
+
+        return <div class="sidebar">
             {boardSelector}
+            <div class="boardCreator">
+                {input}
+                {btn}
+                {uploadBtn}
+                {downloadBtn}
+            </div>
         </div>;
     }
     static createBoard(id = "Example Board"): Board_I | null {

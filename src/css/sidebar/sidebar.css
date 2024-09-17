@@ -1,20 +1,11 @@
 @import "board/board_creator.css";
 @import "board/board_selector.css";
 
-.sidebarInput {
-    width: calc(100% - 20px);
-    position: relative;
-    background-color: #fff1;
-    color: #fff;
-    border: var(--border);
-    border-radius: var(--borderRadius);
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.sidebarInput:hover {
-    background-color: #fff2;
-    border: var(--border);
+.sidebar {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 256px;
+    height: 100%;
+    background: var(--boxBg);
 }

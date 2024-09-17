@@ -4,7 +4,7 @@ import { App_I } from '../../App';
 
 export default class ListCreator {
     static init(app: App_I): HTMLElement {
-        const firstNameInput = <input class="sidebarInput" type="text" placeholder="First id" />;
+        const firstNameInput = <input class="boardCreatorInput" type="text" placeholder="First id" />;
 
         const onClickAdd = () => {
             const info = {

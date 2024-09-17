@@ -3,19 +3,20 @@
 @import "board/board.css";
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Arial, sans-serif;
     color: #fff;
     letter-spacing: 1px;
 
     --iconColor: #fff;
     --bg: #111;
-    --boxBg: linear-gradient(0deg, #fff1, #fff2);
+    --boxBg: linear-gradient(0deg, #fff0, #fff2);
     --borderRadius: 14px;
     --border: 0px solid #fff;
 
     --btnBg: linear-gradient(to right, #444 0%, #999 51%, #444 100%);
     --btnBg2: linear-gradient(to right, #058 0%, #1cf 51%, #058 100%);
     --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
+    --btnBg4: linear-gradient(to right, #034 0%, #168 51%, #034 100%);
 }
 
 body {

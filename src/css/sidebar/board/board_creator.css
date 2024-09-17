@@ -1,9 +1,26 @@
 .boardCreator {
     position: absolute;
-    left: 16px;
-    top: 16px;
-    width: 256px;
-    height: calc(100% - 32px);
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+.boardCreatorInput {
+    width: calc(100% - 20px);
+    position: relative;
+    background-color: #fff1;
+    color: #fff;
+    border: var(--border);
+    border-radius: var(--borderRadius);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.boardCreatorInput:hover {
+    background-color: #fff2;
+    border: var(--border);
 }
 
 .boardCreatorBtn {
@@ -15,4 +32,18 @@
 
 .boardCreatorBtn:hover {
     background-position: right center;
+}
+
+.boardCreatorUploadBtn {
+    position: relative;
+    width: calc(50% - 20px);
+    background: var(--btnBg2);
+    background-size: 200% auto;
+}
+
+.boardCreatorDownloadBtn {
+    position: relative;
+    width: calc(50% - 20px);
+    background: var(--btnBg4);
+    background-size: 200% auto;
 }

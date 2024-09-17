@@ -1,23 +1,26 @@
 #boardSelector {
     position: absolute;
     left: 0px;
-    top: 152px;
+    top: 0px;
     width: 100%;
     height: calc(100% - 152px - 32px);
     padding-top: 16px;
     padding-bottom: 16px;
     overflow-y: scroll;
     overflow-x: hidden;
-
-    background: var(--boxBg);
-    border: var(--border);
-    border-radius: var(--borderRadius);
+    mask-image: linear-gradient(to bottom, #0000 0%, #000 5%, #000 80%, #0000 98%);
+    padding-bottom: 50%;
+    box-sizing: border-box;
 }
 
 .boardCard {
     position: relative;
     width: calc(100% - 20px);
+    padding-top: 32px;
+    padding-left: 16px;
+    padding-bottom: 32px;
     text-align: left;
+    letter-spacing: 1.3px;
 }
 
 .boardCardSelected {
@@ -27,4 +30,18 @@
 
 .boardCardSelected:hover {
     background-position: right center;
+}
+
+.boardCardRemove {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    height: 32px;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.boardCardRemove:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }

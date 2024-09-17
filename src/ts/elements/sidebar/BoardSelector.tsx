@@ -1,3 +1,4 @@
+import { mdiTrashCanOutline } from '@mdi/js';
 import { App_I } from '../../App';
 import LSHelper from '../../data/LSHelper';
 
@@ -18,7 +19,10 @@ export default class BoardSelector {
                 BoardSelector.updateList(app);
             };
             const className = "btn boardCard" + (app.board.id === id ? " boardCardSelected" : "");
-            const e = <div class={className} onclick={onclick}>{id}</div>;
+            const e = <div class={className} onclick={onclick}>
+                {id}
+                <svg class="icon boardCardRemove" viewBox="0 0 24 24"><path d={mdiTrashCanOutline} /></svg>
+            </div>;
             list.append(e);
         }
     }
