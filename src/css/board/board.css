@@ -1,8 +1,22 @@
 @import 'list.css';
 
-.board {
+#board {
     position: absolute;
-    right: 16px;
-    bottom: 16px;
-    width: 256px;
+    left: 256px;
+    top: 0px;
+    width: calc(100% - 256px);
+    height: 100%;
+    transition: 0.3s;
+}
+
+.boardExpanded {
+    left: 0px !important;
+    width: 100% !important;
+}
+
+#boardTitle {
+    position: absolute;
+    left: 48px;
+    top: 16px;
+    font-size: 24px;
 }

@@ -38,6 +38,8 @@
     height: 68px;
     cursor: pointer;
     background-color: var(--boxBg);
+    border-radius: 0 0 var(--borderRadius);
+    transition: 0.3s;
 }
 
 .hideToggle .icon {

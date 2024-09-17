@@ -1,3 +1,4 @@
+import { mdiThemeLightDark } from '@mdi/js';
 import LSHelper from './data/LSHelper';
 import Board, { Board_I } from './elements/board/Board';
 import SideBar from './elements/sidebar/SideBar';
@@ -13,10 +14,14 @@ export default class App {
             board: LSHelper.getBoardOnStart()
         };
 
+        const themeToggle = <div class="themeToggle" onclick={() => document.body.classList.toggle("dark")}>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiThemeLightDark} /></svg>
+        </div>;
+
         const sideBar = SideBar.init(app);
         const board = Board.init(app);
 
-        document.body.append(sideBar, board);
+        document.body.append(board, sideBar, themeToggle);
     }
 }
 

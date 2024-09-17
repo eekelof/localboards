@@ -17,8 +17,7 @@ body {
     background: var(--bg);
     color: var(--fontColor2);
 
-
-    --borderRadius: 1px;
+    --borderRadius: 12px;
     --border: 0px solid #fff;
 
     --iconColor: #fff;
@@ -35,7 +34,9 @@ body {
 }
 
 .dark {
+
     --bg: linear-gradient(70deg, #001 0%, #012 100%);
+    --boxBg: #fff2;
 }
 
 /* Scrollbar styles CHROME */
