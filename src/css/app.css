@@ -4,6 +4,10 @@
     height: 64px;
 }
 
+.titleIcon {
+    fill: var(--titleIconColor);
+}
+
 .btn {
     background: var(--btnBg);
     transition: 0.4s;
