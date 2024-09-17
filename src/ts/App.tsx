@@ -26,10 +26,20 @@ export default class App {
 
         const d = new Date();
         const test = <div>
+            {false ? <div></div> : undefined}
+            {false ? <div></div> : null}
+            {false ? <div></div> : false}
             <div>0</div>
             <div>{d}</div>
+            {[<div>hh</div>, <div>0 ms</div>]}
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" />
+            </svg>
         </div>;
+        // test.textContent = "1234";
         document.body.append(controls, test);
+        const l = [1, 2, 3, [4, [5, 6]]]
+        console.log(...l.flat(Infinity))
     }
 }
 
