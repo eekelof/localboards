@@ -1,16 +1,16 @@
-.personCreator {
+.listCreator {
     position: absolute;
     right: 16px;
     bottom: 16px;
     width: 256px;
 }
 
-.personCreator:hover #personCreatorInner {
+.listCreator:hover #personCreatorInner {
     opacity: 1;
     transform: scaleY(1);
 }
 
-#personCreatorInner {
+#listCreatorInner {
     background: var(--boxBg);
     border-radius: var(--borderRadius);
     padding-top: 6px;
@@ -20,13 +20,13 @@
     transform-origin: bottom;
 }
 
-.personCreatorBtn {
+.listCreatorBtn {
     position: relative;
     width: calc(100% - 20px);
     background: var(--btnBg2);
     background-size: 200% auto;
 }
 
-.personCreatorBtn:hover {
+.listCreatorBtn:hover {
     background-position: right center;
 }

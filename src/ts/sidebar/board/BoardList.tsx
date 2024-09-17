@@ -1,10 +1,10 @@
 import { App_I } from '../../App';
 import BoardHelper from './BoardHelper';
 
-export default class BoardSelector {
+export default class BoardList {
     static init(app: App_I): HTMLElement {
         const list = <div id="boardSelector"></div>;
-        setTimeout(() => BoardSelector.updateList(app));
+        setTimeout(() => BoardList.updateList(app));
         return list;
     }
     static updateList(app: App_I) {
@@ -15,7 +15,7 @@ export default class BoardSelector {
             const onclick = () => {
                 const t = BoardHelper.loadBoard(id);
                 app.board = t || app.board;
-                BoardSelector.updateList(app);
+                BoardList.updateList(app);
             };
             const className = "btn boardCard" + (app.board.id === id ? " boardCardSelected" : "");
             const e = <div class={className} onclick={onclick}>{id}</div>;

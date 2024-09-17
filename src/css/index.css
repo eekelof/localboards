@@ -1,5 +1,6 @@
 @import "app.css";
-@import "controls/controls.css";
+@import "sidebar/sidebar.css";
+@import "board/board.css";
 
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

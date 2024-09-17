@@ -1,8 +1,7 @@
-@import "people/person_creator.css";
 @import "board/board_creator.css";
 @import "board/board_selector.css";
 
-.controlsInput {
+.sidebarInput {
     width: calc(100% - 20px);
     position: relative;
     background-color: #fff1;
@@ -15,7 +14,7 @@
     box-sizing: border-box;
 }
 
-.controlsInput:hover {
+.sidebarInput:hover {
     background-color: #fff2;
     border: var(--border);
 }

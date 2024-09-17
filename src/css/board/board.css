@@ -1,0 +1,8 @@
+@import 'list.css';
+
+.board {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    width: 256px;
+}

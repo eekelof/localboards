@@ -1,15 +1,12 @@
 import { App_I } from '../App';
 import BoardCreator from './board/BoardCreator';
-import PersonCreator from './people/PersonCreator';
 
-export default class Controls {
+export default class SideBar {
     static init(app: App_I) {
         const boardCreator = BoardCreator.init(app);
-        const personCreator = PersonCreator.init(app);
 
-        return <div class="controls">
+        return <div class="sideBar">
             {boardCreator}
-            {personCreator}
         </div>;
     }
 }
