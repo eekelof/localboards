@@ -1,8 +1,10 @@
 .listCreator {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
+    opacity: 0.6;
+    transition: var(--transitionTime);
+}
+
+.listCreator:hover {
+    opacity: 1;
 }
 
 .listCreatorInput {

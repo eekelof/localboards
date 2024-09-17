@@ -7,7 +7,7 @@ import BoardSelector from './BoardSelector';
 
 export default class BoardCreator {
     static init(app: App_I) {
-        const input = <input class="boardCreatorInput" type="text" placeholder="New Board" />;
+        const input = <input class="boardCreatorInput" type="text" placeholder="New Board" maxlength="18" />;
 
         const onclick = () => {
             const board = BoardCreator.#createBoard(input.value);

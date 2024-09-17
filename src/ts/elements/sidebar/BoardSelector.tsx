@@ -3,7 +3,7 @@ import { App_I } from '../../App';
 import LSHelper from '../../data/LSHelper';
 
 export default class BoardSelector {
-    static init(app: App_I): HTMLElement {
+    static init(app: App_I) {
         const list = <div id="boardSelector"></div>;
         setTimeout(() => BoardSelector.updateList(app));
         return list;

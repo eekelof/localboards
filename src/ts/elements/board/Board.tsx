@@ -13,6 +13,7 @@ export default class Board {
             <div id="boardTitle">{app.board.id}</div>
             <div class="lists">
                 {app.board.lists.map(list => List.init(app.board, list))}
+                {List.init(app.board)}
             </div>
         </div>;
     }
