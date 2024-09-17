@@ -1,18 +1,19 @@
 import { mdiDeveloperBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
 import { App_I } from '../../App';
 import LSHelper from '../../data/LSHelper';
+import Util from '../../Util';
 import { Board_I } from '../board/Board';
 import BoardSelector from './BoardSelector';
 
 export default class BoardCreator {
-    static init(app: App_I): HTMLElement {
+    static init(app: App_I) {
         const input = <input class="boardCreatorInput" type="text" placeholder="New Board" />;
 
         const onclick = () => {
             const board = BoardCreator.#createBoard(input.value);
             app.board = board || app.board;
             input.value = "";
-            BoardCreator.#setCreateBtnOpacity(btn, false);
+            Util.setBtnOpacity(btn, false);
             BoardSelector.updateList(app);
         };
 
@@ -20,12 +21,12 @@ export default class BoardCreator {
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiDeveloperBoard} /></svg>
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
         </div>;
-        BoardCreator.#setCreateBtnOpacity(btn, false);
+        Util.setBtnOpacity(btn, false);
 
         input.onkeydown = (e: KeyboardEvent) => {
             if (e.key === "Enter")
                 onclick();
-            setTimeout(() => BoardCreator.#setCreateBtnOpacity(btn, input.value.length > 0));
+            setTimeout(() => Util.setBtnOpacity(btn, input.value.length > 0));
         };
 
         const uploadBtn = <div class="btn boardCreatorUploadBtn" onclick={onclick}>
@@ -42,7 +43,7 @@ export default class BoardCreator {
             {downloadBtn}
         </div>;
     }
-    static #createBoard(id = "Example Board"): Board_I | null {
+    static #createBoard(id = "New Board"): Board_I | null {
         if (id.length === 0)
             return null;
         if (LSHelper.load(id))
@@ -50,10 +51,6 @@ export default class BoardCreator {
         const board = { id, lists: [] };
         LSHelper.save(board);
         return board;
-    }
-    static #setCreateBtnOpacity(btn: HTMLElement, active: boolean) {
-        btn.style.opacity = active ? "1" : "0.3";
-        btn.style.cursor = active ? "pointer" : "default";
     }
 }
 

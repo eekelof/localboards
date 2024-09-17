@@ -1,25 +1,39 @@
-import { mdiPlusBoxOutline } from '@mdi/js';
-import { App_I } from '../../App';
-
+import { mdiListBox, mdiPlus } from '@mdi/js';
+import BoardData, { Board_I } from '../../data/BoardData';
+import Util from '../../Util';
 
 export default class ListCreator {
-    static init(app: App_I): HTMLElement {
-        const input = <input class="listCreatorInput" type="text" placeholder="First id" />;
-        const onClickAdd = () => {
+    static init(board: Board_I): HTMLElement {
+        const input = <input class="listCreatorInput" type="text" placeholder="New List" />;
+
+        const onclick = () => {
+            const list = {
+                title: input.value,
+                cards: []
+            };
+            BoardData.addList(board, list);
+            board.lists.push(list);
             input.value = "";
+            Util.setBtnOpacity(btn, false);
+
+            // t.updateList(app);
         };
 
-        const creator = <div id="personCreatorInner">
+        const btn = <div class="btn listCreatorAddBtn" onclick={onclick}>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiListBox} /></svg>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
+        </div>;
+        Util.setBtnOpacity(btn, false);
+
+        input.onkeydown = (e: KeyboardEvent) => {
+            if (e.key === "Enter")
+                onclick();
+            setTimeout(() => Util.setBtnOpacity(btn, input.value.length > 0));
+        };
+
+        return <div class="listCreator">
             {input}
-        </div>;
-
-        const showBtn = <div class="btn personCreatorBtn" onclick={onClickAdd}>
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlusBoxOutline} /></svg>
-        </div>;
-
-        return <div class="personCreator">
-            {creator}
-            {showBtn}
+            {btn}
         </div>;
     }
 }

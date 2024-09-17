@@ -1,32 +1,26 @@
 .listCreator {
     position: absolute;
-    right: 16px;
-    bottom: 16px;
-    width: 256px;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
 }
 
-.listCreator:hover #personCreatorInner {
-    opacity: 1;
-    transform: scaleY(1);
+.listCreatorInput {
+    text-align: center;
 }
 
-#listCreatorInner {
-    background: var(--boxBg);
-    border-radius: var(--borderRadius);
-    padding-top: 6px;
-    transition: var(--transitionTime);
-    opacity: 0;
-    transform: scaleY(0);
-    transform-origin: bottom;
-}
-
-.listCreatorBtn {
+.listCreatorAddBtn {
     position: relative;
     width: calc(100% - 20px);
-    background: var(--btnBg2);
+    height: 48px;
+    background: var(--btnBg3);
     background-size: 200% auto;
 }
 
-.listCreatorBtn:hover {
+.listCreatorAddBtn:hover {
     background-position: right center;
+}
+
+.listCreatorAddBtn .icon {
+    height: 32px;
 }

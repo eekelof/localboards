@@ -1,16 +1,20 @@
-import { Card_I, List_I } from '../../data/BoardData';
+import { mdiTrashCan } from '@mdi/js';
+import BoardData, { Card_I, List_I } from '../../data/BoardData';
 import { Board_I } from './Board';
 
 export default class List {
     static init(board: Board_I, list: List_I): HTMLElement {
-        const title = <button class="listTitle">{list.title}</button>;
-        const removeBtn = <button class="listRemoveBtn">X</button>;
+        const title = <div class="listTitle">{list.title}</div>;
+        const removeBtn = <div class="btn listRemoveBtn" onclick={onclick}>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiTrashCan} /></svg>
+        </div>;
         const listWrapper = <div class="listWrapper"></div>;
         const cardInput = <input class="cardInput" type="text" placeholder="New card" />;
 
         cardInput.onkeydown = (e: KeyboardEvent) => {
             if (e.key === "Enter") {
-                const card = List.#createCard(cardInput.value);
+                const card = { title: cardInput.value, color: "#fff" };
+                BoardData.addCard(list, card);
                 list.cards.push(card);
                 listWrapper.append(List.#createCardElement(card));
                 cardInput.value = "";
@@ -23,12 +27,6 @@ export default class List {
             {cardInput}
             {listWrapper}
         </div>;
-    }
-    static #createCard(title: string): Card_I {
-        return {
-            title,
-            color: "#333333"
-        };
     }
     static #createCardElement(card: Card_I): HTMLElement {
         return <div class="card" style={{ backgroundColor: card.color }}>
