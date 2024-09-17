@@ -3,10 +3,8 @@
 @import "board/board.css";
 
 :root {
-    font-family: Arial, sans-serif;
-    letter-spacing: 1px;
-
-
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    letter-spacing: 2px;
 }
 
 body {
@@ -16,6 +14,8 @@ body {
     background: var(--bg);
     font-size: 18px;
     overflow: hidden;
+    --borderRadius: 1px;
+    --border: 0px solid #fff;
     --iconColor: #fff;
 
     color: #222;
@@ -23,8 +23,6 @@ body {
     --fontColor: #fffc;
     --bg: linear-gradient(70deg, #000 0%, #ccc 100%);
     --boxBg: linear-gradient(0deg, #fff4, #fffc);
-    --borderRadius: 14px;
-    --border: 0px solid #fff;
 
     --btnBg: linear-gradient(to right, #888 0%, #ccc 51%, #889 100%);
     --btnBg2: linear-gradient(to right, #18a 0%, #3cf 51%, #18a 100%);
@@ -35,14 +33,12 @@ body {
 .dark {
     color: #5cf;
     --titleIconColor: #5cf;
-    --fontColor: #fffc;
+    --fontColor: #fff;
     --bg: linear-gradient(70deg, #001 0%, #012 100%);
     --boxBg: linear-gradient(0deg, #fff0, #fff2);
-    --borderRadius: 14px;
-    --border: 0px solid #fff;
 
-    --btnBg: linear-gradient(to right, #444 0%, #999 51%, #444 100%);
-    --btnBg2: linear-gradient(to right, #058 0%, #1cf 51%, #058 100%);
+    --btnBg: linear-gradient(to right, #4442 0%, #ccc6 51%, #4442 100%);
+    --btnBg2: linear-gradient(to right, #0582 0%, #1cf8 51%, #0582 100%);
     --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
     --btnBg4: linear-gradient(to right, #034 0%, #168 51%, #034 100%);
 }

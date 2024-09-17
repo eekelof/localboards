@@ -41,6 +41,7 @@ export default class BoardCreator {
 
         return <div class="sidebar">
             <div class="sidebarTitle">
+                <svg class="icon titleIcon" viewBox="0 0 24 24"><path d={mdiDeveloperBoard}></path></svg>
                 {" Boards"}
             </div>
             {themeToggle}
