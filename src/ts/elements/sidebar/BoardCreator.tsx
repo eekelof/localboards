@@ -1,12 +1,12 @@
 import { mdiPlusBoxOutline } from '@mdi/js';
 import { App_I } from '../../App';
-import { Board_I } from '../../board/Board';
-import BoardHelper from './BoardHelper';
-import BoardList from './BoardList';
+import LSHelper from '../../data/LSHelper';
+import { Board_I } from '../board/Board';
+import BoardSelector from './BoardSelector';
 
 export default class BoardCreator {
     static init(app: App_I): HTMLElement {
-        const boardSelector = BoardList.init(app);
+        const boardSelector = BoardSelector.init(app);
         const input = <input class="sidebarInput" type="text" placeholder="New board" />;
 
         const onclick = () => {
@@ -14,7 +14,7 @@ export default class BoardCreator {
             app.board = board || app.board;
             input.value = "";
             BoardCreator.#setCreateBtnOpacity(btn, false);
-            BoardList.updateList(app);
+            BoardSelector.updateList(app);
         };
         const btn = <div class="btn boardCreatorBtn" onclick={onclick}>
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlusBoxOutline} /></svg>
@@ -36,10 +36,10 @@ export default class BoardCreator {
     static createBoard(id = "Example Board"): Board_I | null {
         if (id.length === 0)
             return null;
-        if (BoardHelper.loadBoard(id))
+        if (LSHelper.load(id))
             return null;
         const board = { id, lists: [] };
-        BoardHelper.saveBoard(board);
+        LSHelper.save(board);
         return board;
     }
     static #setCreateBtnOpacity(btn: HTMLElement, active: boolean) {

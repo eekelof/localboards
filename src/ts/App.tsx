@@ -1,6 +1,6 @@
-import { Board_I } from './board/Board';
-import BoardHelper from './sidebar/board/BoardHelper';
-import SideBar from './sidebar/SideBar';
+import LSHelper from './data/LSHelper';
+import Board, { Board_I } from './elements/board/Board';
+import SideBar from './elements/sidebar/SideBar';
 
 
 export interface App_I {
@@ -10,10 +10,13 @@ export interface App_I {
 export default class App {
     static init() {
         const app: App_I = {
-            board: BoardHelper.getBoardOnStart()
+            board: LSHelper.getBoardOnStart()
         };
+
         const sideBar = SideBar.init(app);
-        document.body.append(sideBar);
+        const board = Board.init(app);
+
+        document.body.append(sideBar, board);
     }
 }
 
