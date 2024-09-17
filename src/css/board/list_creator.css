@@ -1,0 +1,26 @@
+.listCreator {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+.listCreatorInput {
+    text-align: center;
+}
+
+.listCreatorAddBtn {
+    position: relative;
+    width: calc(100% - 20px);
+    height: 48px;
+    background: var(--btnBg3);
+    background-size: 200% auto;
+}
+
+.listCreatorAddBtn:hover {
+    background-position: right center;
+}
+
+.listCreatorAddBtn .icon {
+    height: 32px;
+}

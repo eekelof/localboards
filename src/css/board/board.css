@@ -1,4 +1,5 @@
 @import 'list.css';
+@import 'list_creator.css';
 
 #board {
     position: absolute;

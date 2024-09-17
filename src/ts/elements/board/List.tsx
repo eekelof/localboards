@@ -9,7 +9,7 @@ export default class List {
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiTrashCan} /></svg>
         </div>;
         const listWrapper = <div class="listWrapper"></div>;
-        const cardInput = <input class="cardInput" type="text" placeholder="New card" />;
+        const cardInput = <input class="cardInput" type="text" placeholder="New Card" />;
 
         cardInput.onkeydown = (e: KeyboardEvent) => {
             if (e.key === "Enter") {

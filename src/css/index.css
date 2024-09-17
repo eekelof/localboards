@@ -7,6 +7,7 @@
     font-family: sans-serif;
     letter-spacing: 2px;
     user-select: none;
+    white-space: nowrap;
 }
 
 body {
@@ -34,7 +35,7 @@ body {
     --btnBg2: linear-gradient(to right, #259 0%, #3af 51%, #259 100%);
     --btnBg3: linear-gradient(to right, #060 0%, #0f0 51%, #060 100%);
 
-    --scrollbarColor: #0004;
+    --scrollbarColor: #fffa;
 }
 
 .dark {

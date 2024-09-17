@@ -11,7 +11,9 @@ export default class Board {
         return <div id="board">
             <div id="boardTopBar"></div>
             <div id="boardTitle">{app.board.id}</div>
-            {app.board.lists.map(list => List.init(app.board, list))}
+            <div class="lists">
+                {app.board.lists.map(list => List.init(app.board, list))}
+            </div>
         </div>;
     }
 }
