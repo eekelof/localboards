@@ -1,15 +1,16 @@
 #boardSelector {
     position: absolute;
     left: 0px;
-    top: 40px;
+    top: 72px;
     width: 100%;
-    height: calc(100% - 224px);
+    height: calc(100% - 248px);
     padding-top: 16px;
     padding-bottom: 16px;
     overflow-y: scroll;
     overflow-x: hidden;
-    mask-image: linear-gradient(to bottom, #0000 0%, #000 5%, #000 80%, #0000 98%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 80%, #0000 98%);
     padding-bottom: 50%;
+    border-top: 1px solid #28ac;
     box-sizing: border-box;
 }
 

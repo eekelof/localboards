@@ -13,13 +13,13 @@
 .sidebarTitle {
     position: absolute;
     left: 16px;
-    top: 24px;
-    font-size: 24px;
+    top: 40px;
+    font-size: 22px;
 }
 
 .sidebarTitle .icon {
     height: 46px;
-    margin-top: -12px;
+    margin-top: -20px;
 }
 
 .themeToggle {
@@ -28,9 +28,11 @@
     top: 0px;
     cursor: pointer;
     transition: 0.1s;
+    opacity: 0.5;
 }
 
 .themeToggle:hover {
+    opacity: 1;
     transform: scale(1.1);
 }
 
