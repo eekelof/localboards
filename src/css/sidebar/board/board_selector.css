@@ -1,7 +1,7 @@
 #boardSelector {
     position: absolute;
     left: 0px;
-    top: 72px;
+    top: 68px;
     width: 100%;
     height: calc(100% - 248px);
     padding-top: 16px;
@@ -10,7 +10,7 @@
     overflow-x: hidden;
     mask-image: linear-gradient(to bottom, #000 0%, #000 80%, #0000 98%);
     padding-bottom: 50%;
-    border-top: 1px solid #28ac;
+    border-top: 1px solid #fffa;
     box-sizing: border-box;
 }
 

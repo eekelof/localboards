@@ -13,13 +13,14 @@
 .sidebarTitle {
     position: absolute;
     left: 16px;
-    top: 40px;
+    top: 34px;
     font-size: 22px;
+    font-weight: bold;
 }
 
 .sidebarTitle .icon {
     height: 46px;
-    margin-top: -20px;
+    margin-top: -21px;
 }
 
 .themeToggle {

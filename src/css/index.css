@@ -11,7 +11,6 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background: var(--bg);
     font-size: 15px;
     overflow: hidden;
     --borderRadius: 1px;
@@ -28,11 +27,13 @@ body {
     --btnBg2: linear-gradient(to right, #18a 0%, #3cf 51%, #18a 100%);
     --btnBg3: linear-gradient(to right, #282 0%, #4f4 51%, #282 100%);
     --btnBg4: linear-gradient(to right, #078 0%, #2ac 51%, #078 100%);
+
+    background: var(--bg);
 }
 
 .dark {
-    color: #5cf;
-    --titleIconColor: #5cf;
+    color: #5ad;
+    --titleIconColor: #5ad;
     --fontColor: #fff;
     --bg: linear-gradient(70deg, #001 0%, #012 100%);
     --boxBg: linear-gradient(0deg, #fff0, #fff2);
