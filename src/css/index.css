@@ -17,13 +17,12 @@ body {
     font-size: 18px;
     overflow: hidden;
 
-
-
-    color: #333;
+    color: #222;
     --fontColor: #fffc;
     --iconColor: #000;
-    --bg: #fff;
-    --boxBg: linear-gradient(0deg, #0000, #0002);
+    --bg: linear-gradient(70deg, #000 0%, #ccc 100%);
+    ;
+    --boxBg: linear-gradient(0deg, #fff4, #fffc);
     --borderRadius: 14px;
     --border: 0px solid #fff;
 
@@ -37,7 +36,7 @@ body {
     color: #5cf;
     --fontColor: #fffc;
     --iconColor: #fff;
-    --bg: #111;
+    --bg: linear-gradient(70deg, #001 0%, #012 100%);
     --boxBg: linear-gradient(0deg, #fff0, #fff2);
     --borderRadius: 14px;
     --border: 0px solid #fff;

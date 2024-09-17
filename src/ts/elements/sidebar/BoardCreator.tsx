@@ -1,4 +1,4 @@
-import { mdiDeveloperBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
+import { mdiDeveloperBoard, mdiDownload, mdiPlus, mdiThemeLightDark, mdiUpload } from '@mdi/js';
 import { App_I } from '../../App';
 import LSHelper from '../../data/LSHelper';
 import { Board_I } from '../board/Board';
@@ -34,11 +34,16 @@ export default class BoardCreator {
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiDownload} /></svg>
         </div>;
 
-        const themeToggle = BoardCreator.#getThemeToggle();
+        const themeToggle = <div class="themeToggle">
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiThemeLightDark} /></svg>
+        </div>;
         themeToggle.onclick = () => document.body.classList.toggle("dark");
 
         return <div class="sidebar">
-            <div class="sidebarTitle">Boards</div>
+            <div class="sidebarTitle">
+                <svg class="icon" viewBox="0 0 24 24"><path d={mdiDeveloperBoard} /></svg>
+                {" Boards"}
+            </div>
             {themeToggle}
             {boardSelector}
             <div class="boardCreator">
@@ -60,27 +65,6 @@ export default class BoardCreator {
     }
     static #setCreateBtnOpacity(btn: HTMLElement, active: boolean) {
         btn.style.opacity = active ? "1" : "0.3";
-    }
-    static #getThemeToggle() {
-        return <div class="theme-toggle" title="Toggle theme">
-            <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-                <mask class="moon" id="moon-mask">
-                    <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                    <circle cx="24" cy="10" r="6" fill="black" />
-                </mask>
-                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
-                <g class="sun-beams" stroke="currentColor">
-                    <line x1="12" y1="1" x2="12" y2="3" />
-                    <line x1="12" y1="21" x2="12" y2="23" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                    <line x1="1" y1="12" x2="3" y2="12" />
-                    <line x1="21" y1="12" x2="23" y2="12" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </g>
-            </svg>
-        </div>;
     }
 }
 
