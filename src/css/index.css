@@ -17,9 +17,9 @@ body {
     overflow: hidden;
     background: var(--bg);
     color: var(--fontColor);
-    transition: var(--transitionTime);
+    transition: 0.8s;
 
-    --transitionTime: 0.5s;
+    --transitionTime: 0.3s;
     --borderRadius: 14px;
     --border: 0px solid #fff0;
 
@@ -50,6 +50,23 @@ body {
     --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
 
     --scrollbarColor: #fff4;
+}
+
+
+input {
+    position: relative;
+    width: calc(100% - 20px);
+    background-color: var(--inputBg);
+    color: var(--fontColor);
+    font-size: 16px;
+    font-weight: bold;
+    border: var(--border);
+    border-radius: var(--borderRadius);
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    outline: none;
 }
 
 /* Scrollbar styles CHROME */
@@ -83,6 +100,7 @@ body {
 
 ::placeholder {
     color: var(--fontColor);
-    opacity: 0.9;
+    font-weight: normal;
+    opacity: 0.7;
     /* Firefox */
 }

@@ -16,8 +16,10 @@
 
 #boardTitle {
     position: absolute;
-    left: 48px;
+    right: 50dvw;
     top: 16px;
     font-size: 24px;
-    color: #fff;
+    font-weight: bold;
+    color: #fffd;
+    transform: translateX(50%);
 }

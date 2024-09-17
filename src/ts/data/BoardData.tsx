@@ -12,7 +12,7 @@ export interface Board_I {
 }
 
 export default class BoardData {
-    static init(id = "Example Board"): Board_I {
+    static init(id = "New Board"): Board_I {
         const todoList = { title: "Todo", cards: [] };
         const doingList = { title: "Doing", cards: [] };
         const doneList = { title: "Done", cards: [] };

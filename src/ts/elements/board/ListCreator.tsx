@@ -4,17 +4,13 @@ import { App_I } from '../../App';
 
 export default class ListCreator {
     static init(app: App_I): HTMLElement {
-        const firstNameInput = <input class="boardCreatorInput" type="text" placeholder="First id" />;
-
+        const input = <input class="listCreatorInput" type="text" placeholder="First id" />;
         const onClickAdd = () => {
-            const info = {
-                firstName: firstNameInput.value.split(" "),
-            };
-            firstNameInput.value = "";
+            input.value = "";
         };
 
         const creator = <div id="personCreatorInner">
-            {firstNameInput}
+            {input}
         </div>;
 
         const showBtn = <div class="btn personCreatorBtn" onclick={onClickAdd}>
