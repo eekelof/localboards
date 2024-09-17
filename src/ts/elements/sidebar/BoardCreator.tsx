@@ -1,4 +1,4 @@
-import { mdiDeveloperBoard, mdiDownload, mdiPlus, mdiThemeLightDark, mdiUpload } from '@mdi/js';
+import { mdiDeveloperBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
 import { App_I } from '../../App';
 import LSHelper from '../../data/LSHelper';
 import { Board_I } from '../board/Board';
@@ -6,7 +6,6 @@ import BoardSelector from './BoardSelector';
 
 export default class BoardCreator {
     static init(app: App_I): HTMLElement {
-        const boardSelector = BoardSelector.init(app);
         const input = <input class="boardCreatorInput" type="text" placeholder="New board" />;
 
         const onclick = () => {
@@ -34,24 +33,11 @@ export default class BoardCreator {
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiDownload} /></svg>
         </div>;
 
-        const themeToggle = <div class="themeToggle">
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiThemeLightDark} /></svg>
-        </div>;
-        themeToggle.onclick = () => document.body.classList.toggle("dark");
-
-        return <div class="sidebar">
-            <div class="sidebarTitle">
-                <svg class="icon titleIcon" viewBox="0 0 24 24"><path d={mdiDeveloperBoard}></path></svg>
-                {" Boards"}
-            </div>
-            {themeToggle}
-            {boardSelector}
-            <div class="boardCreator">
-                {input}
-                {btn}
-                {uploadBtn}
-                {downloadBtn}
-            </div>
+        return <div class="boardCreator">
+            {input}
+            {btn}
+            {uploadBtn}
+            {downloadBtn}
         </div>;
     }
     static createBoard(id = "Example Board"): Board_I | null {

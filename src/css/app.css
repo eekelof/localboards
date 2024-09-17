@@ -5,7 +5,7 @@
 }
 
 .titleIcon {
-    fill: var(--titleIconColor);
+    fill: var(--fontColor2);
 }
 
 .btn {
@@ -28,8 +28,12 @@
 
 .btn:hover {
     transform: scale(1.05);
-    /* background: var(--btnBg2);
-    background-size: 200% auto; */
+    background-position: right center;
+    color: var(--fontColor2);
+}
+
+.btn:active {
+    transform: scale(1);
     background-position: right center;
 }
 

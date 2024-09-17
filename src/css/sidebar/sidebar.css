@@ -1,26 +1,62 @@
 @import "board/board_creator.css";
 @import "board/board_selector.css";
 
-.sidebar {
+#sidebar {
     position: absolute;
     left: 0px;
     top: 0px;
     width: 256px;
     height: 100%;
     background: var(--boxBg);
+    transition: 0.3s;
+}
+
+.sidebarHidden {
+    left: -256px !important;
 }
 
 .sidebarTitle {
     position: absolute;
     left: 16px;
     top: 34px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .sidebarTitle .icon {
-    height: 46px;
-    margin-top: -21px;
+    height: 40px;
+    margin-top: -14px;
+    margin-right: 8px;
+}
+
+.hideToggle {
+    position: absolute;
+    right: -32px;
+    top: 0px;
+    width: 32px;
+    height: 68px;
+    cursor: pointer;
+    background-color: var(--boxBg);
+}
+
+.hideToggle .icon {
+    width: 32px;
+    height: 68px;
+}
+
+.hideToggle .icon {
+    opacity: 0.5;
+    transition: 0.2s;
+}
+
+.hideToggle:hover .icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.sidebarHidden .hideToggle .icon {
+    transform: rotate(180deg);
 }
 
 .themeToggle {

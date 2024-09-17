@@ -5,6 +5,7 @@
 :root {
     font-family: 'Verdana';
     letter-spacing: 2px;
+    user-select: none;
 }
 
 body {
@@ -13,35 +14,28 @@ body {
     height: 100vh;
     font-size: 15px;
     overflow: hidden;
+    background: var(--bg);
+    color: var(--fontColor2);
+
+
     --borderRadius: 1px;
     --border: 0px solid #fff;
+
     --iconColor: #fff;
-
-    color: #222;
-    --titleIconColor: #222;
     --fontColor: #fffc;
-    --bg: linear-gradient(70deg, #000 0%, #ccc 100%);
-    --boxBg: linear-gradient(0deg, #fff4, #fffc);
+    --fontColor2: #fff;
 
-    --btnBg: linear-gradient(to right, #888 0%, #ccc 51%, #889 100%);
-    --btnBg2: linear-gradient(to right, #18a 0%, #3cf 51%, #18a 100%);
-    --btnBg3: linear-gradient(to right, #282 0%, #4f4 51%, #282 100%);
-    --btnBg4: linear-gradient(to right, #078 0%, #2ac 51%, #078 100%);
+    --boxBg: #0008;
+    --btnBg: linear-gradient(to right, #4442 0%, #ccc6 51%, #4442 100%);
+    --btnBg2: linear-gradient(to right, #0468 0%, #08c 51%, #0468 100%);
+    --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
+    --btnBg4: linear-gradient(to right, #046 0%, #29b 51%, #046 100%);
 
-    background: var(--bg);
+    --bg: linear-gradient(70deg, #012 0%, #8cf 100%);
 }
 
 .dark {
-    color: #5ad;
-    --titleIconColor: #5ad;
-    --fontColor: #fff;
     --bg: linear-gradient(70deg, #001 0%, #012 100%);
-    --boxBg: linear-gradient(0deg, #fff0, #fff2);
-
-    --btnBg: linear-gradient(to right, #4442 0%, #ccc6 51%, #4442 100%);
-    --btnBg2: linear-gradient(to right, #0582 0%, #1cf8 51%, #0582 100%);
-    --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
-    --btnBg4: linear-gradient(to right, #034 0%, #168 51%, #034 100%);
 }
 
 /* Scrollbar styles CHROME */

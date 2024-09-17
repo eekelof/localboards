@@ -9,21 +9,23 @@
     overflow-y: scroll;
     overflow-x: hidden;
     mask-image: linear-gradient(to bottom, #000 0%, #000 80%, #0000 98%);
-    padding-bottom: 50%;
-    border-top: 1px solid #fffa;
+    padding-bottom: 40%;
+    border-top: 1px solid #fff4;
     box-sizing: border-box;
 }
 
 .boardCard {
     position: relative;
     width: calc(100% - 20px);
-    padding: 40px;
+    padding: 36px;
     text-align: left;
     letter-spacing: 1.3px;
+    margin-bottom: 14px;
 }
 
 .boardCardSelected {
     background: var(--btnBg2);
+    color: #fff;
     background-size: 200% auto;
 }
 
