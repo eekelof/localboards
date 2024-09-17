@@ -1,4 +1,5 @@
 import { mdiThemeLightDark } from '@mdi/js';
+import Background from './Background';
 import LSHelper from './data/LSHelper';
 import Board, { Board_I } from './elements/board/Board';
 import SideBar from './elements/sidebar/SideBar';
@@ -21,7 +22,7 @@ export default class App {
         const sideBar = SideBar.init(app);
         const board = Board.init(app);
 
-        document.body.append(board, sideBar, themeToggle);
+        document.body.append(Background.init(), board, sideBar, themeToggle);
     }
 }
 

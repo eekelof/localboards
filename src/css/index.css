@@ -1,3 +1,4 @@
+@import "background.css";
 @import "app.css";
 @import "sidebar/sidebar.css";
 @import "board/board.css";
@@ -16,12 +17,13 @@ body {
     overflow: hidden;
     background: var(--bg);
     color: var(--fontColor);
+    transition: var(--transitionTime);
 
-    --transitionTime: 0.3s;
+    --transitionTime: 0.5s;
     --borderRadius: 14px;
     --border: 0px solid #fff0;
 
-    --bg: linear-gradient(70deg, #012 0%, #8cf 100%);
+    --bg: #258;
 
     --iconColor: #333;
     --fontColor: #222;
@@ -36,7 +38,7 @@ body {
 }
 
 .dark {
-    --bg: linear-gradient(70deg, #001 0%, #012 100%);
+    --bg: #012;
 
     --iconColor: #fff;
     --fontColor: #fff;

@@ -1,0 +1,62 @@
+.background {
+    position: absolute;
+    min-height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    filter: blur(8dvmax);
+}
+
+.blob {
+    border-radius: 50%;
+    aspect-ratio: 1;
+    opacity: 0.5;
+    position: absolute;
+}
+
+.blob.one {
+    background: #059;
+    height: max(500px, 50%);
+    left: 10%;
+    top: -10%;
+    animation: movement_two 18s ease-in-out infinite both;
+}
+
+.blob.two {
+    background: #55cc88;
+    height: max(200px, 30%);
+    left: 70%;
+    top: 30px;
+    animation: movement_two 21s ease-in-out infinite both;
+}
+
+.blob.three {
+    background: #55e1f1;
+    height: max(300px, 40%);
+    left: 500px;
+    top: 40%;
+    animation: movement_one 12s ease-in-out infinite both;
+}
+
+@keyframes movement_one {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(50%, 20%) scale(1);
+    }
+}
+
+@keyframes movement_two {
+
+    0%,
+    500% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(20%, 80%) scale(1.3);
+    }
+}
