@@ -14,7 +14,7 @@ export default class List {
         const removeBtn = <svg class="icon iconRemove" viewBox="0 0 24 24"><path d={mdiTrashCan} /></svg>
 
         const cards = <div class="cards"></div>;
-        const cardInput = <input class="cardInput" type="text" placeholder="New Card" maxlength="20" />;
+        const cardInput = <input class="cardInput" type="text" placeholder="New Card" maxlength="512" />;
 
         cardInput.onkeydown = (e: KeyboardEvent) => {
             if (e.key === "Enter") {
