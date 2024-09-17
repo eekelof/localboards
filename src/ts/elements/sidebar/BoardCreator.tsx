@@ -1,4 +1,4 @@
-import { mdiDownloadBoxOutline, mdiPlusBoxOutline, mdiUploadBoxOutline } from '@mdi/js';
+import { mdiDeveloperBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
 import { App_I } from '../../App';
 import LSHelper from '../../data/LSHelper';
 import { Board_I } from '../board/Board';
@@ -16,8 +16,9 @@ export default class BoardCreator {
             BoardCreator.#setCreateBtnOpacity(btn, false);
             BoardSelector.updateList(app);
         };
-        const btn = <div class="btn boardCreatorBtn" onclick={onclick}>
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlusBoxOutline} /></svg>
+        const btn = <div class="btn boardCreatorAddBtn" onclick={onclick}>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiDeveloperBoard} /></svg>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
         </div>;
         BoardCreator.#setCreateBtnOpacity(btn, false);
 
@@ -26,11 +27,11 @@ export default class BoardCreator {
         };
 
 
-        const uploadBtn = <div class="btn boardCreatorBtn boardCreatorUploadBtn" onclick={onclick}>
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiUploadBoxOutline} /></svg>
+        const uploadBtn = <div class="btn boardCreatorUploadBtn" onclick={onclick}>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiUpload} /></svg>
         </div>;
-        const downloadBtn = <div class="btn boardCreatorBtn boardCreatorDownloadBtn" onclick={onclick}>
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiDownloadBoxOutline} /></svg>
+        const downloadBtn = <div class="btn boardCreatorDownloadBtn" onclick={onclick}>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiDownload} /></svg>
         </div>;
 
         return <div class="sidebar">

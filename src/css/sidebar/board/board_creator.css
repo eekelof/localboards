@@ -23,27 +23,43 @@
     border: var(--border);
 }
 
-.boardCreatorBtn {
+.boardCreatorAddBtn {
     position: relative;
     width: calc(100% - 20px);
+    height: 48px;
     background: var(--btnBg3);
     background-size: 200% auto;
 }
 
-.boardCreatorBtn:hover {
+.boardCreatorAddBtn:hover {
     background-position: right center;
 }
 
-.boardCreatorUploadBtn {
-    position: relative;
-    width: calc(50% - 20px);
-    background: var(--btnBg2);
-    background-size: 200% auto;
+
+.boardCreatorAddBtn .icon {
+    height: 32px;
 }
 
+
+.boardCreatorUploadBtn,
 .boardCreatorDownloadBtn {
     position: relative;
     width: calc(50% - 20px);
+    height: 48px;
     background: var(--btnBg4);
     background-size: 200% auto;
+    display: inline-block;
+}
+
+.boardCreatorUploadBtn {
+    float: left;
+}
+
+.boardCreatorDownloadBtn {
+    float: right;
+}
+
+.boardCreatorUploadBtn .icon,
+.boardCreatorDownloadBtn .icon {
+    height: 32px;
 }
