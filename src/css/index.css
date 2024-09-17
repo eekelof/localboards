@@ -4,9 +4,38 @@
 
 :root {
     font-family: Arial, sans-serif;
-    color: #fff;
     letter-spacing: 1px;
 
+
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg);
+    font-size: 18px;
+    overflow: hidden;
+
+
+
+    color: #333;
+    --fontColor: #fffc;
+    --iconColor: #000;
+    --bg: #fff;
+    --boxBg: linear-gradient(0deg, #0000, #0002);
+    --borderRadius: 14px;
+    --border: 0px solid #fff;
+
+    --btnBg: linear-gradient(to right, #888 0%, #ccc 51%, #889 100%);
+    --btnBg2: linear-gradient(to right, #18a 0%, #3cf 51%, #18a 100%);
+    --btnBg3: linear-gradient(to right, #282 0%, #4f4 51%, #282 100%);
+    --btnBg4: linear-gradient(to right, #078 0%, #2ac 51%, #078 100%);
+}
+
+.dark {
+    color: #5cf;
+    --fontColor: #fffc;
     --iconColor: #fff;
     --bg: #111;
     --boxBg: linear-gradient(0deg, #fff0, #fff2);
@@ -17,15 +46,6 @@
     --btnBg2: linear-gradient(to right, #058 0%, #1cf 51%, #058 100%);
     --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
     --btnBg4: linear-gradient(to right, #034 0%, #168 51%, #034 100%);
-}
-
-body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    background: var(--bg);
-    font-size: 18px;
-    overflow: hidden;
 }
 
 /* Scrollbar styles CHROME */
@@ -40,19 +60,19 @@ body {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #fff4;
+    background: #888;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #fff8;
+    background: #888;
 }
 
 /* Scrollbar stylesFF */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #fff4 transparent;
+    scrollbar-color: #444 transparent;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    scrollbar-color: #fff8 transparent;
+    scrollbar-color: #888 transparent;
 }
