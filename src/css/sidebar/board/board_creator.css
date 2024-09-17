@@ -8,7 +8,7 @@
 .boardCreatorInput {
     width: calc(100% - 20px);
     position: relative;
-    background-color: #fff1;
+    background-color: var(--inputBg);
     color: #fff;
     border: var(--border);
     border-radius: var(--borderRadius);
@@ -16,11 +16,7 @@
     margin: 10px;
     text-align: center;
     box-sizing: border-box;
-}
-
-.boardCreatorInput:hover {
-    background-color: #fff2;
-    border: var(--border);
+    outline: none;
 }
 
 .boardCreatorAddBtn {
