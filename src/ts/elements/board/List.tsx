@@ -5,10 +5,9 @@ import { Board_I } from './Board';
 export default class List {
     static init(board: Board_I, list: List_I): HTMLElement {
         const title = <div class="listTitle">{list.title}</div>;
-        const removeBtn = <div class="btn listRemoveBtn" onclick={onclick}>
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiTrashCan} /></svg>
-        </div>;
-        const listWrapper = <div class="listWrapper"></div>;
+        const removeBtn = <svg class="icon iconRemove" viewBox="0 0 24 24"><path d={mdiTrashCan} /></svg>
+
+        const cards = <div class="cards"></div>;
         const cardInput = <input class="cardInput" type="text" placeholder="New Card" />;
 
         cardInput.onkeydown = (e: KeyboardEvent) => {
@@ -16,7 +15,7 @@ export default class List {
                 const card = { title: cardInput.value, color: "#fff" };
                 BoardData.addCard(list, card);
                 list.cards.push(card);
-                listWrapper.append(List.#createCardElement(card));
+                cards.append(List.#createCardElement(card));
                 cardInput.value = "";
             }
         };
@@ -25,7 +24,7 @@ export default class List {
             {title}
             {removeBtn}
             {cardInput}
-            {listWrapper}
+            {cards}
         </div>;
     }
     static #createCardElement(card: Card_I): HTMLElement {

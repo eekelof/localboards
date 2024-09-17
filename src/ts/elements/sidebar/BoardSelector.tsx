@@ -21,7 +21,7 @@ export default class BoardSelector {
             const className = "btn boardCard" + (app.board.id === id ? " boardCardSelected" : "");
             const e = <div class={className} onclick={onclick}>
                 <div class="boardCardTitle">{id}</div>
-                <svg class="icon boardCardRemove" viewBox="0 0 24 24"><path d={mdiTrashCan} /></svg>
+                <svg class="icon iconRemove" viewBox="0 0 24 24"><path d={mdiTrashCan} /></svg>
             </div>;
             list.append(e);
         }

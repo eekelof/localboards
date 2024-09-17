@@ -14,6 +14,7 @@
 }
 
 .list {
+    position: relative;
     margin-right: 40px;
     width: 320px;
     max-height: 128px;
@@ -21,4 +22,18 @@
 
     background: var(--boxBg);
     border-radius: var(--borderRadius);
+}
+
+.listTitle {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--iconColor);
+    padding: 16px;
+}
+
+.list .iconRemove {
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }
