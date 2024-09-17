@@ -8,7 +8,7 @@
     width: 256px;
     height: 100%;
     background: var(--boxBg);
-    transition: 0.3s;
+    transition: var(--transitionTime);
 }
 
 .sidebarHidden {
@@ -39,12 +39,13 @@
     cursor: pointer;
     background-color: var(--boxBg);
     border-radius: 0 0 var(--borderRadius);
-    transition: 0.3s;
+    transition: var(--transitionTime);
 }
 
 .hideToggle .icon {
     width: 32px;
     height: 68px;
+    fill: var(--iconColor);
 }
 
 .hideToggle .icon {

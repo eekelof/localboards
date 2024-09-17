@@ -17,26 +17,30 @@ body {
     background: var(--bg);
     color: var(--fontColor2);
 
+    --transitionTime: 0.3s;
     --borderRadius: 12px;
-    --border: 0px solid #fff;
+    --border: 0px solid #fff0;
 
-    --iconColor: #fff;
-    --fontColor: #fffc;
-    --fontColor2: #fff;
+    --iconColor: #333;
+    --fontColor: #fff;
+    --fontColor2: #333;
 
-    --boxBg: #0008;
-    --btnBg: linear-gradient(to right, #4442 0%, #ccc6 51%, #4442 100%);
+    --boxBg: #fff;
+    --btnBg: #0004;
     --btnBg2: linear-gradient(to right, #0468 0%, #08c 51%, #0468 100%);
     --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
-    --btnBg4: linear-gradient(to right, #046 0%, #29b 51%, #046 100%);
 
     --bg: linear-gradient(70deg, #012 0%, #8cf 100%);
 }
 
 .dark {
+    --iconColor: #fff;
+    --fontColor: #fffc;
+    --fontColor2: #fff;
 
     --bg: linear-gradient(70deg, #001 0%, #012 100%);
     --boxBg: #fff2;
+    --btnBg: #0008;
 }
 
 /* Scrollbar styles CHROME */

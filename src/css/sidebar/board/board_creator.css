@@ -46,7 +46,7 @@
     position: relative;
     width: calc(50% - 20px);
     height: 48px;
-    background: var(--btnBg4);
+    background: var(--btnBg2);
     background-size: 200% auto;
     display: inline-block;
 }

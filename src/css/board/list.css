@@ -14,7 +14,7 @@
     background: var(--boxBg);
     border-radius: var(--borderRadius);
     padding-top: 6px;
-    transition: 0.5s;
+    transition: var(--transitionTime);
     opacity: 0;
     transform: scaleY(0);
     transform-origin: bottom;

@@ -19,7 +19,7 @@ export default class SideBar {
         return <div id="sidebar">
             <div class="sidebarTitle">
                 <svg class="icon titleIcon" viewBox="0 0 24 24"><path d={mdiDeveloperBoard}></path></svg>
-                LocalBoard
+                LocalBoards
             </div>
             {hideToggle}
             {boardSelector}
