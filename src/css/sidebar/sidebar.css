@@ -77,6 +77,10 @@
     transform: scale(1.1);
 }
 
+.themeToggle:active {
+    transform: scale(1);
+}
+
 .themeToggle .icon {
     width: 32px;
 }

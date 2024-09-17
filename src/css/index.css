@@ -27,7 +27,7 @@ body {
     --fontColor: #222;
 
     --boxBg: #fff;
-    --inputBg: #0004;
+    --inputBg: #ccc;
     --btnBg: #fff;
     --btnBg2: linear-gradient(to right, #259 0%, #3af 51%, #259 100%);
     --btnBg3: linear-gradient(to right, #060 0%, #0f0 51%, #060 100%);
@@ -42,7 +42,7 @@ body {
     --fontColor: #fff;
 
     --boxBg: #333;
-    --inputBg: #0008;
+    --inputBg: #555;
     --btnBg: #0008;
     --btnBg2: linear-gradient(to right, #046 0%, #07c 51%, #046 100%);
     --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
@@ -77,4 +77,10 @@ body {
 
 *::-webkit-scrollbar-thumb:hover {
     scrollbar-color: var(--scrollbarColor) transparent;
+}
+
+::placeholder {
+    color: var(--fontColor);
+    opacity: 0.9;
+    /* Firefox */
 }

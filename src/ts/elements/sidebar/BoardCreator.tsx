@@ -6,7 +6,7 @@ import BoardSelector from './BoardSelector';
 
 export default class BoardCreator {
     static init(app: App_I): HTMLElement {
-        const input = <input class="boardCreatorInput" type="text" placeholder="New board" />;
+        const input = <input class="boardCreatorInput" type="text" placeholder="New Board" />;
 
         const onclick = () => {
             const board = BoardCreator.createBoard(input.value);
@@ -51,6 +51,7 @@ export default class BoardCreator {
     }
     static #setCreateBtnOpacity(btn: HTMLElement, active: boolean) {
         btn.style.opacity = active ? "1" : "0.3";
+        btn.style.cursor = active ? "pointer" : "default";
     }
 }
 
