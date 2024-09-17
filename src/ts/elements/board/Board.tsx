@@ -8,6 +8,7 @@ export interface Board_I {
 export default class Board {
     static init(app: App_I) {
         return <div id="board">
+            <div id="boardTopBar"></div>
             <div id="boardTitle">{app.board.id}</div>
             {/* {app.board.lists.map(list => List.init(app.board, list))} */}
         </div>;

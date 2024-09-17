@@ -9,22 +9,24 @@ export default class BoardCreator {
         const input = <input class="boardCreatorInput" type="text" placeholder="New Board" />;
 
         const onclick = () => {
-            const board = BoardCreator.createBoard(input.value);
+            const board = BoardCreator.#createBoard(input.value);
             app.board = board || app.board;
             input.value = "";
             BoardCreator.#setCreateBtnOpacity(btn, false);
             BoardSelector.updateList(app);
         };
+
         const btn = <div class="btn boardCreatorAddBtn" onclick={onclick}>
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiDeveloperBoard} /></svg>
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
         </div>;
         BoardCreator.#setCreateBtnOpacity(btn, false);
 
-        input.onkeydown = () => {
+        input.onkeydown = (e: KeyboardEvent) => {
+            if (e.key === "Enter")
+                onclick();
             setTimeout(() => BoardCreator.#setCreateBtnOpacity(btn, input.value.length > 0));
         };
-
 
         const uploadBtn = <div class="btn boardCreatorUploadBtn" onclick={onclick}>
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiUpload} /></svg>
@@ -40,7 +42,7 @@ export default class BoardCreator {
             {downloadBtn}
         </div>;
     }
-    static createBoard(id = "Example Board"): Board_I | null {
+    static #createBoard(id = "Example Board"): Board_I | null {
         if (id.length === 0)
             return null;
         if (LSHelper.load(id))

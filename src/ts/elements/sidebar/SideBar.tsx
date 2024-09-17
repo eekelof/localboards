@@ -5,13 +5,13 @@ import BoardSelector from './BoardSelector';
 
 export default class SideBar {
     static init(app: App_I) {
-        const hideToggle = <div class="hideToggle">
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiChevronLeft} /></svg>
-        </div>;
-        hideToggle.onclick = () => {
+        const clickHide = () => {
             document.getElementById("sidebar")!.classList.toggle("sidebarHidden");
             document.getElementById("board")!.classList.toggle("boardExpanded");
         };
+        const hideToggle = <div class="hideToggle" onclick={clickHide}>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiChevronLeft} /></svg>
+        </div>;
 
         const boardSelector = BoardSelector.init(app);
         const boardCreator = BoardCreator.init(app);

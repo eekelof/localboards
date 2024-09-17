@@ -4,7 +4,7 @@
 @import "board/board.css";
 
 :root {
-    font-family: 'Verdana';
+    font-family: sans-serif;
     letter-spacing: 2px;
     user-select: none;
 }
@@ -23,7 +23,7 @@ body {
     --borderRadius: 14px;
     --border: 0px solid #fff0;
 
-    --bg: #258;
+    --bg: #012;
 
     --iconColor: #333;
     --fontColor: #222;
@@ -67,6 +67,7 @@ input {
     margin-bottom: 4px;
     box-sizing: border-box;
     outline: none;
+    transition: var(--transitionTime);
 }
 
 /* Scrollbar styles CHROME */
