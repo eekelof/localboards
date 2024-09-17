@@ -11,6 +11,6 @@
     },
     "dependencies": {
         "@mdi/js": "^7.4.47",
-        "solojsx": "^2.4.1"
+        "solojsx": "^2.4.2"
     }
 }

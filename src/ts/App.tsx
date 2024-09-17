@@ -24,7 +24,12 @@ export default class App {
         };
         const controls = Controls.init(app);
 
-        document.body.append(controls);
+        const d = new Date();
+        const test = <div>
+            <div>0</div>
+            <div>{d}</div>
+        </div>;
+        document.body.append(controls, test);
     }
 }
 
