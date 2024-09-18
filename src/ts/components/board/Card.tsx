@@ -1,6 +1,6 @@
 import { mdiChevronDown, mdiChevronUp, mdiClose, mdiPaletteOutline } from '@mdi/js';
 import { Board_I, Card_I, List_I } from '../../App';
-import Updater from '../../util/Updater';
+import Updater from '../../Updater';
 
 export default class Card {
     static init(board: Board_I, list: List_I, card: Card_I) {

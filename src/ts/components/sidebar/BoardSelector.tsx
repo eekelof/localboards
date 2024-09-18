@@ -1,7 +1,7 @@
 import { mdiTrashCan } from '@mdi/js';
 import { App_I } from '../../App';
+import Updater from '../../Updater';
 import LsUtil from '../../util/LsUtil';
-import Updater from '../../util/Updater';
 
 export function BoardSelector(app: App_I) {
     const boards = LsUtil.getAllIDs();

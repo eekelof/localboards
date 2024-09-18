@@ -1,7 +1,7 @@
 import { mdiListBoxOutline, mdiPlus } from '@mdi/js';
 import { Board_I } from '../../App';
+import Updater from '../../Updater';
 import UiUtil from '../../util/UiUtil';
-import Updater from '../../util/Updater';
 
 export function ListCreator(board: Board_I) {
     const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" />;
