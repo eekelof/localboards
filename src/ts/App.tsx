@@ -1,7 +1,7 @@
 import { mdiThemeLightDark } from '@mdi/js';
-import Background from './components/Background';
-import Board from './components/board/Board';
-import SideBar from './components/sidebar/SideBar';
+import { Background } from './components/Background';
+import { Board } from './components/board/Board';
+import { SideBar } from './components/sidebar/SideBar';
 import LsUtil from './util/LsUtil';
 
 
@@ -30,9 +30,9 @@ export default class App {
 
         document.body.append(
             <div id="app">
-                {Background.init()}
-                {Board.init(app.board)}
-                {SideBar.init(app)}
+                {Background()}
+                {Board(app.board)}
+                {SideBar(app)}
 
                 <div class="themeToggle" onclick={() => document.body.classList.toggle("dark")}>
                     <svg class="icon" viewBox="0 0 24 24"><path d={mdiThemeLightDark} /></svg>

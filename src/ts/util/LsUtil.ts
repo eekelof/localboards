@@ -22,12 +22,11 @@ export default class LsUtil {
     }
     static getBoardOnStart() {
         const selected = localStorage.getItem("selectedBoard")!;
-        const board = LsUtil.load(selected) || LsUtil.#getDeafaultBoard();
+        const board = LsUtil.load(selected) || LsUtil.getDeafaultBoard();
         LsUtil.save(board);
         return board;
     }
-
-    static #getDeafaultBoard(id = "New Board"): Board_I {
+    static getDeafaultBoard(id = "New Board"): Board_I {
         const todoList = { title: "Todo", cards: [] };
         const doingList = { title: "Doing", cards: [] };
         const doneList = { title: "Done", cards: [] };

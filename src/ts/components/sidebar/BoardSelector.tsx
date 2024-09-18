@@ -2,29 +2,23 @@ import { mdiTrashCan } from '@mdi/js';
 import { App_I } from '../../App';
 import LsUtil from '../../util/LsUtil';
 
-export default class BoardSelector {
-    static init(app: App_I) {
-        const list = <div id="boardSelector"></div>;
-        setTimeout(() => BoardSelector.updateList(app));
-        return list;
-    }
-    static updateList(app: App_I) {
-        const list = document.getElementById("boardSelector")!;
-        list.innerHTML = "";
-        const boards = LsUtil.getAllIDs();
-        for (const id of boards) {
+export function BoardSelector(app: App_I) {
+    const boards = LsUtil.getAllIDs();
+    return <div id="boardSelector">
+        {boards.map(id => {
             const onclick = () => {
                 const t = LsUtil.load(id);
                 app.board = t || app.board;
                 BoardSelector.updateList(app);
             };
-            const className = "btn boardCard" + (app.board.id === id ? " boardCardSelected" : "");
-            const e = <div class={className} onclick={onclick}>
+
+            const selected = app.board.id === id;
+            const className = "btn boardCard" + (selected ? " boardCardSelected" : "");
+            return <div class={className} onclick={onclick}>
                 <div class="boardCardTitle">{id}</div>
-                <svg class="icon iconSmall" viewBox="0 0 24 24"><path d={mdiTrashCan} /></svg>
+                {selected ? null : <svg class="icon iconSmall" viewBox="0 0 24 24"><path d={mdiTrashCan} /></svg>}
             </div>;
-            list.append(e);
-        }
-    }
+        })}
+    </div>;
 }
 
