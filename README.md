@@ -1,5 +1,5 @@
 # localboards
-Todo list app :bulb:
+Todo list app
 
 ## Features :gem:
 - Stores all data locally
@@ -8,4 +8,5 @@ Todo list app :bulb:
 
 ## Stack :zap:
 - HTML, CSS, TS
-- SoloJSX
+- SoloJSX (https://github.com/SoloJSX/SoloJSX)
+- Vite
