@@ -5,7 +5,7 @@ Todo list app that stores data locally.
 demo link
 
 ## Features :clipboard:
-- Stores all data locally
+- Stores all data in localstorage
 - Download/Upload option
 - Light/Dark mode
 
