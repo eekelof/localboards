@@ -2,7 +2,7 @@ import { Background } from './components/Background';
 import { Board } from './components/board/Board';
 import { SideBar } from './components/sidebar/SideBar';
 import { ThemeToggle } from './components/ThemeToggle';
-import LsUtil from './util/LsUtil';
+import Util from './util/Util';
 
 export interface App_I {
     board: Board_I
@@ -24,7 +24,7 @@ export interface Card_I {
 }
 
 function App() {
-    const app: App_I = { board: LsUtil.getBoardOnStart() };
+    const app: App_I = { board: Util.getBoardOnStart() };
     return <div id="app">
         {Background()}
         {Board(app.board)}

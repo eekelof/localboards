@@ -20,31 +20,10 @@ export default class LsUtil {
         localStorage.removeItem(LsUtil.LOCAL_STORAGE_PREFIX + id);
     }
 
-    static getBoardOnStart() {
-        const selected = localStorage.getItem("selectedBoard")!;
-        const board = LsUtil.get(selected) || LsUtil.createBoard();
-        LsUtil.set(board);
-        return board;
-    }
-    static createBoard(id = "", depth = 0): Board_I {
-        const nid = (id.length > 0 ? id : "New Board") + (depth > 0 ? depth : "");
-        if (LsUtil.get(nid))
-            return LsUtil.createBoard(id, depth + 1);
-
-        const todoList = { id: crypto.randomUUID(), title: "Todo", cards: [] };
-        const doingList = { id: crypto.randomUUID(), title: "Doing", cards: [] };
-        const doneList = { id: crypto.randomUUID(), title: "Done", cards: [] };
-        return {
-            id: nid,
-            created: Date.now(),
-            lists: [todoList, doingList, doneList]
-        };
-    }
-
     static getTheme() {
-        return localStorage.getItem("theme");
+        return JSON.parse(localStorage.getItem("theme") ?? "false");
     }
-    static setTheme(theme: "dark" | "light") {
-        localStorage.setItem("theme", theme);
+    static setTheme(isDark: boolean) {
+        localStorage.setItem("theme", isDark.toString());
     }
 }

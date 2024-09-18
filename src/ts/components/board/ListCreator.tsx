@@ -1,7 +1,7 @@
 import { mdiListBoxOutline, mdiPlus } from '@mdi/js';
 import { Board_I } from '../../App';
 import Updater from '../../Updater';
-import UiUtil from '../../util/UiUtil';
+import Util from '../../util/Util';
 
 export function ListCreator(board: Board_I) {
     const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" />;
@@ -14,19 +14,19 @@ export function ListCreator(board: Board_I) {
         board.lists.push({ id: crypto.randomUUID(), title, cards: [] });
         Updater.board(board);
         input.value = "";
-        UiUtil.setBtnOpacity(btn, false);
+        Util.setBtnOpacity(btn, false);
     };
 
     const btn = <div class="btn listCreatorAddBtn" onclick={onclick}>
         <svg class="icon" viewBox="0 0 24 24"><path d={mdiListBoxOutline} /></svg>
         <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
     </div>;
-    UiUtil.setBtnOpacity(btn, false);
+    Util.setBtnOpacity(btn, false);
 
     input.onkeydown = (e: KeyboardEvent) => {
         if (e.key === "Enter")
             onclick();
-        setTimeout(() => UiUtil.setBtnOpacity(btn, input.value.length > 0));
+        setTimeout(() => Util.setBtnOpacity(btn, input.value.length > 0));
     };
 
     return <div class="listCreator">
