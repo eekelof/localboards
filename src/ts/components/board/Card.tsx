@@ -35,7 +35,6 @@ export function Card(board: Board_I, list: List_I, card: Card_I) {
         remove();
         nlist.cards.push(card);
 
-        Updater.cards(board, list);
         Updater.cards(board, nlist);
     };
 
