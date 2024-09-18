@@ -1,12 +1,12 @@
 # localboards
-Todo list app
-### Demo
-demo link
-
 ## Features :gem:
+- Todo list app
 - Stores all data locally
 - Download/Upload option
 - Light/Dark mode
+
+## Demo
+demo link
 
 ## Stack :zap:
 - HTML, CSS, TS
