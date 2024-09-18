@@ -9,7 +9,7 @@ export function BoardSelector(app: App_I) {
     return <div id="boardSelector">
         {ids.map(id => {
             const select = () => {
-                const t = LsUtil.load(id);
+                const t = LsUtil.get(id);
                 app.board = t || app.board;
                 Updater.board(app.board);
                 Updater.boardSelector(app);
