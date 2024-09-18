@@ -10,14 +10,11 @@ export default class LsUtil {
     }
     static save(board: Board_I) {
         localStorage.setItem(LsUtil.LOCAL_STORAGE_PREFIX + board.id, JSON.stringify(board));
+        localStorage.setItem("selectedBoard", board.id);
     }
     static load(id: string): Board_I | null {
         const board = localStorage.getItem(LsUtil.LOCAL_STORAGE_PREFIX + id);
-        const parsed = board ? JSON.parse(board) : null;
-        if (parsed)
-            localStorage.setItem("selectedBoard", parsed.id);
-
-        return parsed;
+        return board ? JSON.parse(board) : null;
     }
     static remove(id: string) {
         localStorage.removeItem(LsUtil.LOCAL_STORAGE_PREFIX + id);
@@ -25,7 +22,9 @@ export default class LsUtil {
 
     static getBoardOnStart() {
         const selected = localStorage.getItem("selectedBoard")!;
-        return LsUtil.load(selected) || LsUtil.createBoard();
+        const board = LsUtil.load(selected) || LsUtil.createBoard();
+        LsUtil.save(board);
+        return board;
     }
     static createBoard(id = "", depth = 0): Board_I {
         const nid = (id.length > 0 ? id : "New Board") + (depth > 0 ? depth : "");
