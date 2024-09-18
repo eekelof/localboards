@@ -32,7 +32,7 @@ export default class List {
             {cardInput}
             <div class="cards">
                 {list.cards.map(card => Card.init(board, list, card))}
-            </div>;
+            </div>
         </div>;
     }
 }
