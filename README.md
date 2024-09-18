@@ -11,7 +11,7 @@ demo link
 
 ## Stack :zap:
 - HTML, CSS, TS
-- SoloJSX (https://github.com/SoloJSX/SoloJSX)
+- [SoloJSX](https://github.com/SoloJSX/SoloJSX)
 - Vite
 
 ## License
