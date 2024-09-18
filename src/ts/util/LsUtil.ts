@@ -9,8 +9,7 @@ export default class LsUtil {
         return res;
     }
     static save(board: Board_I) {
-        if (board)
-            localStorage.setItem(LsUtil.LOCAL_STORAGE_PREFIX + board.id, JSON.stringify(board));
+        localStorage.setItem(LsUtil.LOCAL_STORAGE_PREFIX + board.id, JSON.stringify(board));
     }
     static load(id: string) {
         const board = localStorage.getItem(LsUtil.LOCAL_STORAGE_PREFIX + id);
@@ -22,9 +21,7 @@ export default class LsUtil {
     }
     static getBoardOnStart() {
         const selected = localStorage.getItem("selectedBoard")!;
-        const board = LsUtil.load(selected) || LsUtil.getDeafaultBoard();
-        LsUtil.save(board);
-        return board;
+        return LsUtil.load(selected) || LsUtil.getDeafaultBoard();
     }
     static getDeafaultBoard(id = "New Board"): Board_I {
         const todoList = { id: crypto.randomUUID(), title: "Todo", cards: [] };

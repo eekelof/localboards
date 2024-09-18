@@ -11,6 +11,8 @@ export function BoardCreator(app: App_I) {
         app.board = board || app.board;
         input.value = "";
         UiUtil.setBtnOpacity(btn, false);
+
+        Updater.board(app.board);
         Updater.boardSelector(app);
     };
 

@@ -3,25 +3,29 @@ import { Board } from "./components/board/Board";
 import { Card } from "./components/board/Card";
 import { Cards, List } from "./components/board/List";
 import { BoardSelector } from "./components/sidebar/BoardSelector";
+import LsUtil from "./util/LsUtil";
 
+/**
+ * Updates DOM elements and saves board to local storage
+ */
 export default class Updater {
     static boardSelector(app: App_I) {
-        Updater.#update(document.getElementById("boardSelector")!, BoardSelector(app));
+        document.getElementById("boardSelector")!.replaceWith(BoardSelector(app));
     }
     static board(board: Board_I) {
-        Updater.#update(document.getElementById("board")!, Board(board));
+        document.getElementById("board")!.replaceWith(Board(board));
+        LsUtil.save(board);
     }
     static list(board: Board_I, list: List_I) {
-        Updater.#update(document.getElementById("list-" + list.id)!, List(board, list));
+        document.getElementById("list-" + list.id)!.replaceWith(List(board, list));
+        LsUtil.save(board);
     }
     static cards(board: Board_I, list: List_I) {
-        Updater.#update(document.getElementById("cards-" + list.id)!, Cards(board, list));
+        document.getElementById("cards-" + list.id)!.replaceWith(Cards(board, list))
+        LsUtil.save(board);
     }
     static card(board: Board_I, list: List_I, card: Card_I) {
-        Updater.#update(document.getElementById("card-" + card.id)!, Card(board, list, card));
-    }
-
-    static #update(oldElement: HTMLElement, newElement: HTMLElement) {
-        oldElement.replaceWith(newElement);
+        document.getElementById("card-" + card.id)!.replaceWith(Card(board, list, card))
+        LsUtil.save(board);
     }
 }

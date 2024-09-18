@@ -4,26 +4,22 @@ import { Board } from './components/board/Board';
 import { SideBar } from './components/sidebar/SideBar';
 import LsUtil from './util/LsUtil';
 
-
-export interface Card_I {
-    id: string;
-    title: string;
-    color: string;
+export interface App_I {
+    board: Board_I
 }
-
+export interface Board_I {
+    id: string;
+    lists: List_I[];
+}
 export interface List_I {
     id: string;
     title: string;
     cards: Card_I[];
 }
-
-export interface Board_I {
+export interface Card_I {
     id: string;
-    lists: List_I[];
-}
-
-export interface App_I {
-    board: Board_I
+    title: string;
+    color: string;
 }
 
 function App() {

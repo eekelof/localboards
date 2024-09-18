@@ -11,8 +11,6 @@ export default class UiUtil {
             return null;
         if (LsUtil.load(id))
             return null;
-        const board = LsUtil.getDeafaultBoard(id);
-        LsUtil.save(board);
-        return board;
+        return LsUtil.getDeafaultBoard(id);
     }
 }
