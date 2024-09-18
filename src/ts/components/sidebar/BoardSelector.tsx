@@ -4,7 +4,7 @@ import Updater from '../../Updater';
 import LsUtil from '../../util/LsUtil';
 
 export function BoardSelector(app: App_I) {
-    const ids = LsUtil.getAllBoardIDs();
+    const ids = LsUtil.getIDs();
 
     return <div id="boardSelector">
         {ids.map(id => {
