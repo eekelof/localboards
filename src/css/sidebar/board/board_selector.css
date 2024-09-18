@@ -38,6 +38,9 @@
     position: absolute;
     bottom: 12px;
     left: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .boardCard .iconSmall {

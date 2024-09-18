@@ -31,8 +31,6 @@
 
 .cardColored {
     padding-top: 56px;
-    padding-left: 14px;
-    padding-right: 32px;
     font-weight: bold;
     color: #fff;
 }
@@ -42,17 +40,17 @@
 }
 
 .cardIconUp {
-    left: 16px;
+    left: 8px;
 }
 
 .cardIconDown {
-    left: 48px;
+    left: 40px;
 }
 
 .cardIconLeft {
-    left: 80px;
+    left: 72px;
 }
 
 .cardIconRight {
-    left: 112px;
+    left: 104px;
 }
