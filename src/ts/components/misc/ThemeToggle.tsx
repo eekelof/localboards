@@ -1,13 +1,13 @@
 import { mdiThemeLightDark } from "@mdi/js";
-import LsUtil from "../../util/LsUtil";
+import LSUtil from "../../util/LSUtil";
 
 export function ThemeToggle() {
     const toggleTheme = () => {
         document.body.classList.toggle("dark");
-        LsUtil.setTheme(document.body.classList.contains("dark"));
+        LSUtil.setTheme(document.body.classList.contains("dark"));
     };
 
-    if (LsUtil.getTheme())
+    if (LSUtil.getTheme())
         toggleTheme();
 
     return <div class="themeToggle" onclick={() => toggleTheme()}>

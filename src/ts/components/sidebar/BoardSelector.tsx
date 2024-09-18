@@ -1,16 +1,16 @@
 import { mdiTrashCan } from '@mdi/js';
 import { App_I } from '../../App';
 import Updater from '../../Updater';
-import LsUtil from '../../util/LsUtil';
+import LSUtil from '../../util/LSUtil';
 import Util from '../../util/Util';
 
 export function BoardSelector(app: App_I) {
-    const ids = LsUtil.getIDs();
+    const ids = LSUtil.getIDs();
 
     return <div id="boardSelector">
         {ids.map(id => {
             const select = () => {
-                const t = LsUtil.get(id);
+                const t = LSUtil.get(id);
                 app.board = t || app.board;
                 Updater.board(app.board);
                 Updater.boardSelector(app);
@@ -19,7 +19,7 @@ export function BoardSelector(app: App_I) {
             const remove = (e: MouseEvent) => {
                 e.stopPropagation();
                 const onConfirm = () => {
-                    LsUtil.remove(id);
+                    LSUtil.remove(id);
                     Updater.boardSelector(app);
                 };
                 Util.showConfirmBox("Delete board '" + id + "'?", onConfirm);

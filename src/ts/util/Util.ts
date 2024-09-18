@@ -1,17 +1,17 @@
 import { Board_I } from "../App";
 import { ConfirmBox } from "../components/misc/ConfirmBox";
-import LsUtil from "./LsUtil";
+import LSUtil from "./LSUtil";
 
 export default class Util {
     static getBoardOnStart() {
         const selected = localStorage.getItem("selectedBoard")!;
-        const board = LsUtil.get(selected) || Util.createBoard();
-        LsUtil.set(board);
+        const board = LSUtil.get(selected) || Util.createBoard();
+        LSUtil.set(board);
         return board;
     }
     static createBoard(id = "", depth = 0): Board_I {
         const nid = (id.length > 0 ? id : "New Board") + (depth > 0 ? depth : "");
-        if (LsUtil.get(nid))
+        if (LSUtil.get(nid))
             return Util.createBoard(id, depth + 1);
 
         const todoList = { id: crypto.randomUUID(), title: "Todo", cards: [] };

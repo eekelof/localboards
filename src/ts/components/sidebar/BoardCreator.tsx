@@ -2,6 +2,7 @@ import { mdiBulletinBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
 import { App_I } from '../../App';
 import Updater from '../../Updater';
 import Util from '../../util/Util';
+import UDUtil from '../../util/UDUtil';
 
 export function BoardCreator(app: App_I) {
     const input = <input class="boardCreatorInput" type="text" placeholder="New Board" maxlength="18" />;
@@ -28,10 +29,13 @@ export function BoardCreator(app: App_I) {
         setTimeout(() => Util.setBtnOpacity(btn, input.value.length > 0));
     };
 
-    const uploadBtn = <div class="btn boardCreatorUploadBtn" onclick={onclick}>
+    const clickedDownload = () => UDUtil.downloadBoard(app.board);
+    const clickedUpload = () => UDUtil.uploadBoard(app);
+
+    const uploadBtn = <div class="btn boardCreatorUploadBtn" onclick={clickedUpload}>
         <svg class="icon" viewBox="0 0 24 24"><path d={mdiUpload} /></svg>
     </div>;
-    const downloadBtn = <div class="btn boardCreatorDownloadBtn" onclick={onclick}>
+    const downloadBtn = <div class="btn boardCreatorDownloadBtn" onclick={clickedDownload}>
         <svg class="icon" viewBox="0 0 24 24"><path d={mdiDownload} /></svg>
     </div>;
 
