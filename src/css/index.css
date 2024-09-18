@@ -24,17 +24,20 @@ body {
     --transitionTime: 0.3s;
     --borderRadius: 14px;
     --border: 0px solid #fff0;
+    --sidebarBg: #0006;
+    --logoColor: #fff;
 
     /* Theme specific styles */
     --bg: #012;
-    --iconColor: #333;
+    --iconColor: #111;
     --redColor: #e22;
-    --fontColor: #222;
-    --sidebarBg: #fff;
+    --fontColor: #111;
     --listBg: #fffa;
     --inputBg: #ccc;
     --inputBgFocus: #ddd;
-    --btnBg: #fff;
+    --cardBg: #fff;
+    --btnBg: #fffa;
+    --btnBgHover: #fff;
     --btnBg2: linear-gradient(to right, #259 0%, #3af 51%, #259 100%);
     --btnBg3: linear-gradient(to right, #080 0%, #0a0 51%, #080 100%);
     --btnBg4: linear-gradient(to right, #777 0%, #aaa 51%, #777 100%);
@@ -46,11 +49,12 @@ body {
     --iconColor: #fff;
     --redColor: #f55;
     --fontColor: #fff;
-    --sidebarBg: #333;
-    --listBg: #333c;
-    --inputBg: #555;
+    --listBg: #0006;
+    --inputBg: #444;
     --inputBgFocus: #666;
-    --btnBg: #0008;
+    --cardBg: #333;
+    --btnBg: #333a;
+    --btnBgHover: #333;
     --btnBg2: linear-gradient(to right, #046 0%, #07c 51%, #046 100%);
     --btnBg3: linear-gradient(to right, #040 0%, #090 51%, #040 100%);
     --btnBg4: linear-gradient(to right, #444 0%, #888 51%, #444 100%);

@@ -2,7 +2,7 @@
     position: relative;
     width: calc(100% - 20px);
 
-    background: var(--btnBg);
+    background: var(--cardBg);
     color: var(--fontColor);
     font-size: 16px;
     border-radius: var(--borderRadius);
