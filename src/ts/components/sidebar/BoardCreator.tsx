@@ -42,4 +42,3 @@ export function BoardCreator(app: App_I) {
         {downloadBtn}
     </div>;
 }
-

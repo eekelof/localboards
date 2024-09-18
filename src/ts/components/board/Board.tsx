@@ -11,4 +11,3 @@ export function Board(board: Board_I) {
         </div>
     </div>;
 }
-

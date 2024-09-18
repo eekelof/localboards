@@ -22,4 +22,3 @@ export function BoardSelector(app: App_I) {
         })}
     </div>;
 }
-
