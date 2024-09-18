@@ -1,13 +1,14 @@
 import { mdiBulletinBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
 import { App_I } from '../../App';
 import Updater from '../../Updater';
+import LsUtil from '../../util/LsUtil';
 import UiUtil from '../../util/UiUtil';
 
 export function BoardCreator(app: App_I) {
     const input = <input class="boardCreatorInput" type="text" placeholder="New Board" maxlength="18" />;
 
     const onclick = () => {
-        const board = UiUtil.createBoard(input.value);
+        const board = LsUtil.createBoard(input.value);
         app.board = board || app.board;
         input.value = "";
         UiUtil.setBtnOpacity(btn, false);

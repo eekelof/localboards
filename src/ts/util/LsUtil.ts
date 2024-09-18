@@ -25,14 +25,18 @@ export default class LsUtil {
 
     static getBoardOnStart() {
         const selected = localStorage.getItem("selectedBoard")!;
-        return LsUtil.load(selected) || LsUtil.getDeafaultBoard();
+        return LsUtil.load(selected) || LsUtil.createBoard();
     }
-    static getDeafaultBoard(id = "New Board"): Board_I {
+    static createBoard(id = "", depth = 0): Board_I {
+        const nid = (id.length > 0 ? id : "New Board") + (depth > 0 ? depth : "");
+        if (LsUtil.load(nid))
+            return LsUtil.createBoard(id, depth + 1);
+
         const todoList = { id: crypto.randomUUID(), title: "Todo", cards: [] };
         const doingList = { id: crypto.randomUUID(), title: "Doing", cards: [] };
         const doneList = { id: crypto.randomUUID(), title: "Done", cards: [] };
         return {
-            id,
+            id: nid,
             lists: [todoList, doingList, doneList]
         };
     }
