@@ -5,7 +5,6 @@ export function Board(board: Board_I) {
     const className = document.getElementById("sidebar")?.classList.contains("sidebarHidden") ? "boardExpanded" : "";
 
     return <div id="board" class={className}>
-        <div id="boardTopBar"></div>
         <div id="boardTitle">{board.id}</div>
         <div class="lists">
             {board.lists.map(list => List(board, list))}
