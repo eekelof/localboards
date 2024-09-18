@@ -38,7 +38,7 @@ export function Card(board: Board_I, list: List_I, card: Card_I) {
         Updater.cards(board, nlist);
     };
 
-    const className = card.color == "" ? "card" : "card cardBig";
+    const className = card.color == "" ? "card" : "card cardColored";
     return <div id={"card-" + card.id} class={className} style={{ backgroundColor: card.color }}>
         {card.title}
         <svg class="icon iconSmall cardIconColor" viewBox="0 0 24 24" onclick={setColor}><path d={mdiPaletteOutline} /></svg>
