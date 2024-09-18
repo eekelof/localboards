@@ -1,4 +1,4 @@
-import { mdiDeveloperBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
+import { mdiBulletinBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
 import { App_I } from '../../App';
 import LSHelper from '../../data/LSHelper';
 import Util from '../../Util';
@@ -18,7 +18,7 @@ export default class BoardCreator {
         };
 
         const btn = <div class="btn boardCreatorAddBtn" onclick={onclick}>
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiDeveloperBoard} /></svg>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiBulletinBoard} /></svg>
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
         </div>;
         Util.setBtnOpacity(btn, false);

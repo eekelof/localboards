@@ -1,4 +1,4 @@
-import { mdiChevronLeft, mdiDeveloperBoard } from '@mdi/js';
+import { mdiBulletinBoard, mdiChevronLeft } from '@mdi/js';
 import { App_I } from '../../App';
 import BoardCreator from './BoardCreator';
 import BoardSelector from './BoardSelector';
@@ -18,7 +18,7 @@ export default class SideBar {
 
         return <div id="sidebar">
             <div class="sidebarTitle">
-                <svg class="icon titleIcon" viewBox="0 0 24 24"><path d={mdiDeveloperBoard}></path></svg>
+                <svg class="icon titleIcon" viewBox="0 0 24 24"><path d={mdiBulletinBoard}></path></svg>
                 LocalBoards
             </div>
             {hideToggle}

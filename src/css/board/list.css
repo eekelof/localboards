@@ -1,7 +1,11 @@
+@import "card.css";
+
 .lists {
     position: absolute;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+
     top: 72px;
     overflow-y: hidden;
     overflow-x: auto;
@@ -17,11 +21,11 @@
     position: relative;
     margin-right: 40px;
     width: 320px;
-    max-height: 128px;
+    min-height: 108px;
     flex-shrink: 0;
-
-    background: var(--boxBg);
+    background: var(--listBg);
     border-radius: var(--borderRadius);
+    padding-bottom: 4px;
 }
 
 .listTitle {

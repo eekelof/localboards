@@ -29,8 +29,10 @@ body {
     --iconColor: #333;
     --fontColor: #222;
 
-    --boxBg: #fff;
+    --sidebarBg: #fff;
+    --listBg: #fffa;
     --inputBg: #ccc;
+    --inputBgFocus: #ddd;
     --btnBg: #fff;
     --btnBg2: linear-gradient(to right, #259 0%, #3af 51%, #259 100%);
     --btnBg3: linear-gradient(to right, #060 0%, #0f0 51%, #060 100%);
@@ -44,8 +46,10 @@ body {
     --iconColor: #fff;
     --fontColor: #fff;
 
-    --boxBg: #333;
+    --sidebarBg: #333;
+    --listBg: #333c;
     --inputBg: #555;
+    --inputBgFocus: #666;
     --btnBg: #0008;
     --btnBg2: linear-gradient(to right, #046 0%, #07c 51%, #046 100%);
     --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
@@ -69,6 +73,11 @@ input {
     box-sizing: border-box;
     outline: none;
     transition: var(--transitionTime);
+}
+
+input:hover,
+input:focus {
+    background-color: var(--inputBgFocus);
 }
 
 /* Scrollbar styles CHROME */

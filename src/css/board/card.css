@@ -1,0 +1,35 @@
+.card {
+    position: relative;
+
+    background: var(--btnBg);
+    transition: 0.4s;
+    background-size: 200% auto;
+    color: var(--fontColor);
+    border-radius: var(--borderRadius);
+    border: var(--border);
+    margin: 10px;
+    box-sizing: border-box;
+
+    width: calc(100% - 20px);
+    padding: 24px;
+    text-align: left;
+    letter-spacing: 1.3px;
+    margin-bottom: 8px;
+    white-space: wrap;
+    user-select: text;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-position: right center;
+}
+
+.cardBig {
+    padding: 36px;
+}
+
+.cardTitle {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+}

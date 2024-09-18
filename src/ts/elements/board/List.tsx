@@ -18,10 +18,10 @@ export default class List {
 
         cardInput.onkeydown = (e: KeyboardEvent) => {
             if (e.key === "Enter") {
-                const card = { title: cardInput.value, color: "#fff" };
+                const card = { title: cardInput.value, color: "" };
                 BoardData.addCard(list, card);
-                list.cards.push(card);
-                cards.append(List.#createCardElement(card));
+                list.cards.unshift(card);
+                cards.prepend(List.#createCardElement(card));
                 cardInput.value = "";
             }
         };
@@ -36,6 +36,7 @@ export default class List {
     static #createCardElement(card: Card_I): HTMLElement {
         return <div class="card" style={{ backgroundColor: card.color }}>
             {card.title}
+            {/* // <div class="cardTitle">{card.title}</div> */}
         </div>;
     }
 }
