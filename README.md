@@ -2,7 +2,7 @@
 Todo list app that stores data locally
 
 ## Demo :gem:
-demo link
+https://localboards.ggez.se
 
 ## Features :clipboard:
 - Stores all data in localstorage
