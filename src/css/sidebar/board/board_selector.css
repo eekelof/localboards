@@ -40,12 +40,12 @@
     left: 12px;
 }
 
-.boardCard .iconRemove {
+.boardCard .iconSmall {
     position: absolute;
     bottom: 8px;
     right: 8px;
 }
 
-.boardCardSelected .iconRemove {
+.boardCardSelected .iconSmall {
     fill: #fff;
 }

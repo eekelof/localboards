@@ -36,7 +36,7 @@
     padding: 16px;
 }
 
-.list .iconRemove {
+.list .iconSmall {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -45,4 +45,16 @@
 .cards {
     overflow-y: auto;
     max-height: calc(100dvh - 232px);
+}
+
+.cards .cardIconColor {
+    right: 48px;
+}
+
+.cards .cardIconUp {
+    left: 16px;
+}
+
+.cards .cardIconDown {
+    left: 48px;
 }
