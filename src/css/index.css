@@ -36,7 +36,7 @@ body {
     --inputBgFocus: #ddd;
     --btnBg: #fff;
     --btnBg2: linear-gradient(to right, #259 0%, #3af 51%, #259 100%);
-    --btnBg3: linear-gradient(to right, #060 0%, #0f0 51%, #060 100%);
+    --btnBg3: linear-gradient(to right, #080 0%, #0a0 51%, #080 100%);
     --btnBg4: linear-gradient(to right, #777 0%, #aaa 51%, #777 100%);
     --scrollbarColor: #fffa;
 }
@@ -52,7 +52,7 @@ body {
     --inputBgFocus: #666;
     --btnBg: #0008;
     --btnBg2: linear-gradient(to right, #046 0%, #07c 51%, #046 100%);
-    --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
+    --btnBg3: linear-gradient(to right, #040 0%, #090 51%, #040 100%);
     --btnBg4: linear-gradient(to right, #444 0%, #888 51%, #444 100%);
     --scrollbarColor: #fff4;
 }

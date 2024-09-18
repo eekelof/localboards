@@ -1,11 +1,17 @@
 .listCreator {
     opacity: 0.6;
     transition: var(--transitionTime);
+    height: 112px;
 }
 
 .listCreator:hover {
     opacity: 1;
 }
+
+.listCreatorInput {
+    margin-top: 10px;
+}
+
 
 .listCreatorAddBtn {
     position: relative;

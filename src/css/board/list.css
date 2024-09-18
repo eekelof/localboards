@@ -19,7 +19,7 @@
     position: relative;
     margin-right: 40px;
     width: 320px;
-    min-height: 108px;
+    min-height: 112px;
     flex-shrink: 0;
     background: var(--listBg);
     border-radius: var(--borderRadius);

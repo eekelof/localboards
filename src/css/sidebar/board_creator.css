@@ -5,6 +5,10 @@
     width: 100%;
 }
 
+.boardCreatorInput {
+    margin-top: 0px;
+}
+
 .boardCreatorAddBtn {
     position: relative;
     width: calc(100% - 20px);
