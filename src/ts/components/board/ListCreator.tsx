@@ -4,7 +4,7 @@ import Updater from '../../Updater';
 import Util from '../../util/Util';
 
 export function ListCreator(board: Board_I) {
-    const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" />;
+    const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" enterkeyhint="done" />;
 
     const onclick = () => {
         const title = input.value.trim();
@@ -12,6 +12,7 @@ export function ListCreator(board: Board_I) {
             return;
         board.lists.push({ id: crypto.randomUUID(), title, cards: [] });
         Updater.board(board);
+        document.querySelector(".listCreator")!.scrollIntoView();
     };
 
     const btn = <div class="btn listCreatorAddBtn" onclick={onclick}>

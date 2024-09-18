@@ -1,11 +1,11 @@
 import { mdiBulletinBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
 import { App_I } from '../../App';
 import Updater from '../../Updater';
-import Util from '../../util/Util';
 import UDUtil from '../../util/UDUtil';
+import Util from '../../util/Util';
 
 export function BoardCreator(app: App_I) {
-    const input = <input class="boardCreatorInput" type="text" placeholder="New Board" maxlength="18" />;
+    const input = <input class="boardCreatorInput" type="text" placeholder="New Board" maxlength="18" enterkeyhint="done" />;
 
     const onclick = () => {
         const board = Util.createBoard(input.value);

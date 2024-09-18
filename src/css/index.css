@@ -14,7 +14,7 @@
 body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     font-size: 15px;
     overflow: hidden;
     background: var(--bg);

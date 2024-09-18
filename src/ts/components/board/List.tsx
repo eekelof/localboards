@@ -9,7 +9,7 @@ export function List(board: Board_I, list?: List_I) {
     if (!list)
         return <div class="list listCreator">{ListCreator(board)}</div>;
 
-    const cardInput = <input class="cardInput" type="text" placeholder="New Card" maxlength="512" />;
+    const cardInput = <input class="cardInput" type="text" placeholder="New Card" maxlength="512" enterkeyhint="done" />;
     cardInput.onkeydown = (e: KeyboardEvent) => {
         if (e.key != "Enter" || cardInput.value.length === 0)
             return;
