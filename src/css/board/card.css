@@ -22,7 +22,7 @@
     white-space: wrap;
 
     transition: var(--transitionTime);
-    animation: fadeIn 0.2s ease-in-out;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 .card:hover {
@@ -37,4 +37,15 @@
     padding-right: 32px;
     font-weight: bold;
     color: #fff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+    }
 }

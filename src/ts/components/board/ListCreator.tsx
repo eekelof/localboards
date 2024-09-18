@@ -13,7 +13,6 @@ export function ListCreator(board: Board_I) {
 
         board.lists.push({ id: crypto.randomUUID(), title, cards: [] });
         Updater.board(board);
-
         input.value = "";
         UiUtil.setBtnOpacity(btn, false);
     };

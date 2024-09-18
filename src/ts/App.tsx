@@ -29,16 +29,15 @@ export interface App_I {
 function App() {
     const app: App_I = { board: LsUtil.getBoardOnStart() };
 
-    document.body.append(
-        <div id="app">
-            {Background()}
-            {Board(app.board)}
-            {SideBar(app)}
+    const e = <div id="app">
+        {Background()}
+        {Board(app.board)}
+        {SideBar(app)}
 
-            <div class="themeToggle" onclick={() => document.body.classList.toggle("dark")}>
-                <svg class="icon" viewBox="0 0 24 24"><path d={mdiThemeLightDark} /></svg>
-            </div>
+        <div class="themeToggle" onclick={() => document.body.classList.toggle("dark")}>
+            <svg class="icon" viewBox="0 0 24 24"><path d={mdiThemeLightDark} /></svg>
         </div>
-    );
+    </div>;
+    document.body.append(e);
 }
 App();

@@ -22,11 +22,11 @@ export function List(board: Board_I, list?: List_I) {
             const card = { id: crypto.randomUUID(), title: cardInput.value, color: "" };
             list.cards.unshift(card);
             cardInput.value = "";
-            Updater.board(board);
+            Updater.cards(board, list);
         }
     };
 
-    return <div class="list">
+    return <div id={"list-" + list.id} class="list">
         <div class="listTitle">{list.title}</div>
         <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={remove}><path d={mdiTrashCan} /></svg>
         {cardInput}
