@@ -3,7 +3,7 @@ import { Board_I } from "../App";
 export default class LsUtil {
     static LOCAL_STORAGE_PREFIX = "board-";
 
-    static getAllIDs() {
+    static getAllBoardIDs() {
         const ids = Object.keys(localStorage).filter(k => k.startsWith(LsUtil.LOCAL_STORAGE_PREFIX));
         const res = ids.map(k => k.slice(LsUtil.LOCAL_STORAGE_PREFIX.length));
         return res;
@@ -19,6 +19,10 @@ export default class LsUtil {
 
         return parsed;
     }
+    static remove(id: string) {
+        localStorage.removeItem(LsUtil.LOCAL_STORAGE_PREFIX + id);
+    }
+
     static getBoardOnStart() {
         const selected = localStorage.getItem("selectedBoard")!;
         return LsUtil.load(selected) || LsUtil.getDeafaultBoard();
