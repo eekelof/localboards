@@ -9,6 +9,7 @@ export interface App_I {
 }
 export interface Board_I {
     id: string;
+    created: number;
     lists: List_I[];
 }
 export interface List_I {

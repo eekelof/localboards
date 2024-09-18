@@ -4,9 +4,10 @@ import Updater from '../../Updater';
 import LsUtil from '../../util/LsUtil';
 
 export function BoardSelector(app: App_I) {
-    const boards = LsUtil.getAllBoardIDs();
+    const ids = LsUtil.getAllBoardIDs();
+
     return <div id="boardSelector">
-        {boards.map(id => {
+        {ids.map(id => {
             const select = () => {
                 const t = LsUtil.load(id);
                 app.board = t || app.board;

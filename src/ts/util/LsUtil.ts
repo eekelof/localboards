@@ -6,12 +6,12 @@ export default class LsUtil {
     static getAllBoardIDs() {
         const ids = Object.keys(localStorage).filter(k => k.startsWith(LsUtil.LOCAL_STORAGE_PREFIX));
         const res = ids.map(k => k.slice(LsUtil.LOCAL_STORAGE_PREFIX.length));
-        return res;
+        return res.sort((a, b) => LsUtil.load(a)!.created - LsUtil.load(b)!.created);
     }
     static save(board: Board_I) {
         localStorage.setItem(LsUtil.LOCAL_STORAGE_PREFIX + board.id, JSON.stringify(board));
     }
-    static load(id: string) {
+    static load(id: string): Board_I | null {
         const board = localStorage.getItem(LsUtil.LOCAL_STORAGE_PREFIX + id);
         const parsed = board ? JSON.parse(board) : null;
         if (parsed)
@@ -37,6 +37,7 @@ export default class LsUtil {
         const doneList = { id: crypto.randomUUID(), title: "Done", cards: [] };
         return {
             id: nid,
+            created: Date.now(),
             lists: [todoList, doingList, doneList]
         };
     }
