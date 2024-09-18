@@ -5,16 +5,9 @@ import Util from '../../util/Util';
 export default class ListCreator {
     static init(board: Board_I) {
         const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" />;
-
         const onclick = () => {
-            const list = {
-                title: input.value,
-                cards: []
-            };
-            board.lists.push(list);
-            input.value = "";
+            ListCreator.#createList(board, input);
             Util.setBtnOpacity(btn, false);
-            App.updateBoard(board);
         };
 
         const btn = <div class="btn listCreatorAddBtn" onclick={onclick}>
@@ -34,4 +27,17 @@ export default class ListCreator {
             {btn}
         </div>;
     }
+    static #createList(board: Board_I, input: HTMLInputElement) {
+        const title = input.value.trim();
+        if (title.trim().length === 0)
+            return;
+
+        const list = {
+            title,
+            cards: []
+        };
+        board.lists.push(list);
+        input.value = "";
+        App.updateBoard(board);
+    };
 }
