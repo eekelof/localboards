@@ -12,6 +12,7 @@ export function Card(board: Board_I, list: List_I, card: Card_I) {
     const remove = () => {
         const i = list.cards.indexOf(card);
         list.cards.splice(i, 1);
+
         Updater.cards(board, list);
     };
 
@@ -28,13 +29,14 @@ export function Card(board: Board_I, list: List_I, card: Card_I) {
 
     const moveToList = (dir: number) => {
         const i = board.lists.indexOf(list);
-        const j = i + dir;
-        const nlist = board.lists[j];
+        const nlist = board.lists[i + dir];
         if (!nlist)
             return;
         remove();
         nlist.cards.push(card);
-        Updater.board(board);
+
+        Updater.cards(board, list);
+        Updater.cards(board, nlist);
     };
 
     const className = card.color == "" ? "card" : "card cardBig";
