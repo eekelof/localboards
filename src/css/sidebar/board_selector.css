@@ -6,7 +6,7 @@
     height: calc(100% - 248px);
     padding-top: 16px;
     padding-bottom: 16px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     mask-image: linear-gradient(to bottom, #000 0%, #000 80%, #0000 98%);
     padding-bottom: 40%;
