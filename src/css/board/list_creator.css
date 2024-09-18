@@ -7,10 +7,6 @@
     opacity: 1;
 }
 
-.listCreatorInput {
-    text-align: center;
-}
-
 .listCreatorAddBtn {
     position: relative;
     width: calc(100% - 20px);
