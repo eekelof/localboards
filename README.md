@@ -1,6 +1,11 @@
 # localboards
+Todo list app :bulb:
 
-- Todo list app 
+## Features :gem:
 - Stores all data locally
 - Download/Upload option
-- Made with TS and SoloJSX
+- Light/Dark mode
+
+## Stack :zap:
+- HTML, CSS, TS
+- SoloJSX
