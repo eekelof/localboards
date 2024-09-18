@@ -24,9 +24,9 @@ export default class Util {
         };
     }
 
-    static setBtnOpacity(btn: HTMLElement, active: boolean) {
-        btn.style.opacity = active ? "1" : "0.3";
-        btn.style.cursor = active ? "pointer" : "default";
+    static setBtnVisibility(btn: HTMLElement, active: boolean) {
+        btn.style.transform = active ? "scale(1)" : "scale(0)";
+        btn.style.opacity = active ? "1" : "0";
     }
 
     static showConfirmBox(text: string, onConfirm: () => void) {

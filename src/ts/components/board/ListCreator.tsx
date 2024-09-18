@@ -19,12 +19,12 @@ export function ListCreator(board: Board_I) {
         <svg class="icon" viewBox="0 0 24 24"><path d={mdiListBoxOutline} /></svg>
         <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
     </div>;
-    Util.setBtnOpacity(btn, false);
+    Util.setBtnVisibility(btn, false);
 
     input.onkeydown = (e: KeyboardEvent) => {
         if (e.key === "Enter")
             onclick();
-        setTimeout(() => Util.setBtnOpacity(btn, input.value.length > 0));
+        setTimeout(() => Util.setBtnVisibility(btn, input.value.length > 0));
     };
 
     return <div class="listCreator">

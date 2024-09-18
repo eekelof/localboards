@@ -11,7 +11,7 @@ export function BoardCreator(app: App_I) {
         const board = Util.createBoard(input.value);
         app.board = board || app.board;
         input.value = "";
-        Util.setBtnOpacity(btn, false);
+        Util.setBtnVisibility(btn, false);
 
         Updater.board(app.board);
         Updater.boardSelector(app);
@@ -21,12 +21,12 @@ export function BoardCreator(app: App_I) {
         <svg class="icon" viewBox="0 0 24 24"><path d={mdiBulletinBoard} /></svg>
         <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
     </div>;
-    Util.setBtnOpacity(btn, false);
+    Util.setBtnVisibility(btn, false);
 
     input.onkeydown = (e: KeyboardEvent) => {
         if (e.key === "Enter")
             onclick();
-        setTimeout(() => Util.setBtnOpacity(btn, input.value.length > 0));
+        setTimeout(() => Util.setBtnVisibility(btn, input.value.length > 0));
     };
 
     const clickedDownload = () => UDUtil.downloadBoard(app.board);
@@ -40,8 +40,8 @@ export function BoardCreator(app: App_I) {
     </div>;
 
     return <div class="boardCreator">
-        {input}
         {btn}
+        {input}
         {uploadBtn}
         {downloadBtn}
     </div>;
