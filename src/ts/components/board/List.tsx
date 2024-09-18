@@ -20,13 +20,12 @@ export function List(board: Board_I, list?: List_I) {
     };
 
     const remove = () => {
-        const text = "Delete list '" + list.title + "'?";
         const onConfirm = () => {
             const i = board.lists.indexOf(list);
             board.lists.splice(i, 1);
             Updater.board(board);
         };
-        Util.showConfirmBox(text, onConfirm);
+        Util.showConfirmBox("Delete list '" + list.title + "'?", onConfirm);
     };
 
     const move = (dir: number) => {
