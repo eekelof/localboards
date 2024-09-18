@@ -20,9 +20,13 @@ export default class App {
         </div>;
 
         const sideBar = SideBar.init(app);
-        const board = Board.init(app);
+
+        const board = Board.init(app.board);
 
         document.body.append(Background.init(), board, sideBar, themeToggle);
+    }
+    static updateBoard(board: Board_I) {
+        document.getElementById("board")!.replaceWith(Board.init(board));
     }
 }
 

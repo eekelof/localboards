@@ -1,4 +1,3 @@
-import { App_I } from '../../App';
 import { List_I } from '../../data/BoardData';
 import List from './List';
 
@@ -7,13 +6,13 @@ export interface Board_I {
     lists: List_I[];
 }
 export default class Board {
-    static init(app: App_I) {
+    static init(board: Board_I) {
         return <div id="board">
             <div id="boardTopBar"></div>
-            <div id="boardTitle">{app.board.id}</div>
+            <div id="boardTitle">{board.id}</div>
             <div class="lists">
-                {app.board.lists.map(list => List.init(app.board, list))}
-                {List.init(app.board)}
+                {board.lists.map(list => List.init(board, list))}
+                {List.init(board)}
             </div>
         </div>;
     }

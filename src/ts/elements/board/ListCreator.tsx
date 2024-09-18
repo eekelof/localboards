@@ -1,5 +1,5 @@
 import { mdiListBoxOutline, mdiPlus } from '@mdi/js';
-import BoardData, { Board_I } from '../../data/BoardData';
+import { Board_I } from '../../data/BoardData';
 import Util from '../../Util';
 
 export default class ListCreator {
@@ -11,7 +11,6 @@ export default class ListCreator {
                 title: input.value,
                 cards: []
             };
-            BoardData.addList(board, list);
             board.lists.push(list);
             input.value = "";
             Util.setBtnOpacity(btn, false);
