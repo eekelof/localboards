@@ -1,6 +1,7 @@
 import { mdiListBoxOutline, mdiPlus } from '@mdi/js';
-import { Board_I } from '../../data/BoardData';
-import Util from '../../Util';
+import App from '../../App';
+import Util from '../../util/Util';
+import { Board_I } from './Board';
 
 export default class ListCreator {
     static init(board: Board_I) {
@@ -14,8 +15,7 @@ export default class ListCreator {
             board.lists.push(list);
             input.value = "";
             Util.setBtnOpacity(btn, false);
-
-            // t.updateList(app);
+            App.updateBoard(board);
         };
 
         const btn = <div class="btn listCreatorAddBtn" onclick={onclick}>

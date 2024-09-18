@@ -1,7 +1,6 @@
 import { mdiBulletinBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
 import { App_I } from '../../App';
-import LSHelper from '../../data/LSHelper';
-import Util from '../../Util';
+import Util from '../../util/Util';
 import { Board_I } from '../board/Board';
 import BoardSelector from './BoardSelector';
 
@@ -46,10 +45,10 @@ export default class BoardCreator {
     static #createBoard(id = "New Board"): Board_I | null {
         if (id.length === 0)
             return null;
-        if (LSHelper.load(id))
+        if (Util.load(id))
             return null;
         const board = { id, lists: [] };
-        LSHelper.save(board);
+        Util.save(board);
         return board;
     }
 }

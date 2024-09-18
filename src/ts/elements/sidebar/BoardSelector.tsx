@@ -1,6 +1,6 @@
 import { mdiTrashCan } from '@mdi/js';
 import { App_I } from '../../App';
-import LSHelper from '../../data/LSHelper';
+import Util from '../../util/Util';
 
 export default class BoardSelector {
     static init(app: App_I) {
@@ -11,10 +11,10 @@ export default class BoardSelector {
     static updateList(app: App_I) {
         const list = document.getElementById("boardSelector")!;
         list.innerHTML = "";
-        const boards = LSHelper.getAllIDs();
+        const boards = Util.getAllIDs();
         for (const id of boards) {
             const onclick = () => {
-                const t = LSHelper.load(id);
+                const t = Util.load(id);
                 app.board = t || app.board;
                 BoardSelector.updateList(app);
             };

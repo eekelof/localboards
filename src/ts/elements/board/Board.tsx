@@ -1,4 +1,4 @@
-import { List_I } from '../../data/BoardData';
+import { List_I } from '../../App';
 import List from './List';
 
 export interface Board_I {

@@ -1,9 +1,24 @@
 import { mdiThemeLightDark } from '@mdi/js';
-import Background from './Background';
-import LSHelper from './data/LSHelper';
-import Board, { Board_I } from './elements/board/Board';
+import Background from './elements/Background';
+import Board from './elements/board/Board';
 import SideBar from './elements/sidebar/SideBar';
+import Util from './util/Util';
 
+
+export interface Card_I {
+    title: string;
+    color: string;
+}
+
+export interface List_I {
+    title: string;
+    cards: Card_I[];
+}
+
+export interface Board_I {
+    id: string;
+    lists: List_I[];
+}
 
 export interface App_I {
     board: Board_I
@@ -11,22 +26,21 @@ export interface App_I {
 
 export default class App {
     static init() {
-        const app: App_I = {
-            board: LSHelper.getBoardOnStart()
-        };
+        const app: App_I = { board: Util.getBoardOnStart() };
 
-        const themeToggle = <div class="themeToggle" onclick={() => document.body.classList.toggle("dark")}>
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiThemeLightDark} /></svg>
-        </div>;
+        document.body.append(
+            <div id="app">
+                {Background.init()}
+                {Board.init(app.board)}
+                {SideBar.init(app)}
 
-        const sideBar = SideBar.init(app);
-
-        const board = Board.init(app.board);
-
-        document.body.append(Background.init(), board, sideBar, themeToggle);
+                <div class="themeToggle" onclick={() => document.body.classList.toggle("dark")}>
+                    <svg class="icon" viewBox="0 0 24 24"><path d={mdiThemeLightDark} /></svg>
+                </div>
+            </div>
+        );
     }
     static updateBoard(board: Board_I) {
         document.getElementById("board")!.replaceWith(Board.init(board));
     }
 }
-
