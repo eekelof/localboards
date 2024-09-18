@@ -41,3 +41,8 @@
     top: 8px;
     right: 8px;
 }
+
+.cards {
+    overflow-y: auto;
+    max-height: calc(100dvh - 232px);
+}
