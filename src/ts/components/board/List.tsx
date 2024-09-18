@@ -1,4 +1,4 @@
-import { mdiTrashCan } from '@mdi/js';
+import { mdiChevronLeft, mdiChevronRight, mdiTrashCan } from '@mdi/js';
 import { Board_I, List_I } from '../../App';
 import Updater from '../../Updater';
 import { Card } from './Card';
@@ -26,9 +26,23 @@ export function List(board: Board_I, list?: List_I) {
         }
     };
 
+
+    const move = (dir: number) => {
+        const i = board.lists.indexOf(list);
+        const j = i + dir;
+        if (j < 0 || j >= board.lists.length)
+            return;
+        board.lists[i] = board.lists[j];
+        board.lists[j] = list;
+
+        Updater.board(board);
+    };
+
     return <div id={"list-" + list.id} class="list">
         <div class="listTitle">{list.title}</div>
         <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={remove}><path d={mdiTrashCan} /></svg>
+        <svg class="icon iconSmall listIconLeft" viewBox="0 0 24 24" onclick={() => move(-1)}><path d={mdiChevronLeft} /></svg>
+        <svg class="icon iconSmall listIconRight" viewBox="0 0 24 24" onclick={() => move(1)}><path d={mdiChevronRight} /></svg>
         {cardInput}
         {Cards(board, list)}
     </div>;

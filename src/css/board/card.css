@@ -11,8 +11,8 @@
 
     box-sizing: border-box;
 
-    padding-top: 40px;
-    padding-bottom: 8px;
+    padding-top: 44px;
+    padding-bottom: 16px;
     padding-left: 14px;
     padding-right: 32px;
 
@@ -31,9 +31,28 @@
 
 .cardBig {
     padding-top: 56px;
-    padding-bottom: 8px;
     padding-left: 14px;
     padding-right: 32px;
     font-weight: bold;
     color: #fff;
+}
+
+.cardIconColor {
+    right: 48px;
+}
+
+.cardIconUp {
+    left: 16px;
+}
+
+.cardIconDown {
+    left: 48px;
+}
+
+.cardIconLeft {
+    left: 80px;
+}
+
+.cardIconRight {
+    left: 112px;
 }

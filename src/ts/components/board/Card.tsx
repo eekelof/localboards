@@ -1,4 +1,4 @@
-import { mdiChevronDown, mdiChevronUp, mdiClose, mdiPaletteOutline } from '@mdi/js';
+import { mdiChevronDown, mdiChevronLeft, mdiChevronRight, mdiChevronUp, mdiClose, mdiPaletteOutline } from '@mdi/js';
 import { Board_I, Card_I, List_I } from '../../App';
 import Updater from '../../Updater';
 
@@ -22,7 +22,19 @@ export function Card(board: Board_I, list: List_I, card: Card_I) {
             return;
         list.cards[i] = list.cards[j];
         list.cards[j] = card;
+
         Updater.cards(board, list);
+    };
+
+    const moveToList = (dir: number) => {
+        const i = board.lists.indexOf(list);
+        const j = i + dir;
+        const nlist = board.lists[j];
+        if (!nlist)
+            return;
+        remove();
+        nlist.cards.push(card);
+        Updater.board(board);
     };
 
     const className = card.color == "" ? "card" : "card cardBig";
@@ -32,5 +44,7 @@ export function Card(board: Board_I, list: List_I, card: Card_I) {
         <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={remove}><path d={mdiClose} /></svg>
         <svg class="icon iconSmall cardIconUp" viewBox="0 0 24 24" onclick={() => move(-1)}><path d={mdiChevronUp} /></svg>
         <svg class="icon iconSmall cardIconDown" viewBox="0 0 24 24" onclick={() => move(1)}><path d={mdiChevronDown} /></svg>
+        <svg class="icon iconSmall cardIconLeft" viewBox="0 0 24 24" onclick={() => moveToList(-1)}><path d={mdiChevronLeft} /></svg>
+        <svg class="icon iconSmall cardIconRight" viewBox="0 0 24 24" onclick={() => moveToList(1)}><path d={mdiChevronRight} /></svg>
     </div >;
 }

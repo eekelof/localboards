@@ -1,5 +1,6 @@
 @import 'list.css';
 @import 'list_creator.css';
+@import "card.css";
 
 #board {
     position: absolute;
