@@ -1,11 +1,11 @@
 # localboards
-## Features :gem:
+## Features :gear:
 - Todo list app
 - Stores all data locally
 - Download/Upload option
 - Light/Dark mode
 
-## Demo
+## Demo :gem:
 demo link
 
 ## Stack :zap:
