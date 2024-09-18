@@ -1,8 +1,8 @@
 import { mdiThemeLightDark } from '@mdi/js';
-import Background from './elements/Background';
-import Board from './elements/board/Board';
-import SideBar from './elements/sidebar/SideBar';
-import Util from './util/Util';
+import Background from './components/Background';
+import Board from './components/board/Board';
+import SideBar from './components/sidebar/SideBar';
+import LsUtil from './util/LsUtil';
 
 
 export interface Card_I {
@@ -26,7 +26,7 @@ export interface App_I {
 
 export default class App {
     static init() {
-        const app: App_I = { board: Util.getBoardOnStart() };
+        const app: App_I = { board: LsUtil.getBoardOnStart() };
 
         document.body.append(
             <div id="app">

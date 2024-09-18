@@ -1,19 +1,19 @@
 import { Board_I } from "../App";
 
-export default class Util {
+export default class LsUtil {
     static LOCAL_STORAGE_PREFIX = "board-";
 
     static getAllIDs() {
-        const ids = Object.keys(localStorage).filter(k => k.startsWith(Util.LOCAL_STORAGE_PREFIX));
-        const res = ids.map(k => k.slice(Util.LOCAL_STORAGE_PREFIX.length));
+        const ids = Object.keys(localStorage).filter(k => k.startsWith(LsUtil.LOCAL_STORAGE_PREFIX));
+        const res = ids.map(k => k.slice(LsUtil.LOCAL_STORAGE_PREFIX.length));
         return res;
     }
     static save(board: Board_I) {
         if (board)
-            localStorage.setItem(Util.LOCAL_STORAGE_PREFIX + board.id, JSON.stringify(board));
+            localStorage.setItem(LsUtil.LOCAL_STORAGE_PREFIX + board.id, JSON.stringify(board));
     }
     static load(id: string) {
-        const board = localStorage.getItem(Util.LOCAL_STORAGE_PREFIX + id);
+        const board = localStorage.getItem(LsUtil.LOCAL_STORAGE_PREFIX + id);
         const parsed = board ? JSON.parse(board) : null;
         if (parsed)
             localStorage.setItem("selectedBoard", parsed.id);
@@ -22,14 +22,9 @@ export default class Util {
     }
     static getBoardOnStart() {
         const selected = localStorage.getItem("selectedBoard")!;
-        const board = Util.load(selected) || Util.#getDeafaultBoard();
-        Util.save(board);
+        const board = LsUtil.load(selected) || LsUtil.#getDeafaultBoard();
+        LsUtil.save(board);
         return board;
-    }
-
-    static setBtnOpacity(btn: HTMLElement, active: boolean) {
-        btn.style.opacity = active ? "1" : "0.3";
-        btn.style.cursor = active ? "pointer" : "default";
     }
 
     static #getDeafaultBoard(id = "New Board"): Board_I {

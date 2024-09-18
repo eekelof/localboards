@@ -1,25 +1,25 @@
 import { mdiListBoxOutline, mdiPlus } from '@mdi/js';
 import App, { Board_I } from '../../App';
-import Util from '../../util/Util';
+import UiUtil from '../../util/UiUtil';
 
 export default class ListCreator {
     static init(board: Board_I) {
         const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" />;
         const onclick = () => {
             ListCreator.#createList(board, input);
-            Util.setBtnOpacity(btn, false);
+            UiUtil.setBtnOpacity(btn, false);
         };
 
         const btn = <div class="btn listCreatorAddBtn" onclick={onclick}>
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiListBoxOutline} /></svg>
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
         </div>;
-        Util.setBtnOpacity(btn, false);
+        UiUtil.setBtnOpacity(btn, false);
 
         input.onkeydown = (e: KeyboardEvent) => {
             if (e.key === "Enter")
                 onclick();
-            setTimeout(() => Util.setBtnOpacity(btn, input.value.length > 0));
+            setTimeout(() => UiUtil.setBtnOpacity(btn, input.value.length > 0));
         };
 
         return <div class="listCreator">
