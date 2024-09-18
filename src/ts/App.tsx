@@ -1,7 +1,7 @@
-import { Background } from './components/Background';
 import { Board } from './components/board/Board';
+import { Background } from './components/misc/Background';
+import { ThemeToggle } from './components/misc/ThemeToggle';
 import { SideBar } from './components/sidebar/SideBar';
-import { ThemeToggle } from './components/ThemeToggle';
 import Util from './util/Util';
 
 export interface App_I {

@@ -1,5 +1,5 @@
-@import "board/board_creator.css";
-@import "board/board_selector.css";
+@import "board_creator.css";
+@import "board_selector.css";
 
 #sidebar {
     position: absolute;

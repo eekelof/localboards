@@ -1,5 +1,5 @@
 import { mdiThemeLightDark } from "@mdi/js";
-import LsUtil from "../util/LsUtil";
+import LsUtil from "../../util/LsUtil";
 
 export function ThemeToggle() {
     const toggleTheme = () => {
