@@ -21,11 +21,11 @@ export default class Updater {
         LSUtil.set(board);
     }
     static cards(board: Board_I, list: List_I) {
-        document.getElementById("cards-" + list.id)!.replaceWith(Cards(board, list))
+        document.getElementById("cards-" + list.id)!.replaceWith(Cards(board, list));
         LSUtil.set(board);
     }
     static card(board: Board_I, list: List_I, card: Card_I) {
-        document.getElementById("card-" + card.id)!.replaceWith(Card(board, list, card))
+        document.getElementById("card-" + card.id)!.replaceWith(Card(board, list, card));
         LSUtil.set(board);
     }
 }
