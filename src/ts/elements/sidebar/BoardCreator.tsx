@@ -1,7 +1,6 @@
 import { mdiBulletinBoard, mdiDownload, mdiPlus, mdiUpload } from '@mdi/js';
-import { App_I } from '../../App';
+import { App_I, Board_I } from '../../App';
 import Util from '../../util/Util';
-import { Board_I } from '../board/Board';
 import BoardSelector from './BoardSelector';
 
 export default class BoardCreator {
