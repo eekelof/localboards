@@ -10,11 +10,8 @@ export function ListCreator(board: Board_I) {
         const title = input.value.trim();
         if (title.length === 0)
             return;
-
         board.lists.push({ id: crypto.randomUUID(), title, cards: [] });
         Updater.board(board);
-        input.value = "";
-        Util.setBtnOpacity(btn, false);
     };
 
     const btn = <div class="btn listCreatorAddBtn" onclick={onclick}>

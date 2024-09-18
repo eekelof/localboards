@@ -35,7 +35,6 @@ export function List(board: Board_I, list?: List_I) {
             return;
         board.lists[i] = board.lists[j];
         board.lists[j] = list;
-
         Updater.board(board);
     };
 

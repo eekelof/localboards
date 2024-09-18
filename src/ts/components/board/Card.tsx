@@ -12,7 +12,6 @@ export function Card(board: Board_I, list: List_I, card: Card_I) {
     const remove = () => {
         const i = list.cards.indexOf(card);
         list.cards.splice(i, 1);
-
         Updater.cards(board, list);
     };
 
@@ -23,7 +22,6 @@ export function Card(board: Board_I, list: List_I, card: Card_I) {
             return;
         list.cards[i] = list.cards[j];
         list.cards[j] = card;
-
         Updater.cards(board, list);
     };
 
@@ -34,7 +32,6 @@ export function Card(board: Board_I, list: List_I, card: Card_I) {
             return;
         remove();
         nlist.cards.push(card);
-
         Updater.cards(board, nlist);
     };
 
