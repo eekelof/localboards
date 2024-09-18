@@ -1,5 +1,5 @@
 # localboards
-Todo list app that stores data locally.
+Todo list app that stores data locally
 
 ## Demo :gem:
 demo link
