@@ -1,9 +1,10 @@
 # localboards
+Todo list app that stores data locally.
+
 ## Demo :gem:
 demo link
 
-## Features :gear:
-- Todo list app
+## Features :clipboard:
 - Stores all data locally
 - Download/Upload option
 - Light/Dark mode
