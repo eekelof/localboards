@@ -6,11 +6,13 @@ import LsUtil from './util/LsUtil';
 
 
 export interface Card_I {
+    id: string;
     title: string;
     color: string;
 }
 
 export interface List_I {
+    id: string;
     title: string;
     cards: Card_I[];
 }
@@ -39,8 +41,5 @@ export default class App {
                 </div>
             </div>
         );
-    }
-    static updateBoard(board: Board_I) {
-        document.getElementById("board")!.replaceWith(Board.init(board));
     }
 }

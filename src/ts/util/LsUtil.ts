@@ -27,9 +27,9 @@ export default class LsUtil {
         return board;
     }
     static getDeafaultBoard(id = "New Board"): Board_I {
-        const todoList = { title: "Todo", cards: [] };
-        const doingList = { title: "Doing", cards: [] };
-        const doneList = { title: "Done", cards: [] };
+        const todoList = { id: crypto.randomUUID(), title: "Todo", cards: [] };
+        const doingList = { id: crypto.randomUUID(), title: "Doing", cards: [] };
+        const doneList = { id: crypto.randomUUID(), title: "Done", cards: [] };
         return {
             id,
             lists: [todoList, doingList, doneList]

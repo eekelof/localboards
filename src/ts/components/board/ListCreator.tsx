@@ -1,43 +1,37 @@
 import { mdiListBoxOutline, mdiPlus } from '@mdi/js';
-import App, { Board_I } from '../../App';
+import { Board_I } from '../../App';
 import UiUtil from '../../util/UiUtil';
+import Updater from '../../util/Updater';
 
-export default class ListCreator {
-    static init(board: Board_I) {
-        const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" />;
-        const onclick = () => {
-            ListCreator.#createList(board, input);
-            UiUtil.setBtnOpacity(btn, false);
-        };
+export function ListCreator(board: Board_I) {
+    const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" />;
 
-        const btn = <div class="btn listCreatorAddBtn" onclick={onclick}>
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiListBoxOutline} /></svg>
-            <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
-        </div>;
-        UiUtil.setBtnOpacity(btn, false);
-
-        input.onkeydown = (e: KeyboardEvent) => {
-            if (e.key === "Enter")
-                onclick();
-            setTimeout(() => UiUtil.setBtnOpacity(btn, input.value.length > 0));
-        };
-
-        return <div class="listCreator">
-            {input}
-            {btn}
-        </div>;
-    }
-    static #createList(board: Board_I, input: HTMLInputElement) {
+    const onclick = () => {
         const title = input.value.trim();
-        if (title.trim().length === 0)
+        if (title.length === 0)
             return;
 
-        const list = {
-            title,
-            cards: []
-        };
-        board.lists.push(list);
+        board.lists.push({ id: crypto.randomUUID(), title, cards: [] });
+        Updater.board(board);
+
         input.value = "";
-        App.updateBoard(board);
+        UiUtil.setBtnOpacity(btn, false);
     };
+
+    const btn = <div class="btn listCreatorAddBtn" onclick={onclick}>
+        <svg class="icon" viewBox="0 0 24 24"><path d={mdiListBoxOutline} /></svg>
+        <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
+    </div>;
+    UiUtil.setBtnOpacity(btn, false);
+
+    input.onkeydown = (e: KeyboardEvent) => {
+        if (e.key === "Enter")
+            onclick();
+        setTimeout(() => UiUtil.setBtnOpacity(btn, input.value.length > 0));
+    };
+
+    return <div class="listCreator">
+        {input}
+        {btn}
+    </div>;
 }

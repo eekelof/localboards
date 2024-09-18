@@ -1,5 +1,6 @@
 import { mdiChevronDown, mdiChevronUp, mdiClose, mdiPaletteOutline } from '@mdi/js';
-import App, { Board_I, Card_I, List_I } from '../../App';
+import { Board_I, Card_I, List_I } from '../../App';
+import Updater from '../../util/Updater';
 
 export default class Card {
     static init(board: Board_I, list: List_I, card: Card_I) {
@@ -7,13 +8,13 @@ export default class Card {
         const setColor = () => {
             const colors = ["", "#b55", "#bb5", "#5b5", "#5bb", "#55b", "#b5b", "#b95", "#999"];
             card.color = colors[(colors.indexOf(card.color) + 1) % colors.length];
-            App.updateBoard(board);
+            Updater.board(board);
         };
 
         const remove = () => {
             const i = list.cards.indexOf(card);
             list.cards.splice(i, 1);
-            App.updateBoard(board);
+            Updater.board(board);
         };
 
         const move = (dir: number) => {
@@ -23,7 +24,7 @@ export default class Card {
                 return;
             list.cards[i] = list.cards[j];
             list.cards[j] = card;
-            App.updateBoard(board);
+            Updater.board(board);
         };
 
         return <div class={card.color == "" ? "card" : "card cardBig"} style={{ backgroundColor: card.color }}>

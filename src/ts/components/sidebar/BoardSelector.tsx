@@ -1,6 +1,7 @@
 import { mdiTrashCan } from '@mdi/js';
 import { App_I } from '../../App';
 import LsUtil from '../../util/LsUtil';
+import Updater from '../../util/Updater';
 
 export function BoardSelector(app: App_I) {
     const boards = LsUtil.getAllIDs();
@@ -9,7 +10,7 @@ export function BoardSelector(app: App_I) {
             const onclick = () => {
                 const t = LsUtil.load(id);
                 app.board = t || app.board;
-                BoardSelector.updateList(app);
+                Updater.boardSelector(app);
             };
 
             const selected = app.board.id === id;

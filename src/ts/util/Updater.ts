@@ -1,6 +1,6 @@
-import { App_I, Board_I } from "./App";
-import { Board } from "./components/board/Board";
-import { BoardSelector } from "./components/sidebar/BoardSelector";
+import { App_I, Board_I } from "../App";
+import { Board } from "../components/board/Board";
+import { BoardSelector } from "../components/sidebar/BoardSelector";
 
 export default class Updater {
     static boardSelector(app: App_I) {
