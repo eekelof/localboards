@@ -28,6 +28,7 @@ body {
     /* Theme specific styles */
     --bg: #012;
     --iconColor: #333;
+    --redColor: #e22;
     --fontColor: #222;
     --sidebarBg: #fff;
     --listBg: #fffa;
@@ -36,12 +37,14 @@ body {
     --btnBg: #fff;
     --btnBg2: linear-gradient(to right, #259 0%, #3af 51%, #259 100%);
     --btnBg3: linear-gradient(to right, #060 0%, #0f0 51%, #060 100%);
+    --btnBg4: linear-gradient(to right, #777 0%, #aaa 51%, #777 100%);
     --scrollbarColor: #fffa;
 }
 
 .dark {
     --bg: #012;
     --iconColor: #fff;
+    --redColor: #f55;
     --fontColor: #fff;
     --sidebarBg: #333;
     --listBg: #333c;
@@ -50,6 +53,7 @@ body {
     --btnBg: #0008;
     --btnBg2: linear-gradient(to right, #046 0%, #07c 51%, #046 100%);
     --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
+    --btnBg4: linear-gradient(to right, #444 0%, #888 51%, #444 100%);
     --scrollbarColor: #fff4;
 }
 
