@@ -1,7 +1,6 @@
 import { mdiListBoxOutline, mdiPlus } from '@mdi/js';
-import App from '../../App';
+import App, { Board_I } from '../../App';
 import Util from '../../util/Util';
-import { Board_I } from './Board';
 
 export default class ListCreator {
     static init(board: Board_I) {

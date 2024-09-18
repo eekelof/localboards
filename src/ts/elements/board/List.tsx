@@ -1,6 +1,5 @@
 import { mdiTrashCan } from '@mdi/js';
-import App, { List_I } from '../../App';
-import { Board_I } from './Board';
+import App, { Board_I, List_I } from '../../App';
 import Card from './Card';
 import ListCreator from './ListCreator';
 
