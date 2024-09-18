@@ -24,11 +24,10 @@ body {
     --borderRadius: 14px;
     --border: 0px solid #fff0;
 
+    /* Theme specific styles */
     --bg: #012;
-
     --iconColor: #333;
     --fontColor: #222;
-
     --sidebarBg: #fff;
     --listBg: #fffa;
     --inputBg: #ccc;
@@ -36,16 +35,13 @@ body {
     --btnBg: #fff;
     --btnBg2: linear-gradient(to right, #259 0%, #3af 51%, #259 100%);
     --btnBg3: linear-gradient(to right, #060 0%, #0f0 51%, #060 100%);
-
     --scrollbarColor: #fffa;
 }
 
 .dark {
     --bg: #012;
-
     --iconColor: #fff;
     --fontColor: #fff;
-
     --sidebarBg: #333;
     --listBg: #333c;
     --inputBg: #555;
@@ -53,7 +49,6 @@ body {
     --btnBg: #0008;
     --btnBg2: linear-gradient(to right, #046 0%, #07c 51%, #046 100%);
     --btnBg3: linear-gradient(to right, #040 0%, #0f0 51%, #040 100%);
-
     --scrollbarColor: #fff4;
 }
 

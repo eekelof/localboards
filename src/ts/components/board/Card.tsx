@@ -4,7 +4,7 @@ import Updater from '../../Updater';
 
 export function Card(board: Board_I, list: List_I, card: Card_I) {
     const setColor = () => {
-        const colors = ["", "#b55", "#bb5", "#5b5", "#5bb", "#55b", "#b5b", "#b95", "#999"];
+        const colors = ["", "#a33", "#a63", "#aa3", "#3a3", "#3aa", "#66a", "#a3a", "#888"];
         card.color = colors[(colors.indexOf(card.color) + 1) % colors.length];
         Updater.card(board, list, card);
     };

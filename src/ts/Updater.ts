@@ -1,8 +1,7 @@
 import { App_I, Board_I, Card_I, List_I } from "./App";
 import { Board } from "./components/board/Board";
 import { Card } from "./components/board/Card";
-import { Cards } from "./components/board/Cards";
-import { List } from "./components/board/List";
+import { Cards, List } from "./components/board/List";
 import { BoardSelector } from "./components/sidebar/BoardSelector";
 
 export default class Updater {
@@ -22,7 +21,7 @@ export default class Updater {
         Updater.#update(document.getElementById("card-" + card.id)!, Card(board, list, card));
     }
 
-    static #update(oldComponent: HTMLElement, newComponent: HTMLElement) {
-        oldComponent.replaceWith(newComponent);
+    static #update(oldElement: HTMLElement, newElement: HTMLElement) {
+        oldElement.replaceWith(newElement);
     }
 }

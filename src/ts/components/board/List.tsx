@@ -1,7 +1,7 @@
 import { mdiTrashCan } from '@mdi/js';
 import { Board_I, List_I } from '../../App';
 import Updater from '../../Updater';
-import { Cards } from './Cards';
+import { Card } from './Card';
 import { ListCreator } from './ListCreator';
 
 export function List(board: Board_I, list?: List_I) {
@@ -31,5 +31,11 @@ export function List(board: Board_I, list?: List_I) {
         <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={remove}><path d={mdiTrashCan} /></svg>
         {cardInput}
         {Cards(board, list)}
+    </div>;
+}
+
+export function Cards(board: Board_I, list: List_I) {
+    return <div id={"cards-" + list.id} class="cards">
+        {list.cards.map(card => Card(board, list, card))}
     </div>;
 }

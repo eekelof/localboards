@@ -28,8 +28,7 @@ export interface App_I {
 
 function App() {
     const app: App_I = { board: LsUtil.getBoardOnStart() };
-
-    const e = <div id="app">
+    return <div id="app">
         {Background()}
         {Board(app.board)}
         {SideBar(app)}
@@ -38,6 +37,5 @@ function App() {
             <svg class="icon" viewBox="0 0 24 24"><path d={mdiThemeLightDark} /></svg>
         </div>
     </div>;
-    document.body.append(e);
 }
-App();
+document.body.append(App());
