@@ -1,6 +1,36 @@
 .confirmBox {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0008;
+}
+
+.confirmBoxInner {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    background: var(--listBg);
+    height: 80px;
+    padding: 32px;
+    border-radius: var(--borderRadius);
+    font-size: 18px;
+}
+
+.confirmBoxCancel,
+.confirmBoxConfirm {
+    position: absolute;
+    bottom: 16px;
+    top: auto;
+}
+
+.confirmBoxCancel {
+    left: 24px;
+}
+
+.confirmBoxConfirm {
+    right: 24px;
 }

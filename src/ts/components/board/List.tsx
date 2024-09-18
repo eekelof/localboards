@@ -1,6 +1,7 @@
 import { mdiChevronLeft, mdiChevronRight, mdiTrashCan } from '@mdi/js';
 import { Board_I, List_I } from '../../App';
 import Updater from '../../Updater';
+import Util from '../../util/Util';
 import { Card } from './Card';
 import { ListCreator } from './ListCreator';
 
@@ -19,9 +20,13 @@ export function List(board: Board_I, list?: List_I) {
     };
 
     const remove = () => {
-        const i = board.lists.indexOf(list);
-        board.lists.splice(i, 1);
-        Updater.board(board);
+        const text = "Delete list '" + list.title + "'?";
+        const onConfirm = () => {
+            const i = board.lists.indexOf(list);
+            board.lists.splice(i, 1);
+            Updater.board(board);
+        };
+        Util.showConfirmBox(text, onConfirm);
     };
 
     const move = (dir: number) => {

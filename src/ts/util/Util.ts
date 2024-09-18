@@ -1,4 +1,5 @@
 import { Board_I } from "../App";
+import { ConfirmBox } from "../components/misc/ConfirmBox";
 import LsUtil from "./LsUtil";
 
 export default class Util {
@@ -26,5 +27,9 @@ export default class Util {
     static setBtnOpacity(btn: HTMLElement, active: boolean) {
         btn.style.opacity = active ? "1" : "0.3";
         btn.style.cursor = active ? "pointer" : "default";
+    }
+
+    static showConfirmBox(text: string, onConfirm: () => void) {
+        document.body.append(ConfirmBox(text, onConfirm));
     }
 }
