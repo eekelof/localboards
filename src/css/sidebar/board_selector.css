@@ -28,13 +28,13 @@
 }
 
 .boardCardSelected {
-    background: var(--btnBg2);
+    background: var(--btnBgSelected);
     color: #fff;
     background-size: 200% auto;
 }
 
 .boardCardSelected:hover {
-    background: var(--btnBg2);
+    background: var(--btnBgSelected);
     background-size: 200% auto;
     background-position: right center;
 }

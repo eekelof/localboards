@@ -10,6 +10,7 @@ export interface App_I {
 export interface Board_I {
     id: string;
     created: number;
+    color: number;
     lists: List_I[];
 }
 export interface List_I {
@@ -26,7 +27,7 @@ export interface Card_I {
 function App() {
     const app: App_I = { board: Util.getBoardOnStart() };
     return <div id="app">
-        {Background()}
+        {Background(app)}
         {Board(app)}
         {SideBar(app)}
         {ThemeToggle()}
