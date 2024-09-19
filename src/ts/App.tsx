@@ -27,7 +27,7 @@ export interface Card_I {
 function App() {
     const app: App_I = { board: Util.getBoardOnStart() };
     return <div id="app">
-        {Background(app)}
+        {Background()}
         {Board(app)}
         {SideBar(app)}
         {ThemeToggle()}

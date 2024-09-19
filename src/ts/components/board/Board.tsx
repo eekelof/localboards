@@ -1,7 +1,16 @@
 import { App_I } from '../../App';
+import { BG_COLORS } from '../misc/Background';
 import { List } from './List';
 
 export function Board(app: App_I) {
+    const c = BG_COLORS[app.board.color % BG_COLORS.length];
+
+    var r = document.querySelector(':root')! as HTMLElement;
+    r.style.setProperty('--bg', c[0]);
+    r.style.setProperty('--bgBlob1', c[1]);
+    r.style.setProperty('--bgBlob2', c[2]);
+    r.style.setProperty('--bgBlob3', c[3]);
+
     return <div id="board">
         <div id="boardTitle">{app.board.id}</div>
         {Lists(app)}

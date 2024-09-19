@@ -1,4 +1,5 @@
 import { Board_I } from "../App";
+import { BG_COLORS } from "../components/misc/Background";
 import { ConfirmBox } from "../components/misc/ConfirmBox";
 import LSUtil from "./LSUtil";
 
@@ -20,6 +21,7 @@ export default class Util {
         return {
             id: nid,
             created: Date.now(),
+            color: Math.floor(Math.random() * BG_COLORS.length),
             lists: [todoList, doingList, doneList]
         };
     }
