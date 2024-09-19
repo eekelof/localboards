@@ -1,7 +1,7 @@
 import { Board_I } from "../App";
 
 export default class LSUtil {
-    static LS_PREFIX = "board-" as const;
+    static LS_PREFIX = "lb-" as const;
 
     static getIDs() {
         const ids = Object.keys(localStorage).filter(k => k.startsWith(LSUtil.LS_PREFIX));
