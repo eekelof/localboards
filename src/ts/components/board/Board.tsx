@@ -2,9 +2,7 @@ import { App_I } from '../../App';
 import { List } from './List';
 
 export function Board(app: App_I) {
-    const className = document.getElementById("sidebar")?.classList.contains("sidebarHidden") ? "boardExpanded" : "";
-
-    return <div id="board" class={className}>
+    return <div id="board">
         <div id="boardTitle">{app.board.id}</div>
         {Lists(app)}
     </div>;
