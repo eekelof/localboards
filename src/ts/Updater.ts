@@ -10,32 +10,32 @@ import LSUtil from "./util/LSUtil";
  */
 export default class Updater {
     static boardSelector(app: App_I) {
-        const scroll = document.getElementById("boardSelector")!.scrollTop;
-        document.getElementById("boardSelector")!.replaceWith(BoardSelector(app));
-        document.getElementById("boardSelector")!.scrollTop = scroll;
+        Updater.#inner(app, "boardSelector", BoardSelector(app));
     }
     static board(app: App_I) {
-        document.getElementById("board")!.replaceWith(Board(app));
-        LSUtil.set(app.board);
+        Updater.#inner(app, "board", Board(app));
     }
     static lists(app: App_I) {
-        const scroll = document.getElementById("lists")!.scrollLeft;
-        document.getElementById("lists")!.replaceWith(Lists(app));
-        document.getElementById("lists")!.scrollLeft = scroll;
-        LSUtil.set(app.board);
+        Updater.#inner(app, "lists", Lists(app));
     }
     static list(app: App_I, list: List_I) {
-        document.getElementById("list-" + list.id)!.replaceWith((List(app, list)));
-        LSUtil.set(app.board);
+        Updater.#inner(app, "list-" + list.id, List(app, list));
     }
     static cards(app: App_I, list: List_I) {
-        const scroll = document.getElementById("cards-" + list.id)!.scrollTop;
-        document.getElementById("cards-" + list.id)!.replaceWith(Cards(app, list));
-        document.getElementById("cards-" + list.id)!.scrollTop = scroll;
-        LSUtil.set(app.board);
+        Updater.#inner(app, "cards-" + list.id, Cards(app, list));
     }
     static card(app: App_I, list: List_I, card: Card_I) {
-        document.getElementById("card-" + card.id)!.replaceWith(Card(app, list, card));
+        Updater.#inner(app, "card-" + card.id, Card(app, list, card));
+    }
+    static #inner(app: App_I, id: string, e: HTMLElement) {
+        const old = document.getElementById(id)!;
+
+        const scrollTop = old.scrollTop;
+        const scrollLeft = old.scrollLeft;
+        old.replaceWith(e);
+        e.scrollTop = scrollTop;
+        e.scrollLeft = scrollLeft;
+
         LSUtil.set(app.board);
     }
 }
