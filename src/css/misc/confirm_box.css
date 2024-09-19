@@ -33,5 +33,5 @@
 
 .confirmBoxConfirm {
     right: 24px;
-    fill: var(--redColor);
+    fill: var(--removeColor);
 }

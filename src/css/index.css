@@ -26,7 +26,7 @@
 
     /* Theme specific styles */
     --iconColor: #111;
-    --redColor: #e22;
+    --removeColor: #e22;
     --fontColor: #111;
     --listBg: #fffa;
     --inputBg: #ccc;
@@ -41,7 +41,7 @@
 
 .dark {
     --iconColor: #fff;
-    --redColor: #f55;
+    --removeColor: #f55;
     --fontColor: #fff;
     --listBg: #0006;
     --inputBg: #444;
