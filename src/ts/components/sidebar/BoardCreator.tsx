@@ -7,17 +7,17 @@ import Util from '../../util/Util';
 export function BoardCreator(app: App_I) {
     const input = <input class="boardCreatorInput" type="text" placeholder="New Board" maxlength="18" enterkeyhint="done" />;
 
-    const onclick = () => {
+    const clickedCreate = () => {
         const board = Util.createBoard(input.value);
         app.board = board || app.board;
         input.value = "";
         Util.setBtnVisibility(btn, false);
 
-        Updater.board(app.board);
+        Updater.board(app);
         Updater.boardSelector(app);
     };
 
-    const btn = <div class="btn boardCreatorAddBtn" onclick={onclick}>
+    const btn = <div class="btn boardCreatorAddBtn" onclick={clickedCreate}>
         <svg class="icon" viewBox="0 0 24 24"><path d={mdiBulletinBoard} /></svg>
         <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
     </div>;
@@ -25,11 +25,11 @@ export function BoardCreator(app: App_I) {
 
     input.onkeydown = (e: KeyboardEvent) => {
         if (e.key === "Enter")
-            onclick();
+            clickedCreate();
         setTimeout(() => Util.setBtnVisibility(btn, input.value.length > 0));
     };
 
-    const clickedDownload = () => UDUtil.downloadBoard(app.board);
+    const clickedDownload = () => UDUtil.downloadBoard(app);
     const clickedUpload = () => UDUtil.uploadBoard(app);
 
     const uploadBtn = <div class="btn boardCreatorUploadBtn" onclick={clickedUpload}>

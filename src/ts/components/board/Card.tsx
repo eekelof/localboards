@@ -1,18 +1,18 @@
 import { mdiChevronDown, mdiChevronLeft, mdiChevronRight, mdiChevronUp, mdiClose, mdiPaletteOutline } from '@mdi/js';
-import { Board_I, Card_I, List_I } from '../../App';
+import { App_I, Card_I, List_I } from '../../App';
 import Updater from '../../Updater';
 
-export function Card(board: Board_I, list: List_I, card: Card_I) {
+export function Card(app: App_I, list: List_I, card: Card_I) {
     const setColor = () => {
         const colors = ["", "#a33", "#a63", "#aa3", "#3a3", "#3aa", "#66a", "#a3a", "#888"];
         card.color = colors[(colors.indexOf(card.color) + 1) % colors.length];
-        Updater.card(board, list, card);
+        Updater.card(app, list, card);
     };
 
     const remove = () => {
         const i = list.cards.indexOf(card);
         list.cards.splice(i, 1);
-        Updater.cards(board, list);
+        Updater.cards(app, list);
     };
 
     const move = (dir: number) => {
@@ -22,17 +22,17 @@ export function Card(board: Board_I, list: List_I, card: Card_I) {
             return;
         list.cards[i] = list.cards[j];
         list.cards[j] = card;
-        Updater.cards(board, list);
+        Updater.cards(app, list);
     };
 
     const moveToList = (dir: number) => {
-        const i = board.lists.indexOf(list);
-        const nlist = board.lists[i + dir];
+        const i = app.board.lists.indexOf(list);
+        const nlist = app.board.lists[i + dir];
         if (!nlist)
             return;
         remove();
         nlist.cards.push(card);
-        Updater.cards(board, nlist);
+        Updater.cards(app, nlist);
     };
 
     const className = card.color == "" ? "card" : "card cardColored";

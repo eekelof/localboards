@@ -12,7 +12,7 @@ export function BoardSelector(app: App_I) {
             const select = () => {
                 const t = LSUtil.get(id);
                 app.board = t || app.board;
-                Updater.board(app.board);
+                Updater.board(app);
                 Updater.boardSelector(app);
             };
 

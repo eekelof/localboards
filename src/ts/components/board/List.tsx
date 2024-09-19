@@ -1,13 +1,15 @@
 import { mdiChevronLeft, mdiChevronRight, mdiTrashCan } from '@mdi/js';
-import { Board_I, List_I } from '../../App';
+import { App_I, List_I } from '../../App';
 import Updater from '../../Updater';
 import Util from '../../util/Util';
 import { Card } from './Card';
 import { ListCreator } from './ListCreator';
 
-export function List(board: Board_I, list?: List_I) {
+export function List(app: App_I, list?: List_I) {
     if (!list)
-        return <div class="list listCreator">{ListCreator(board)}</div>;
+        return <div class="list listCreator">{ListCreator(app)}</div>;
+
+    const lists = app.board.lists;
 
     const cardInput = <input class="cardInput" type="text" placeholder="New Card" maxlength="512" enterkeyhint="done" />;
     cardInput.onkeydown = (e: KeyboardEvent) => {
@@ -16,26 +18,27 @@ export function List(board: Board_I, list?: List_I) {
         const card = { id: crypto.randomUUID(), title: cardInput.value, color: "" };
         list.cards.unshift(card);
         cardInput.value = "";
-        Updater.cards(board, list);
+        Updater.cards(app, list);
     };
 
     const remove = () => {
         const onConfirm = () => {
-            const i = board.lists.indexOf(list);
-            board.lists.splice(i, 1);
-            Updater.board(board);
+            const i = lists.indexOf(list);
+            lists.splice(i, 1);
+            Updater.lists(app);
         };
         Util.showConfirmBox("Delete list '" + list.title + "'?", onConfirm);
     };
 
     const move = (dir: number) => {
-        const i = board.lists.indexOf(list);
+        const i = lists.indexOf(list);
         const j = i + dir;
-        if (j < 0 || j >= board.lists.length)
+        if (j < 0 || j >= lists.length)
             return;
-        board.lists[i] = board.lists[j];
-        board.lists[j] = list;
-        Updater.board(board);
+        lists[i] = lists[j];
+        lists[j] = list;
+
+        Updater.lists(app);
     };
 
     return <div id={"list-" + list.id} class="list">
@@ -44,12 +47,12 @@ export function List(board: Board_I, list?: List_I) {
         <svg class="icon iconSmall listIconLeft" viewBox="0 0 24 24" onclick={() => move(-1)}><path d={mdiChevronLeft} /></svg>
         <svg class="icon iconSmall listIconRight" viewBox="0 0 24 24" onclick={() => move(1)}><path d={mdiChevronRight} /></svg>
         {cardInput}
-        {Cards(board, list)}
+        {Cards(app, list)}
     </div>;
 }
 
-export function Cards(board: Board_I, list: List_I) {
+export function Cards(app: App_I, list: List_I) {
     return <div id={"cards-" + list.id} class="cards">
-        {list.cards.map(card => Card(board, list, card))}
+        {list.cards.map(card => Card(app, list, card))}
     </div>;
 }

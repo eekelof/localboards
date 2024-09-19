@@ -1,18 +1,18 @@
 import { mdiListBoxOutline, mdiPlus } from '@mdi/js';
-import { Board_I } from '../../App';
 import Updater from '../../Updater';
 import Util from '../../util/Util';
+import { App_I } from '../../App';
 
-export function ListCreator(board: Board_I) {
+export function ListCreator(app: App_I) {
     const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" enterkeyhint="done" />;
 
     const onclick = () => {
         const title = input.value.trim();
         if (title.length === 0)
             return;
-        board.lists.push({ id: crypto.randomUUID(), title, cards: [] });
-        Updater.board(board);
-        document.querySelector(".listCreator")!.scrollIntoView();
+        app.board.lists.push({ id: crypto.randomUUID(), title, cards: [] });
+
+        Updater.lists(app);
     };
 
     const btn = <div class="btn listCreatorAddBtn" onclick={onclick}>

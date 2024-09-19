@@ -27,7 +27,7 @@ function App() {
     const app: App_I = { board: Util.getBoardOnStart() };
     return <div id="app">
         {Background()}
-        {Board(app.board)}
+        {Board(app)}
         {SideBar(app)}
         {ThemeToggle()}
     </div>;

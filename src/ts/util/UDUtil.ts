@@ -1,12 +1,12 @@
-import { App_I, Board_I } from "../App";
+import { App_I } from "../App";
 import Updater from "../Updater";
 
 export default class UDUtil {
-    static downloadBoard(board: Board_I) {
-        const data = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(board));
+    static downloadBoard(app: App_I) {
+        const data = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(app.board));
         const a = document.createElement("a");
         a.href = data;
-        a.download = "board-" + board.id + ".json";
+        a.download = "board-" + app.board.id + ".json";
         a.click();
     }
 
@@ -24,7 +24,7 @@ export default class UDUtil {
                 const board = JSON.parse(reader.result as string);
                 app.board = board;
 
-                Updater.board(app.board);
+                Updater.board(app);
                 Updater.boardSelector(app);
             };
             reader.readAsText(file);
