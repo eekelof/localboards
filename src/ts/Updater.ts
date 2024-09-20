@@ -10,24 +10,24 @@ import LSUtil from "./util/LSUtil";
  */
 export default class Updater {
     static boardSelector(app: App_I) {
-        Updater.#inner(app, "boardSelector", BoardSelector(app));
+        Updater.#update(app, "boardSelector", BoardSelector(app));
     }
     static board(app: App_I) {
-        Updater.#inner(app, "board", Board(app));
+        Updater.#update(app, "board", Board(app));
     }
     static lists(app: App_I) {
-        Updater.#inner(app, "lists", Lists(app));
+        Updater.#update(app, "lists", Lists(app));
     }
     static list(app: App_I, list: List_I) {
-        Updater.#inner(app, "list-" + list.id, List(app, list));
+        Updater.#update(app, "list-" + list.id, List(app, list));
     }
     static cards(app: App_I, list: List_I) {
-        Updater.#inner(app, "cards-" + list.id, Cards(app, list));
+        Updater.#update(app, "cards-" + list.id, Cards(app, list));
     }
     static card(app: App_I, list: List_I, card: Card_I) {
-        Updater.#inner(app, "card-" + card.id, Card(app, list, card));
+        Updater.#update(app, "card-" + card.id, Card(app, list, card));
     }
-    static #inner(app: App_I, id: string, e: HTMLElement) {
+    static #update(app: App_I, id: string, e: HTMLElement) {
         const old = document.getElementById(id)!;
 
         const scrollTop = old.scrollTop;
