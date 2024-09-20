@@ -21,7 +21,7 @@ export interface List_I {
 export interface Card_I {
     id: string;
     title: string;
-    color: string;
+    color: number;
 }
 
 function App() {

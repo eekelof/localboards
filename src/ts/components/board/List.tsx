@@ -15,7 +15,7 @@ export function List(app: App_I, list?: List_I) {
     cardInput.onkeydown = (e: KeyboardEvent) => {
         if (e.key != "Enter" || cardInput.value.length === 0)
             return;
-        const card = { id: crypto.randomUUID(), title: cardInput.value, color: "" };
+        const card = { id: crypto.randomUUID(), title: cardInput.value, color: 0 };
         list.cards.unshift(card);
         cardInput.value = "";
         Updater.cards(app, list);

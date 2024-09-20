@@ -1,11 +1,11 @@
 import { mdiChevronDown, mdiChevronLeft, mdiChevronRight, mdiChevronUp, mdiClose, mdiPaletteOutline } from '@mdi/js';
 import { App_I, Card_I, List_I } from '../../App';
 import Updater from '../../Updater';
+import { CARD_COLORS } from '../../util/Constants';
 
 export function Card(app: App_I, list: List_I, card: Card_I) {
     const setColor = () => {
-        const colors = ["", "#a33", "#a63", "#aa3", "#3a3", "#3aa", "#66a", "#a3a", "#888"];
-        card.color = colors[(colors.indexOf(card.color) + 1) % colors.length];
+        card.color = (card.color + 1) % CARD_COLORS.length;
         Updater.card(app, list, card);
     };
 
@@ -35,8 +35,8 @@ export function Card(app: App_I, list: List_I, card: Card_I) {
         Updater.cards(app, nlist);
     };
 
-    const className = card.color == "" ? "card" : "card cardColored";
-    return <div id={"card-" + card.id} class={className} style={{ backgroundColor: card.color }}>
+    const className = card.color == 0 ? "card" : "card cardColored";
+    return <div id={"card-" + card.id} class={className} style={{ backgroundColor: CARD_COLORS[card.color] }}>
         {card.title}
         <svg class="icon iconSmall cardIconColor" viewBox="0 0 24 24" onclick={setColor}><path d={mdiPaletteOutline} /></svg>
         <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={remove}><path d={mdiClose} /></svg>

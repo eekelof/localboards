@@ -1,11 +1,10 @@
 import { App_I } from '../../App';
-import { BG_COLORS } from '../misc/Background';
+import { BG_COLORS } from '../../util/Constants';
 import { List } from './List';
 
 export function Board(app: App_I) {
     const c = BG_COLORS[app.board.color % BG_COLORS.length];
-
-    var r = document.querySelector(':root')! as HTMLElement;
+    const r = document.querySelector(":root")! as HTMLElement;
     r.style.setProperty('--bg', c[0]);
     r.style.setProperty('--bgBlob1', c[1]);
     r.style.setProperty('--bgBlob2', c[2]);

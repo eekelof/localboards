@@ -3,7 +3,7 @@ import { App_I } from '../../App';
 import Updater from '../../Updater';
 import LSUtil from '../../util/LSUtil';
 import Util from '../../util/Util';
-import { BG_COLORS } from '../misc/Background';
+import { BG_COLORS } from '../../util/Constants';
 
 export function BoardSelector(app: App_I) {
     const ids = LSUtil.getIDs();

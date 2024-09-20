@@ -1,6 +1,6 @@
 import { Board_I } from "../App";
-import { BG_COLORS } from "../components/misc/Background";
 import { ConfirmBox } from "../components/misc/ConfirmBox";
+import { BG_COLORS } from "./Constants";
 import LSUtil from "./LSUtil";
 
 export default class Util {
