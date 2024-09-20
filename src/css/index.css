@@ -35,7 +35,7 @@
     --btnBg: #fffa;
     --btnBgHover: #fff;
     --btnBg3: linear-gradient(to right, #080 0%, #0a0 51%, #080 100%);
-    --btnBg4: linear-gradient(to right, #777 0%, #aaa 51%, #777 100%);
+    --btnBg4: linear-gradient(to right, #7778 0%, #aaa8 51%, #7778 100%);
     --scrollbarColor: #fffa;
 }
 
@@ -50,7 +50,7 @@
     --btnBg: #333a;
     --btnBgHover: #333;
     --btnBg3: linear-gradient(to right, #040 0%, #090 51%, #040 100%);
-    --btnBg4: linear-gradient(to right, #444 0%, #888 51%, #444 100%);
+    --btnBg4: linear-gradient(to right, #4448 0%, #8888 51%, #4448 100%);
     --scrollbarColor: #fff4;
 }
 
