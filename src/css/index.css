@@ -32,6 +32,7 @@
     --inputBg: #ccc;
     --inputBgFocus: #ddd;
     --cardBg: #fff;
+    --cardBoxShadow: 0 0 8px 0 #0003;
     --btnBg: #fffa;
     --btnBgHover: #fff;
     --btnBg3: linear-gradient(to right, #080 0%, #0a0 51%, #080 100%);
@@ -47,6 +48,7 @@
     --inputBg: #444;
     --inputBgFocus: #666;
     --cardBg: #333;
+    --cardBoxShadow: 0 0 8px 0 #0008;
     --btnBg: #333a;
     --btnBgHover: #333;
     --btnBg3: linear-gradient(to right, #040 0%, #090 51%, #040 100%);
