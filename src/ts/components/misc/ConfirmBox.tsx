@@ -7,7 +7,7 @@ export function ConfirmBox(text: string, onConfirm: () => void) {
         e.remove();
     };
 
-    const e = <div class="confirmBox">
+    const e = <div class="confirmBox" onclick={onCancel}>
         <div class="confirmBoxInner">
             {text}
             <svg class="icon iconSmall confirmBoxCancel" viewBox="0 0 24 24" onclick={onCancel}><path d={mdiArrowLeft} /></svg>
