@@ -15,6 +15,7 @@ export const CARD_COLORS = [
     "#8a3",
     "#3a3",
     "#3aa",
+    "#36a",
     "#66a",
     "#a3a",
     "#888"
