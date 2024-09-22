@@ -36,9 +36,7 @@ export function BoardSelector(app: App_I) {
         const clickedColor = (e: MouseEvent) => {
             e.stopPropagation();
             app.board.color = (app.board.color + 1) % BG_COLORS.length;
-
             Updater.board(app);
-            Updater.boardSelector(app);
         };
 
         const clickedRemove = (e: MouseEvent) => {
