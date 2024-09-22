@@ -17,13 +17,13 @@
     width: 100% !important;
 }
 
+
 #boardTitle {
     position: absolute;
-    right: 50dvw;
+    left: var(--leftPadding);
     top: 16px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
     font-weight: bold;
     color: #fffd;
-    transform: translateX(50%);
 }

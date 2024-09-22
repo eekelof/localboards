@@ -7,7 +7,7 @@
     top: 72px;
     overflow-y: hidden;
     overflow-x: auto;
-    padding-left: 64px;
+    padding-left: var(--leftPadding);
     padding-right: 80px;
 
     width: 100%;
