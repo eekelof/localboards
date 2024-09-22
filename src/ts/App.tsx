@@ -1,6 +1,6 @@
 import { Board } from './components/board/Board';
 import { Background } from './components/misc/Background';
-import { ThemeToggle } from './components/misc/ThemeToggle';
+import { Settings } from './components/misc/Settings';
 import { SideBar } from './components/sidebar/SideBar';
 import Util from './util/Util';
 
@@ -30,7 +30,7 @@ function App() {
         {Background()}
         {Board(app)}
         {SideBar(app)}
-        {ThemeToggle()}
+        {Settings()}
     </div>;
 }
 document.body.append(App());

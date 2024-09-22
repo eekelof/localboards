@@ -51,25 +51,6 @@
     transform: scale(1.1);
 }
 
-.themeToggle {
-    position: absolute;
-    right: 16px;
-    top: 0px;
-    cursor: pointer;
-    transition: 0.1s;
-    opacity: 0.5;
-}
-
-.themeToggle:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.themeToggle:active {
+.iconSmall:active {
     transform: scale(1);
-}
-
-.themeToggle .icon {
-    width: 32px;
-    fill: #fff;
 }

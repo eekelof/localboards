@@ -1,8 +1,9 @@
-@import "misc/background.css";
 @import "app.css";
+@import "misc/settings.css";
+@import "misc/background.css";
+@import "misc/confirm_box.css";
 @import "sidebar/sidebar.css";
 @import "board/board.css";
-@import "misc/confirm_box.css";
 
 :root {
     font-family: sans-serif;
