@@ -2,6 +2,7 @@ import { mdiChevronLeft, mdiChevronRight, mdiTrashCan } from '@mdi/js';
 import { App_I, List_I } from '../../App';
 import Updater from '../../Updater';
 import Util from '../../util/Util';
+import { SmallIcon } from '../misc/Icon';
 import { Card } from './Card';
 import { ListCreator } from './ListCreator';
 
@@ -43,9 +44,9 @@ export function List(app: App_I, list?: List_I) {
 
     return <div id={"list-" + list.id} class="list">
         <div class="listTitle">{list.title}</div>
-        <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={clickedRemove}><path d={mdiTrashCan} /></svg>
-        <svg class="icon iconSmall listIconLeft" viewBox="0 0 24 24" onclick={() => clickedMove(-1)}><path d={mdiChevronLeft} /></svg>
-        <svg class="icon iconSmall listIconRight" viewBox="0 0 24 24" onclick={() => clickedMove(1)}><path d={mdiChevronRight} /></svg>
+        {SmallIcon(mdiTrashCan, "", clickedRemove)}
+        {SmallIcon(mdiChevronLeft, "listIconLeft", () => clickedMove(-1))}
+        {SmallIcon(mdiChevronRight, "listIconRight", () => clickedMove(1))}
         {cardInput}
         {Cards(app, list)}
     </div>;

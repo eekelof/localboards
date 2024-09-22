@@ -1,5 +1,6 @@
 import { mdiGithub, mdiThemeLightDark } from "@mdi/js";
 import LSUtil from "../../util/LSUtil";
+import { SmallIcon } from "./Icon";
 
 export function Settings() {
     const toggleTheme = () => {
@@ -11,10 +12,10 @@ export function Settings() {
 
     return <div id="settings">
         <div class="themeToggle" onclick={() => toggleTheme()}>
-            <svg class="icon iconSmall" viewBox="0 0 24 24"><path d={mdiThemeLightDark} /></svg>
+            {SmallIcon(mdiThemeLightDark, "themeToggleIcon")}
         </div>
         <a href="https://github.com/eekelof/localboards" target="blank" class="githubLink">
-            <svg class="icon iconSmall" viewBox="0 0 24 24"><path d={mdiGithub} /></svg>
+            {SmallIcon(mdiGithub, "githubLinkIcon")}
         </a>
     </div>;
 }

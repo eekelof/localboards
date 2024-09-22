@@ -1,5 +1,6 @@
 import { mdiBulletinBoard, mdiChevronLeft } from '@mdi/js';
 import { App_I } from '../../App';
+import { Icon } from '../misc/Icon';
 import { BoardCreator } from './BoardCreator';
 import { BoardSelector } from './BoardSelector';
 
@@ -9,7 +10,7 @@ export function SideBar(app: App_I) {
         document.getElementById("board")!.classList.toggle("boardExpanded");
     };
     const hideToggle = <div class="hideToggle" onclick={clickedHide}>
-        <svg class="icon" viewBox="0 0 24 24"><path d={mdiChevronLeft} /></svg>
+        {Icon(mdiChevronLeft)}
     </div>;
 
     const boardSelector = BoardSelector(app);
@@ -17,7 +18,7 @@ export function SideBar(app: App_I) {
 
     return <div id="sidebar">
         <div class="sidebarTitle">
-            <svg class="icon titleIcon" viewBox="0 0 24 24"><path d={mdiBulletinBoard}></path></svg>
+            {Icon(mdiBulletinBoard, "titleIcon")}
             localboards
         </div>
         {hideToggle}

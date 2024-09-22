@@ -2,6 +2,7 @@ import { mdiChevronDown, mdiChevronLeft, mdiChevronRight, mdiChevronUp, mdiClose
 import { App_I, Card_I, List_I } from '../../App';
 import Updater from '../../Updater';
 import { CARD_COLORS } from '../../util/Constants';
+import { SmallIcon } from '../misc/Icon';
 
 export function Card(app: App_I, list: List_I, card: Card_I) {
     const clickedColor = () => {
@@ -38,11 +39,11 @@ export function Card(app: App_I, list: List_I, card: Card_I) {
     const className = card.color == 0 ? "card" : "card cardColored";
     return <div id={"card-" + card.id} class={className} style={{ backgroundColor: CARD_COLORS[card.color] }}>
         {card.title}
-        <svg class="icon iconSmall cardIconColor" viewBox="0 0 24 24" onclick={clickedColor}><path d={mdiPaletteOutline} /></svg>
-        <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={clickedRemove}><path d={mdiClose} /></svg>
-        <svg class="icon iconSmall cardIconUp" viewBox="0 0 24 24" onclick={() => clickedMove(-1)}><path d={mdiChevronUp} /></svg>
-        <svg class="icon iconSmall cardIconDown" viewBox="0 0 24 24" onclick={() => clickedMove(1)}><path d={mdiChevronDown} /></svg>
-        <svg class="icon iconSmall cardIconLeft" viewBox="0 0 24 24" onclick={() => clickedMoveToList(-1)}><path d={mdiChevronLeft} /></svg>
-        <svg class="icon iconSmall cardIconRight" viewBox="0 0 24 24" onclick={() => clickedMoveToList(1)}><path d={mdiChevronRight} /></svg>
+        {SmallIcon(mdiPaletteOutline, "cardIconColor", clickedColor)}
+        {SmallIcon(mdiClose, "", clickedRemove)}
+        {SmallIcon(mdiChevronUp, "cardIconUp", () => clickedMove(-1))}
+        {SmallIcon(mdiChevronDown, "cardIconDown", () => clickedMove(1))}
+        {SmallIcon(mdiChevronLeft, "cardIconLeft", () => clickedMoveToList(-1))}
+        {SmallIcon(mdiChevronRight, "cardIconRight", () => clickedMoveToList(1))}
     </div >;
 }

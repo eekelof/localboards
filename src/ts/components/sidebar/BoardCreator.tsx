@@ -3,6 +3,7 @@ import { App_I } from '../../App';
 import Updater from '../../Updater';
 import UDUtil from '../../util/UDUtil';
 import Util from '../../util/Util';
+import { Icon } from '../misc/Icon';
 
 export function BoardCreator(app: App_I) {
     const clickedCreate = () => {
@@ -14,16 +15,12 @@ export function BoardCreator(app: App_I) {
     };
 
     const btn = <div class="btn boardCreatorAddBtn" onclick={clickedCreate}>
-        <svg class="icon" viewBox="0 0 24 24"><path d={mdiBulletinBoard} /></svg>
-        <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
+        {Icon(mdiBulletinBoard)}
+        {Icon(mdiPlus)}
     </div>;
 
-    const uploadBtn = <div class="btn boardCreatorUploadBtn" onclick={() => UDUtil.upload(app)}>
-        <svg class="icon" viewBox="0 0 24 24"><path d={mdiUpload} /></svg>
-    </div>;
-    const downloadBtn = <div class="btn boardCreatorDownloadBtn" onclick={() => UDUtil.download(app)}>
-        <svg class="icon" viewBox="0 0 24 24"><path d={mdiDownload} /></svg>
-    </div>;
+    const uploadBtn = <div class="btn boardCreatorUploadBtn" onclick={() => UDUtil.upload(app)}> {Icon(mdiUpload)} </div>;
+    const downloadBtn = <div class="btn boardCreatorDownloadBtn" onclick={() => UDUtil.download(app)}> {Icon(mdiDownload)} </div>;
 
     return <div class="boardCreator">
         {btn}

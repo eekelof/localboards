@@ -4,6 +4,7 @@ import Updater from '../../Updater';
 import { BG_COLORS } from '../../util/Constants';
 import LSUtil from '../../util/LSUtil';
 import Util from '../../util/Util';
+import { SmallIcon } from '../misc/Icon';
 
 export function BoardSelector(app: App_I) {
     const ids = LSUtil.getIDs();
@@ -55,10 +56,10 @@ export function BoardSelector(app: App_I) {
         return <div class={className} onclick={clickedSelect}>
             <div class="boardCardTitle">{id}</div>
             {input}
-            {selected ? [
-                <svg class="icon iconSmall boardCardEdit" viewBox="0 0 24 24" onclick={clickedEdit}><path d={mdiPencil} /></svg>,
-                <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={clickedColor}><path d={mdiPalette} /></svg>
-            ] : <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={clickedRemove}><path d={mdiTrashCan} /></svg>}
+            {selected ?
+                [SmallIcon(mdiPencil, "boardCardEdit", clickedEdit), SmallIcon(mdiPalette, "", clickedColor)]
+                : SmallIcon(mdiTrashCan, "", clickedRemove)
+            }
         </div>;
     });
     return <div id="boardSelector">{boards}</div>;

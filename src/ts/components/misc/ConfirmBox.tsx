@@ -1,4 +1,5 @@
 import { mdiArrowLeft, mdiTrashCan } from "@mdi/js";
+import { SmallIcon } from "./Icon";
 
 export function ConfirmBox(text: string, name: string, onConfirm: () => void) {
     const clickedCancel = () => e.remove();
@@ -11,8 +12,8 @@ export function ConfirmBox(text: string, name: string, onConfirm: () => void) {
         <div class="confirmBoxInner">
             <div class="confirmBoxText">{text}</div>
             <b>{name}</b>
-            <svg class="icon iconSmall confirmBoxCancel" viewBox="0 0 24 24" onclick={clickedCancel}><path d={mdiArrowLeft} /></svg>
-            <svg class="icon iconSmall confirmBoxConfirm" viewBox="0 0 24 24" onclick={clickedConfirm}><path d={mdiTrashCan} /></svg>
+            {SmallIcon(mdiArrowLeft, "confirmBoxCancel", clickedCancel)}
+            {SmallIcon(mdiTrashCan, "confirmBoxConfirm", clickedConfirm)}
         </div>
     </div>;
     return e;

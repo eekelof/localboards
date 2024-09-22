@@ -1,6 +1,7 @@
 import { mdiListBoxOutline, mdiPlus } from '@mdi/js';
 import { App_I } from '../../App';
 import Updater from '../../Updater';
+import { Icon } from '../misc/Icon';
 
 export function ListCreator(app: App_I) {
     const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" enterkeyhint="done" />;
@@ -16,8 +17,8 @@ export function ListCreator(app: App_I) {
     };
 
     const btn = <div class="btn listCreatorAddBtn" onclick={clickedCreate}>
-        <svg class="icon" viewBox="0 0 24 24"><path d={mdiListBoxOutline} /></svg>
-        <svg class="icon" viewBox="0 0 24 24"><path d={mdiPlus} /></svg>
+        {Icon(mdiListBoxOutline)}
+        {Icon(mdiPlus)}
     </div>;
 
 
