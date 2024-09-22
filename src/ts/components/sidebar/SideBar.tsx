@@ -18,7 +18,7 @@ export function SideBar(app: App_I) {
 
     return <div id="sidebar">
         <div class="sidebarTitle">
-            {Icon(mdiBulletinBoard, "titleIcon")}
+            {Icon(mdiBulletinBoard)}
             localboards
         </div>
         {hideToggle}

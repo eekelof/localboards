@@ -29,6 +29,7 @@
     height: 40px;
     margin-top: -14px;
     margin-right: 8px;
+    fill: var(--fontColor);
 }
 
 .hideToggle {

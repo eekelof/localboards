@@ -1,11 +1,38 @@
-.icon {
-    fill: #fff;
-    vertical-align: middle;
-    height: 64px;
+body {
+    margin: 0;
+    width: 100%;
+    height: 100dvh;
+    font-size: 15px;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--fontColor);
+    transition: 0.8s;
 }
 
-.titleIcon {
-    fill: var(--fontColor);
+input {
+    position: relative;
+    width: calc(100% - 20px);
+    background-color: var(--inputBg);
+    color: var(--fontColor);
+    font-size: 16px;
+    font-weight: bold;
+    border: var(--border);
+    border-radius: var(--borderRadius);
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    outline: none;
+    transition: var(--transitionTime);
+}
+
+input:hover,
+input:focus {
+    background-color: var(--inputBgFocus);
+}
+
+input:focus {
+    box-shadow: var(--boxShadow);
 }
 
 .btn {
@@ -33,24 +60,4 @@
 .btn:active {
     transform: scale(1);
     background-position: right center;
-}
-
-.iconSmall {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    height: 32px;
-    opacity: 0.7;
-    transition: var(--transitionTime);
-    fill: var(--fontColor);
-    cursor: pointer;
-}
-
-.iconSmall:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.iconSmall:active {
-    transform: scale(1);
 }

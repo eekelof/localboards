@@ -28,7 +28,7 @@ export function List(app: App_I, list?: List_I) {
             lists.splice(i, 1);
             Updater.lists(app);
         };
-        Util.showConfirmBox("Delete List?", list.title, onConfirm);
+        Util.showConfirmBox("Delete List", list.title, onConfirm);
     };
 
     const clickedMove = (dir: number) => {

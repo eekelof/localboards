@@ -47,7 +47,7 @@ export function BoardSelector(app: App_I) {
                 LSUtil.remove(id);
                 Updater.boardSelector(app);
             };
-            Util.showConfirmBox("Delete Board?", id, onConfirm);
+            Util.showConfirmBox("Delete Board", id, onConfirm);
         };
 
         const selected = app.board.id === id;
