@@ -18,6 +18,7 @@ export function BoardSelector(app: App_I) {
             Updater.board(app);
             Updater.boardSelector(app);
         };
+        input.onblur = () => input.style.display = "none";
 
         const clickedSelect = () => {
             const t = LSUtil.get(id);

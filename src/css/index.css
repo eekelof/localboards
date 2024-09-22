@@ -71,6 +71,7 @@ input {
     margin-bottom: 4px;
     box-sizing: border-box;
     outline: none;
+    box-shadow: var(--boxShadow);
     transition: var(--transitionTime);
 }
 
