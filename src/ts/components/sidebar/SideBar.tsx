@@ -9,20 +9,11 @@ export function SideBar(app: App_I) {
         document.getElementById("sidebar")!.classList.toggle("sidebarHidden");
         document.getElementById("board")!.classList.toggle("boardExpanded");
     };
-    const hideToggle = <div class="hideToggle" onclick={clickedHide}>
-        {Icon(mdiChevronLeft)}
-    </div>;
-
-    const boardSelector = BoardSelector(app);
-    const boardCreator = BoardCreator(app);
 
     return <div id="sidebar">
-        <div class="sidebarTitle">
-            {Icon(mdiBulletinBoard)}
-            localboards
-        </div>
-        {hideToggle}
-        {boardSelector}
-        {boardCreator}
+        <div class="sidebarTitle"> {Icon(mdiBulletinBoard)} localboards </div>
+        <div class="hideToggle" onclick={clickedHide}> {Icon(mdiChevronLeft)} </div>
+        {BoardSelector(app)}
+        {BoardCreator(app)}
     </div>;
 }

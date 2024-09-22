@@ -6,7 +6,7 @@ import { Icon } from '../misc/Icon';
 export function ListCreator(app: App_I) {
     const input = <input class="listCreatorInput" type="text" placeholder="New List" maxlength="16" enterkeyhint="done" />;
     const clickedCreate = () => {
-        let title = input.value.trim() || "List";
+        const title = input.value.trim() || "List";
         app.board.lists.push({ id: crypto.randomUUID(), title, cards: [] });
         Updater.lists(app);
     };
@@ -16,14 +16,11 @@ export function ListCreator(app: App_I) {
             clickedCreate();
     };
 
-    const btn = <div class="btn listCreatorAddBtn" onclick={clickedCreate}>
-        {Icon(mdiListBoxOutline)}
-        {Icon(mdiPlus)}
-    </div>;
-
-
-    return <div class="listCreator">
+    return <div class="list listCreator">
         {input}
-        {btn}
+        <div class="btn listCreatorAddBtn" onclick={clickedCreate}>
+            {Icon(mdiListBoxOutline)}
+            {Icon(mdiPlus)}
+        </div>
     </div>;
 }

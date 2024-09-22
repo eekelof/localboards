@@ -1,6 +1,7 @@
 import { App_I } from '../../App';
 import { BG_COLORS } from '../../util/Constants';
 import { List } from './List';
+import { ListCreator } from './ListCreator';
 
 export function Board(app: App_I) {
     const c = BG_COLORS[app.board.color % BG_COLORS.length];
@@ -19,6 +20,6 @@ export function Board(app: App_I) {
 export function Lists(app: App_I) {
     return <div id="lists">
         {app.board.lists.map(list => List(app, list))}
-        {List(app)}
-    </div>
+        {ListCreator(app)}
+    </div>;
 }

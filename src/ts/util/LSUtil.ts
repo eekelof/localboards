@@ -3,7 +3,7 @@ import { Board_I } from "../App";
 export default class LSUtil {
     static LS_PREFIX = "lb-" as const;
 
-    static getIDs() {
+    static getIDs(): string[] {
         const ids = Object.keys(localStorage).filter(k => k.startsWith(LSUtil.LS_PREFIX));
         const res = ids.map(k => k.slice(LSUtil.LS_PREFIX.length));
         return res.sort().sort((a, b) => LSUtil.get(b)!.created - LSUtil.get(a)!.created);
@@ -20,7 +20,7 @@ export default class LSUtil {
         localStorage.removeItem(LSUtil.LS_PREFIX + id);
     }
 
-    static getTheme() {
+    static getTheme(): boolean {
         return JSON.parse(localStorage.getItem("theme") ?? "false");
     }
     static setTheme(isDark: boolean) {

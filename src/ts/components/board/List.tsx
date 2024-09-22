@@ -4,14 +4,8 @@ import Updater from '../../Updater';
 import Util from '../../util/Util';
 import { SmallIcon } from '../misc/Icon';
 import { Card } from './Card';
-import { ListCreator } from './ListCreator';
 
-export function List(app: App_I, list?: List_I) {
-    if (!list)
-        return <div class="list listCreator">{ListCreator(app)}</div>;
-
-    const lists = app.board.lists;
-
+export function List(app: App_I, list: List_I) {
     const cardInput = <input class="cardInput" type="text" placeholder="New Card" maxlength="512" enterkeyhint="done" />;
     cardInput.onkeydown = (e: KeyboardEvent) => {
         if (e.key != "Enter" || cardInput.value.length === 0)
@@ -21,6 +15,8 @@ export function List(app: App_I, list?: List_I) {
         cardInput.value = "";
         Updater.cards(app, list);
     };
+
+    const lists = app.board.lists;
 
     const clickedRemove = () => {
         const onConfirm = () => {
@@ -38,7 +34,6 @@ export function List(app: App_I, list?: List_I) {
             return;
         lists[i] = lists[j];
         lists[j] = list;
-
         Updater.lists(app);
     };
 
