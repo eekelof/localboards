@@ -14,10 +14,16 @@
     transform: translate(-50%, -50%);
 
     background: var(--cardBg);
-    height: 80px;
+    height: 96px;
     padding: 32px;
     border-radius: var(--borderRadius);
     font-size: 18px;
+    text-align: center;
+}
+
+.confirmBoxText {
+    margin-bottom: 16px;
+    opacity: 0.9;
 }
 
 .confirmBoxCancel,

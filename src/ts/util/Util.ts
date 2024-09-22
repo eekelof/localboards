@@ -28,7 +28,7 @@ export default class Util {
             id = suggestion + " " + i;
         return id;
     }
-    static showConfirmBox(text: string, onConfirm: () => void) {
-        document.body.append(ConfirmBox(text, onConfirm));
+    static showConfirmBox(text: string, name: string, onConfirm: () => void) {
+        document.body.append(ConfirmBox(text, name, onConfirm));
     }
 }

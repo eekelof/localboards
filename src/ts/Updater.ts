@@ -10,8 +10,6 @@ import LSUtil from "./util/LSUtil";
  */
 export default class Updater {
     static boardSelector(app: App_I) {
-        console.log("boardSelector");
-
         Updater.#update(app, "boardSelector", BoardSelector(app));
     }
     static board(app: App_I) {
