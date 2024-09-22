@@ -28,7 +28,7 @@
     --inputBg: #ccc;
     --inputBgFocus: #ddd;
     --cardBg: #fff;
-    --cardBoxShadow: 0 0 8px 0 #0003;
+    --boxShadow: 0 0 8px 0 #0003;
     --btnBg: #fffa;
     --btnBgHover: #fff;
     --scrollbarColor: #fffa;
@@ -40,7 +40,7 @@
     --inputBg: #444;
     --inputBgFocus: #666;
     --cardBg: #333;
-    --cardBoxShadow: 0 0 8px 0 #0008;
+    --boxShadow: 0 0 8px 0 #0008;
     --btnBg: #333a;
     --btnBgHover: #333;
     --scrollbarColor: #fff4;

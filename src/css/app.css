@@ -22,7 +22,7 @@
     box-sizing: border-box;
     user-select: none;
     width: 80px;
-    box-shadow: var(--cardBoxShadow);
+    box-shadow: var(--boxShadow);
 }
 
 .btn:hover {
