@@ -6,18 +6,18 @@ import LSUtil from "./LSUtil";
 export default class Util {
     static getBoardOnStart() {
         const selected = localStorage.getItem("selectedBoard")!;
-        const board = LSUtil.get(selected) || Util.createBoard();
+        const board = LSUtil.get(selected) || Util.createBoard(0);
         LSUtil.set(board);
         return board;
     }
-    static createBoard(): Board_I {
+    static createBoard(color = Math.floor(Math.random() * BG_COLORS.length)): Board_I {
         const todoList = { id: crypto.randomUUID(), title: "Todo", cards: [] };
         const doingList = { id: crypto.randomUUID(), title: "Doing", cards: [] };
         const doneList = { id: crypto.randomUUID(), title: "Done", cards: [] };
         return {
             id: Util.getAvailableBoardId("New Board"),
             created: Date.now(),
-            color: Math.floor(Math.random() * BG_COLORS.length),
+            color,
             lists: [todoList, doingList, doneList]
         };
     }
