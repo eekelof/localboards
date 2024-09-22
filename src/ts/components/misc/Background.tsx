@@ -3,5 +3,6 @@ export function Background() {
         <div class="blob one"></div>
         <div class="blob two"></div>
         <div class="blob three"></div>
+        <div class="blob four"></div>
     </div>;
 }

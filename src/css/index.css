@@ -20,9 +20,9 @@
 
     /* Background */
     --bg: #012;
-    --bgBlob1: #005599;
-    --bgBlob2: #55cc88;
-    --bgBlob3: #55e1f1;
+    --bgBlob1: #000;
+    --bgBlob2: #000;
+    --bgBlob3: #000;
 
     /* Theme specific styles */
     --iconColor: #111;
