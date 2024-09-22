@@ -47,7 +47,6 @@
     animation: movement_three 74s ease-in-out infinite both;
 }
 
-
 @keyframes movement_one {
 
     0%,
