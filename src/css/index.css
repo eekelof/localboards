@@ -25,8 +25,8 @@
     /* Theme specific styles */
     --fontColor: #111;
     --listBg: #fffa;
-    --inputBg: #ccc;
-    --inputBgFocus: #ddd;
+    --inputBg: #ddd;
+    --inputBgFocus: #fff;
     --cardBg: #fff;
     --boxShadow: 0 0 8px 0 #0003;
     --btnBg: #fffa;
@@ -71,13 +71,16 @@ input {
     margin-bottom: 4px;
     box-sizing: border-box;
     outline: none;
-    box-shadow: var(--boxShadow);
     transition: var(--transitionTime);
 }
 
 input:hover,
 input:focus {
     background-color: var(--inputBgFocus);
+}
+
+input:focus {
+    box-shadow: var(--boxShadow);
 }
 
 /* Scrollbar styles CHROME */
