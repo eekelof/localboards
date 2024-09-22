@@ -9,6 +9,7 @@
     width: calc(100% - 256px);
     height: 100%;
     transition: var(--transitionTime);
+    overflow: hidden;
 }
 
 .boardExpanded {
