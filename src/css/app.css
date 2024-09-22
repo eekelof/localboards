@@ -28,7 +28,6 @@
 .btn:hover {
     transform: scale(1.05);
     background-position: right center;
-    background: var(--btnBgHover);
 }
 
 .btn:active {

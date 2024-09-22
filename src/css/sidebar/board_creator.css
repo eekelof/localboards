@@ -32,6 +32,11 @@
     padding: 4px;
 }
 
+.boardCreatorUploadBtn:hover,
+.boardCreatorDownloadBtn:hover {
+    background: var(--btnBgHover);
+}
+
 .boardCreatorUploadBtn {
     float: left;
 }
