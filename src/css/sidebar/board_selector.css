@@ -3,7 +3,7 @@
     left: 0px;
     top: 68px;
     width: 100%;
-    height: calc(100% - 228px);
+    height: calc(100% - 180px);
     padding-top: 16px;
     padding-bottom: 16px;
     overflow-y: auto;
@@ -16,7 +16,7 @@
 .boardCard {
     position: relative;
     width: calc(100% - 20px);
-    padding: 36px;
+    height: 88px;
     text-align: left;
     letter-spacing: 1.3px;
     margin-bottom: 14px;
@@ -28,13 +28,13 @@
 }
 
 .boardCardSelected {
-    background: var(--btnBgSelected);
+    background: var(--btnBgThemed);
     color: #fff;
     background-size: 200% auto;
 }
 
 .boardCardSelected:hover {
-    background: var(--btnBgSelected);
+    background: var(--btnBgThemed);
     background-size: 200% auto;
     background-position: right center;
 }
@@ -50,10 +50,21 @@
 
 .boardCard .iconSmall {
     position: absolute;
-    bottom: 8px;
     right: 8px;
 }
 
 .boardCardSelected .iconSmall {
     fill: #fff;
+}
+
+.boardCardEdit {
+    position: absolute;
+    right: 48px !important;
+}
+
+.boardCardInput {
+    position: absolute;
+    margin: 0px;
+    bottom: 8px;
+    display: none;
 }

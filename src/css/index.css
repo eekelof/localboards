@@ -16,7 +16,7 @@
     --border: 0px solid #fff0;
     --sidebarBg: #0006;
     --logoColor: #fff;
-    --btnBgSelected: linear-gradient(to right, var(--bg) 0%, var(--bgBlob1) 51%, var(--bg) 100%);
+    --btnBgThemed: linear-gradient(to right, var(--bg) 0%, var(--bgBlob1) 51%, var(--bg) 100%);
 
     /* Background */
     --bg: #012;
@@ -26,7 +26,6 @@
 
     /* Theme specific styles */
     --iconColor: #111;
-    --removeColor: #e22;
     --fontColor: #111;
     --listBg: #fffa;
     --inputBg: #ccc;
@@ -35,14 +34,12 @@
     --cardBoxShadow: 0 0 8px 0 #0003;
     --btnBg: #fffa;
     --btnBgHover: #fff;
-    --btnBg3: linear-gradient(to right, #080 0%, #0a0 51%, #080 100%);
-    --btnBg4: linear-gradient(to right, #7778 0%, #aaa8 51%, #7778 100%);
+    --btnBgUD: linear-gradient(to right, #7778 0%, #aaa8 51%, #7778 100%);
     --scrollbarColor: #fffa;
 }
 
 .dark {
     --iconColor: #fff;
-    --removeColor: #f55;
     --fontColor: #fff;
     --listBg: #0006;
     --inputBg: #444;
@@ -51,8 +48,7 @@
     --cardBoxShadow: 0 0 8px 0 #0008;
     --btnBg: #333a;
     --btnBgHover: #333;
-    --btnBg3: linear-gradient(to right, #040 0%, #090 51%, #040 100%);
-    --btnBg4: linear-gradient(to right, #4448 0%, #8888 51%, #4448 100%);
+    --btnBgUD: linear-gradient(to right, #4448 0%, #8888 51%, #4448 100%);
     --scrollbarColor: #fff4;
 }
 

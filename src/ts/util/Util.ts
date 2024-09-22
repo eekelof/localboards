@@ -10,27 +10,24 @@ export default class Util {
         LSUtil.set(board);
         return board;
     }
-    static createBoard(id = "", depth = 0): Board_I {
-        const nid = (id.length > 0 ? id : "New Board") + (depth > 0 ? depth : "");
-        if (LSUtil.get(nid))
-            return Util.createBoard(id, depth + 1);
-
+    static createBoard(): Board_I {
         const todoList = { id: crypto.randomUUID(), title: "Todo", cards: [] };
         const doingList = { id: crypto.randomUUID(), title: "Doing", cards: [] };
         const doneList = { id: crypto.randomUUID(), title: "Done", cards: [] };
         return {
-            id: nid,
+            id: Util.getAvailableBoardId("New Board"),
             created: Date.now(),
             color: Math.floor(Math.random() * BG_COLORS.length),
             lists: [todoList, doingList, doneList]
         };
     }
-
-    static setBtnVisibility(btn: HTMLElement, active: boolean) {
-        btn.style.transform = active ? "scale(1)" : "scale(0)";
-        btn.style.opacity = active ? "1" : "0";
+    static getAvailableBoardId(suggestion: string) {
+        let id = suggestion;
+        const ids = LSUtil.getIDs();
+        for (let i = 1; ids.includes(id); i++)
+            id = suggestion + " " + i;
+        return id;
     }
-
     static showConfirmBox(text: string, onConfirm: () => void) {
         document.body.append(ConfirmBox(text, onConfirm));
     }

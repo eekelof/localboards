@@ -17,7 +17,7 @@
     position: relative;
     width: calc(100% - 20px);
     height: 48px;
-    background: var(--btnBg3);
+    background: var(--btnBgThemed);
     background-size: 200% auto;
 }
 
