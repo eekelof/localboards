@@ -21,6 +21,7 @@
     letter-spacing: 1.3px;
     margin-bottom: 14px;
     margin-top: 0px;
+    box-shadow: var(--cardBoxShadow);
 }
 
 .boardCard:hover {

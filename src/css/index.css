@@ -14,8 +14,6 @@
     --transitionTime: 0.3s;
     --borderRadius: 14px;
     --border: 0px solid #fff0;
-    --sidebarBg: #0006;
-    --logoColor: #fff;
     --btnBgThemed: linear-gradient(to right, var(--bg) 0%, var(--bgBlob1) 51%, var(--bg) 100%);
 
     /* Background */
@@ -25,7 +23,6 @@
     --bgBlob3: #000;
 
     /* Theme specific styles */
-    --iconColor: #111;
     --fontColor: #111;
     --listBg: #fffa;
     --inputBg: #ccc;
@@ -34,12 +31,10 @@
     --cardBoxShadow: 0 0 8px 0 #0003;
     --btnBg: #fffa;
     --btnBgHover: #fff;
-    --btnBgUD: linear-gradient(to right, #7778 0%, #aaa8 51%, #7778 100%);
     --scrollbarColor: #fffa;
 }
 
 .dark {
-    --iconColor: #fff;
     --fontColor: #fff;
     --listBg: #0006;
     --inputBg: #444;
@@ -48,7 +43,6 @@
     --cardBoxShadow: 0 0 8px 0 #0008;
     --btnBg: #333a;
     --btnBgHover: #333;
-    --btnBgUD: linear-gradient(to right, #4448 0%, #8888 51%, #4448 100%);
     --scrollbarColor: #fff4;
 }
 

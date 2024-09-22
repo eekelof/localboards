@@ -26,7 +26,7 @@
     position: relative;
     width: calc(50% - 20px);
     height: 32px;
-    background: var(--btnBgUD);
+    background: var(--btnBg);
     background-size: 200% auto;
     display: inline-block;
     padding: 4px;
@@ -43,4 +43,5 @@
 .boardCreatorUploadBtn .icon,
 .boardCreatorDownloadBtn .icon {
     height: 24px;
+    fill: var(--fontColor);
 }

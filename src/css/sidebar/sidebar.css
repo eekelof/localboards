@@ -7,7 +7,7 @@
     top: 0px;
     width: 256px;
     height: 100%;
-    background: var(--sidebarBg);
+    background: var(--listBg);
     transition: var(--transitionTime);
 }
 
@@ -22,7 +22,7 @@
     font-size: 20px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
-    color: var(--logoColor);
+    color: var(--fontColor);
 }
 
 .sidebarTitle .icon {
@@ -38,7 +38,7 @@
     width: 32px;
     height: 68px;
     cursor: pointer;
-    background-color: var(--sidebarBg);
+    background-color: var(--listBg);
     border-radius: 0 0 var(--borderRadius);
     transition: var(--transitionTime);
 }
@@ -46,7 +46,7 @@
 .hideToggle .icon {
     width: 32px;
     height: 68px;
-    fill: var(--logoColor);
+    fill: var(--fontColor);
 }
 
 .hideToggle .icon {
@@ -61,27 +61,4 @@
 
 .sidebarHidden .hideToggle .icon {
     transform: rotate(180deg);
-}
-
-.themeToggle {
-    position: absolute;
-    right: 16px;
-    top: 0px;
-    cursor: pointer;
-    transition: 0.1s;
-    opacity: 0.5;
-}
-
-.themeToggle:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.themeToggle:active {
-    transform: scale(1);
-}
-
-.themeToggle .icon {
-    width: 32px;
-    fill: var(--logoColor)
 }
