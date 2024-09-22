@@ -30,6 +30,7 @@ export function BoardSelector(app: App_I) {
             e.stopPropagation();
             input.style.display = "block";
             input.focus();
+            input.value = id;
         };
 
         const clickedColor = (e: MouseEvent) => {

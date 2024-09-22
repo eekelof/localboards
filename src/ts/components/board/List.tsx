@@ -21,7 +21,7 @@ export function List(app: App_I, list?: List_I) {
         Updater.cards(app, list);
     };
 
-    const remove = () => {
+    const clickedRemove = () => {
         const onConfirm = () => {
             const i = lists.indexOf(list);
             lists.splice(i, 1);
@@ -30,7 +30,7 @@ export function List(app: App_I, list?: List_I) {
         Util.showConfirmBox("Delete list '" + list.title + "'?", onConfirm);
     };
 
-    const move = (dir: number) => {
+    const clickedMove = (dir: number) => {
         const i = lists.indexOf(list);
         const j = i + dir;
         if (j < 0 || j >= lists.length)
@@ -43,9 +43,9 @@ export function List(app: App_I, list?: List_I) {
 
     return <div id={"list-" + list.id} class="list">
         <div class="listTitle">{list.title}</div>
-        <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={remove}><path d={mdiTrashCan} /></svg>
-        <svg class="icon iconSmall listIconLeft" viewBox="0 0 24 24" onclick={() => move(-1)}><path d={mdiChevronLeft} /></svg>
-        <svg class="icon iconSmall listIconRight" viewBox="0 0 24 24" onclick={() => move(1)}><path d={mdiChevronRight} /></svg>
+        <svg class="icon iconSmall" viewBox="0 0 24 24" onclick={clickedRemove}><path d={mdiTrashCan} /></svg>
+        <svg class="icon iconSmall listIconLeft" viewBox="0 0 24 24" onclick={() => clickedMove(-1)}><path d={mdiChevronLeft} /></svg>
+        <svg class="icon iconSmall listIconRight" viewBox="0 0 24 24" onclick={() => clickedMove(1)}><path d={mdiChevronRight} /></svg>
         {cardInput}
         {Cards(app, list)}
     </div>;
