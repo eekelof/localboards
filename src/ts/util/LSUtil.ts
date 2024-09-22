@@ -6,7 +6,7 @@ export default class LSUtil {
     static getIDs() {
         const ids = Object.keys(localStorage).filter(k => k.startsWith(LSUtil.LS_PREFIX));
         const res = ids.map(k => k.slice(LSUtil.LS_PREFIX.length));
-        return res.sort((a, b) => LSUtil.get(b)!.created - LSUtil.get(a)!.created);
+        return res.sort().sort((a, b) => LSUtil.get(b)!.created - LSUtil.get(a)!.created);
     }
     static set(board: Board_I) {
         localStorage.setItem(LSUtil.LS_PREFIX + board.id, JSON.stringify(board));
