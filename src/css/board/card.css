@@ -22,7 +22,6 @@
     white-space: wrap;
 
     transition: var(--transitionTime);
-    box-shadow: var(--cardBoxShadow);
 }
 
 .card:hover {
