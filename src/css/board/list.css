@@ -44,5 +44,6 @@
 
 .cards {
     overflow-y: auto;
-    max-height: calc(100dvh - 232px);
+    max-height: calc(100dvh - 212px);
+    margin-bottom: 8px;
 }
