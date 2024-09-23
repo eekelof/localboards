@@ -28,6 +28,7 @@
 
     border-bottom: 3px solid var(--btnBg);
     transition: var(--transitionTime);
+    box-sizing: border-box;
 }
 
 .sidebarTitleText {
@@ -50,7 +51,7 @@
 
 .hideToggle {
     position: absolute;
-    right: -35px;
+    right: -32px;
     top: 0px;
     width: 32px;
     height: 64px;
@@ -61,13 +62,14 @@
     border: 3px solid var(--btnBg);
     border-top: none;
     border-left: none;
+    box-sizing: border-box;
 }
 
 .hideToggle .icon {
     left: 0px;
     top: 0px;
-    width: 32px;
-    height: 64px;
+    width: 29px;
+    height: 61px;
     fill: var(--fontColor);
 }
 
