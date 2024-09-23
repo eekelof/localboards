@@ -17,18 +17,34 @@
 
 .sidebarTitle {
     position: absolute;
-    left: 16px;
-    top: 28px;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 64px;
     font-size: 20px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     color: var(--fontColor);
+
+    border-bottom: 3px solid var(--btnBg);
+    transition: var(--transitionTime);
+}
+
+.sidebarTitleText {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 64px;
+    line-height: 76px;
+    text-align: center;
 }
 
 .sidebarTitle .icon {
+    position: absolute;
+    left: 8px;
+    top: 12px;
     height: 40px;
-    margin-top: -14px;
-    margin-right: 0px;
     fill: var(--fontColor);
 }
 
@@ -48,6 +64,8 @@
 }
 
 .hideToggle .icon {
+    left: 0px;
+    top: 0px;
     width: 32px;
     height: 64px;
     fill: var(--fontColor);
