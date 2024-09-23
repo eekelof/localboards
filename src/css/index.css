@@ -7,12 +7,6 @@
 @import "board/board.css";
 
 :root {
-    font-family: sans-serif;
-    letter-spacing: 2px;
-    user-select: none;
-    white-space: nowrap;
-
-    /* Variables */
     --transitionTime: 0.3s;
     --leftPadding: clamp(40px, 5vw, 64px);
     --borderRadius: 14px;
@@ -47,37 +41,4 @@
     --btnBg: #333a;
     --btnBgHover: #333;
     --scrollbarColor: #fff4;
-}
-
-::-webkit-scrollbar {
-    width: 8px;
-    height: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: var(--scrollbarColor);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbarColor);
-}
-
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbarColor) transparent;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-    scrollbar-color: var(--scrollbarColor) transparent;
-}
-
-::placeholder {
-    color: var(--fontColor);
-    font-weight: normal;
-    opacity: 0.7;
 }
