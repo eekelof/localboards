@@ -21,6 +21,7 @@
 
     /* Theme specific styles */
     --fontColor: #111;
+    --titleBg: #fff;
     --listBg: #fffa;
     --inputBg: #ddd;
     --inputBgFocus: #fff;
@@ -33,6 +34,7 @@
 
 .dark {
     --fontColor: #fff;
+    --titleBg: #222;
     --listBg: #0006;
     --inputBg: #444;
     --inputBgFocus: #666;
