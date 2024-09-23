@@ -37,7 +37,7 @@
     right: -32px;
     top: 0px;
     width: 32px;
-    height: 68px;
+    height: 64px;
     cursor: pointer;
     background-color: var(--listBg);
     border-radius: 0 0 var(--borderRadius);
@@ -46,7 +46,7 @@
 
 .hideToggle .icon {
     width: 32px;
-    height: 68px;
+    height: 64px;
     fill: var(--fontColor);
 }
 

@@ -1,9 +1,9 @@
 #boardSelector {
     position: absolute;
     left: 0px;
-    top: 68px;
+    top: 64px;
     width: 100%;
-    height: calc(100% - 180px);
+    height: calc(100% - 176px);
     padding-top: 16px;
     padding-bottom: 16px;
     overflow-y: auto;

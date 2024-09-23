@@ -19,10 +19,27 @@
 
 #boardTitle {
     position: absolute;
-    left: var(--leftPadding);
-    top: 16px;
+    left: calc(var(--leftPadding) + 12px);
+    top: 24px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
     font-weight: bold;
-    color: #fffd;
+    color: #fffb;
+}
+
+#lists {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    top: 64px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding-left: var(--leftPadding);
+    padding-right: 80px;
+
+    width: 100%;
+    height: calc(100% - 72px);
+    box-sizing: border-box;
 }
