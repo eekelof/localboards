@@ -1,8 +1,8 @@
-# localboards
+# Localboards
 Todo list app that stores data locally
 
 ## Demo :gem:
-https://localboards.ggez.se
+[localboards.ggez.se](https://localboards.ggez.se)
 
 ## Features :clipboard:
 - Stores all data in localstorage

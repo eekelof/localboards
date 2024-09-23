@@ -11,7 +11,7 @@ export function SideBar(app: App_I) {
     };
 
     return <div id="sidebar">
-        <div class="sidebarTitle"> {Icon(mdiBulletinBoard)} localboards </div>
+        <div class="sidebarTitle"> {Icon(mdiBulletinBoard)} Localboards </div>
         <div class="hideToggle" onclick={clickedHide}> {Icon(mdiChevronLeft)} </div>
         {BoardSelector(app)}
         {BoardCreator(app)}
