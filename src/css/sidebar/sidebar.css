@@ -34,7 +34,7 @@
 
 .hideToggle {
     position: absolute;
-    right: -33px;
+    right: -35px;
     top: 0px;
     width: 32px;
     height: 64px;
@@ -42,7 +42,7 @@
     background-color: var(--listBg);
     border-radius: 0 0 var(--borderRadius);
     transition: var(--transitionTime);
-    border: 1px solid var(--btnBg);
+    border: 3px solid var(--btnBg);
     border-top: none;
     border-left: none;
 }

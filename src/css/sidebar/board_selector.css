@@ -11,7 +11,8 @@
     mask-image: linear-gradient(to bottom, #000 0%, #000 80%, #0000 98%);
     padding-bottom: 40%;
     box-sizing: border-box;
-    border-top: 1px solid var(--btnBg);
+    border-top: 3px solid var(--btnBg);
+    transition: var(--transitionTime);
 }
 
 .boardCard {
