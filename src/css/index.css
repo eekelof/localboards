@@ -30,6 +30,7 @@
     --btnBg: #fffa;
     --btnBgHover: #fff;
     --scrollbarColor: #fffa;
+    --confirmBoxTint: #0001;
 }
 
 .dark {
@@ -43,4 +44,5 @@
     --btnBg: #333a;
     --btnBgHover: #333;
     --scrollbarColor: #fff4;
+    --confirmBoxTint: #0004;
 }
