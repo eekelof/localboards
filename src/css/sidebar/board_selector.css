@@ -32,6 +32,7 @@
     color: #fff;
     background-size: 200% auto;
     cursor: default;
+    font-weight: bold;
 }
 
 .boardCardSelected:hover {
@@ -45,7 +46,6 @@
     bottom: 12px;
     left: 12px;
     font-size: 17px;
-    font-weight: bold;
     font-family: var(--titleFont);
 }
 
@@ -90,7 +90,6 @@
     background-color: #0000;
     color: #fff;
     font-size: 17px;
-    font-weight: bold;
     border: var(--border);
     border-radius: var(--borderRadius);
     padding: 20px;

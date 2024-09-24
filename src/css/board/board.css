@@ -19,12 +19,11 @@
 
 #boardTitle {
     position: absolute;
-    left: var(--leftPadding);
+    left: calc(var(--leftPadding) + 8px);
     top: 24px;
     font-family: var(--titleFont);
     font-size: 24px;
-    font-weight: bold;
-    color: #fffb;
+    color: #fffa;
 }
 
 #lists {
