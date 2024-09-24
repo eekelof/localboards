@@ -63,7 +63,7 @@ function BoardCard(app: App_I, id: string) {
         <div class="boardCardTitle">{id}</div>
         {selected ? [SmallIcon(mdiPencil, "boardCardEdit", clickedEdit), SmallIcon(mdiPalette, "boardCardColor", clickedColor)]
             : SmallIcon(mdiTrashCan, "boardCardRemove", clickedRemove)}
-    </div>
+    </div>;
 
     return <div class={"btn boardCard" + (selected ? " boardCardSelected" : "")} onclick={clickedSelect}>
         {inner}

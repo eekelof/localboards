@@ -31,6 +31,7 @@
     background: var(--btnBgThemed);
     color: #fff;
     background-size: 200% auto;
+    cursor: default;
 }
 
 .boardCardSelected:hover {
