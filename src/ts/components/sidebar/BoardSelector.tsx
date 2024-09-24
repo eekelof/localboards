@@ -22,7 +22,10 @@ function BoardCard(app: App_I, id: string) {
         Updater.board(app);
         Updater.boardSelector(app);
     };
-    input.onblur = () => input.style.display = "none";
+    input.onblur = () => {
+        input.style.display = "none";
+        inner.style.display = "block";
+    };
 
     const clickedSelect = () => {
         const t = LSUtil.get(id);
@@ -34,6 +37,7 @@ function BoardCard(app: App_I, id: string) {
     const clickedEdit = (e: MouseEvent) => {
         e.stopPropagation();
         input.style.display = "block";
+        inner.style.display = "none";
         input.focus();
         input.value = id;
     };
@@ -50,16 +54,19 @@ function BoardCard(app: App_I, id: string) {
             LSUtil.remove(id);
             Updater.boardSelector(app);
         };
-        Util.showConfirmBox("Delete Board", id, onConfirm);
+        Util.showConfirmBox("Delete Board?", id, onConfirm);
     };
 
     const selected = app.board.id === id;
-    return <div class={"btn boardCard" + (selected ? " boardCardSelected" : "")} onclick={clickedSelect}>
+
+    const inner = <div class="boardCardInner">
         <div class="boardCardTitle">{id}</div>
+        {selected ? [SmallIcon(mdiPencil, "boardCardEdit", clickedEdit), SmallIcon(mdiPalette, "boardCardColor", clickedColor)]
+            : SmallIcon(mdiTrashCan, "boardCardRemove", clickedRemove)}
+    </div>
+
+    return <div class={"btn boardCard" + (selected ? " boardCardSelected" : "")} onclick={clickedSelect}>
+        {inner}
         {input}
-        {selected ?
-            [SmallIcon(mdiPencil, "boardCardEdit", clickedEdit), SmallIcon(mdiPalette, "", clickedColor)]
-            : SmallIcon(mdiTrashCan, "", clickedRemove)
-        }
     </div>;
 }
