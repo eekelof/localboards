@@ -1,7 +1,7 @@
 .listCreator {
     opacity: 0.6;
     transition: var(--transitionTime);
-    height: 112px;
+    height: 115px;
 }
 
 .listCreator:hover {
@@ -9,7 +9,7 @@
 }
 
 .listCreatorInput {
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .listCreatorAddBtn {
