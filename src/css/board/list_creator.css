@@ -15,7 +15,8 @@
 .listCreatorAddBtn {
     position: relative;
     width: calc(100% - 20px);
-    height: 48px;
+    height: 44px;
+    padding: 6px;
     background: var(--btnBgThemed);
     background-size: 200% auto;
 }
