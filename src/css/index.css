@@ -11,6 +11,7 @@
     --leftPadding: clamp(40px, 5vw, 64px);
     --borderRadius: 8px;
     --border: none;
+    --titleFont: 'Roboto', sans-serif;
     --btnBgThemed: linear-gradient(to right, var(--bg) 0%, var(--bgBlob1) 51%, var(--bg) 100%);
 
     /* Background */

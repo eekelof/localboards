@@ -19,9 +19,9 @@
 
 #boardTitle {
     position: absolute;
-    left: calc(var(--leftPadding) + 12px);
+    left: var(--leftPadding);
     top: 24px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--titleFont);
     font-size: 24px;
     font-weight: bold;
     color: #fffb;

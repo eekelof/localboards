@@ -23,7 +23,8 @@
     height: 64px;
     font-size: 20px;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--titleFont);
+    letter-spacing: 3px;
     color: var(--fontColor);
     transition: var(--transitionTime);
     background: var(--titleBg);
@@ -33,10 +34,10 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 100%;
+    width: calc(100% - 64px);
     height: 64px;
     line-height: 84px;
-    text-align: center;
+    padding-left: 64px;
 }
 
 .sidebarTitle .icon {
