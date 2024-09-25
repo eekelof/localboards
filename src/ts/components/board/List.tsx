@@ -35,7 +35,9 @@ export function List(app: App_I, list: List_I) {
             lists.splice(i, 1);
             Updater.lists(app);
         };
-        Util.showConfirmBox("Delete List?", list.title, onConfirm);
+        if (list.cards.length > 0)
+            return Util.showConfirmBox("Delete List?", list.title, onConfirm);
+        onConfirm();
     };
 
     const clickedMove = (dir: number) => {
