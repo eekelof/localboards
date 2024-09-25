@@ -1,4 +1,4 @@
-import { Board } from './components/board/Board';
+import { Board, Board_I } from './components/board/Board';
 import { Background } from './components/misc/Background';
 import { Settings } from './components/misc/Settings';
 import { SideBar } from './components/sidebar/SideBar';
@@ -6,22 +6,6 @@ import Util from './util/Util';
 
 export interface App_I {
     board: Board_I
-}
-export interface Board_I {
-    id: string;
-    created: number;
-    color: number;
-    lists: List_I[];
-}
-export interface List_I {
-    id: string;
-    title: string;
-    cards: Card_I[];
-}
-export interface Card_I {
-    id: string;
-    title: string;
-    color: number;
 }
 
 function App() {

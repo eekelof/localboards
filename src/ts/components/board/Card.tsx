@@ -1,8 +1,20 @@
 import { mdiChevronDown, mdiChevronLeft, mdiChevronRight, mdiChevronUp, mdiClose, mdiPaletteOutline } from '@mdi/js';
-import { App_I, Card_I, List_I } from '../../App';
+import { App_I } from '../../App';
 import Updater from '../../Updater';
 import { CARD_COLORS } from '../../util/Constants';
 import { SmallIcon } from '../misc/Icon';
+import { List_I } from './List';
+
+export interface Card_I {
+    id: string;
+    title: string;
+    color: number;
+    fadeIn: boolean;
+}
+
+export function CardObject(title: string): Card_I {
+    return { id: crypto.randomUUID(), title, color: 0, fadeIn: true };
+}
 
 export function Card(app: App_I, list: List_I, card: Card_I) {
     const clickedColor = () => {
@@ -36,7 +48,10 @@ export function Card(app: App_I, list: List_I, card: Card_I) {
         Updater.cards(app, nlist);
     };
 
-    const className = card.color == 0 ? "card" : "card cardColored";
+    const fadeIn = card.fadeIn ? " fadeIn" : "";
+    card.fadeIn = false;
+
+    const className = (card.color == 0 ? "card" : "card cardColored") + fadeIn;
     return <div id={"card-" + card.id} class={className} style={{ backgroundColor: CARD_COLORS[card.color] }}>
         {card.title}
         {SmallIcon(mdiPaletteOutline, "cardIconColor", clickedColor)}

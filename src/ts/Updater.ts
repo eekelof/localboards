@@ -1,7 +1,7 @@
-import { App_I, Card_I, List_I } from "./App";
+import { App_I } from "./App";
 import { Board, Lists } from "./components/board/Board";
-import { Card } from "./components/board/Card";
-import { Cards, List } from "./components/board/List";
+import { Card, Card_I } from "./components/board/Card";
+import { Cards, List, List_I } from "./components/board/List";
 import { BoardSelector } from "./components/sidebar/BoardSelector";
 import LSUtil from "./util/LSUtil";
 

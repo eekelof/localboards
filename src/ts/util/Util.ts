@@ -1,4 +1,5 @@
-import { Board_I } from "../App";
+import { Board_I, BoardObject } from "../components/board/Board";
+import { ListObject } from "../components/board/List";
 import { ConfirmBox } from "../components/misc/ConfirmBox";
 import { BG_COLORS } from "./Constants";
 import LSUtil from "./LSUtil";
@@ -7,22 +8,13 @@ export default class Util {
     static getBoardOnStart() {
         const selected = localStorage.getItem("selectedBoard")!;
         const board = LSUtil.get(selected);
-        if (!board) {
-            Util.createBoard("New Board 3", 2);
-            Util.createBoard("New Board 2", 1);
-        }
         return board || Util.createBoard("New Board", 0);
     }
     static createBoard(id = "New Board", color = Math.floor(Math.random() * BG_COLORS.length)): Board_I {
-        const todoList = { id: crypto.randomUUID(), title: "Todo", cards: [] };
-        const doingList = { id: crypto.randomUUID(), title: "Doing", cards: [] };
-        const doneList = { id: crypto.randomUUID(), title: "Done", cards: [] };
-        const board = {
-            id: Util.getAvailableBoardId(id),
-            created: Date.now(),
-            color,
-            lists: [todoList, doingList, doneList]
-        };
+        const todoList = ListObject("Todo");
+        const doingList = ListObject("Doing");
+        const doneList = ListObject("Done");
+        const board = BoardObject(id, color, [todoList, doingList, doneList]);
         LSUtil.set(board);
         return board;
     }

@@ -1,16 +1,27 @@
 import { mdiChevronLeft, mdiChevronRight, mdiTrashCan } from '@mdi/js';
-import { App_I, List_I } from '../../App';
+import { App_I } from '../../App';
 import Updater from '../../Updater';
 import Util from '../../util/Util';
 import { SmallIcon } from '../misc/Icon';
-import { Card } from './Card';
+import { Card, Card_I, CardObject } from './Card';
+
+export interface List_I {
+    id: string;
+    title: string;
+    cards: Card_I[];
+    fadeIn: boolean;
+}
+
+export function ListObject(title: string): List_I {
+    return { id: crypto.randomUUID(), title, cards: [], fadeIn: true };
+}
 
 export function List(app: App_I, list: List_I) {
     const cardInput = <input class="cardInput" type="text" placeholder="New Card" maxlength="512" enterkeyhint="done" />;
     cardInput.onkeydown = (e: KeyboardEvent) => {
         if (e.key != "Enter" || cardInput.value.length === 0)
             return;
-        const card = { id: crypto.randomUUID(), title: cardInput.value, color: 0 };
+        const card = CardObject(cardInput.value);
         list.cards.unshift(card);
         cardInput.value = "";
         Updater.cards(app, list);
@@ -37,7 +48,10 @@ export function List(app: App_I, list: List_I) {
         Updater.lists(app);
     };
 
-    return <div id={"list-" + list.id} class="list">
+    const fadeIn = list.fadeIn ? " fadeIn" : "";
+    list.fadeIn = false;
+
+    return <div id={"list-" + list.id} class={"list" + fadeIn}>
         <div class="listTitle">{list.title}</div>
         {SmallIcon(mdiTrashCan, "", clickedRemove)}
         {SmallIcon(mdiChevronLeft, "listIconLeft", () => clickedMove(-1))}
