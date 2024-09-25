@@ -10,6 +10,7 @@ export interface Board_I {
     color: number;
     lists: List_I[];
 }
+
 export function BoardObject(id: string, color: number, lists: List_I[]): Board_I {
     return { id: Util.getAvailableBoardId(id), created: Date.now(), color, lists };
 }
