@@ -39,6 +39,7 @@ export function List(app: App_I, list: List_I) {
     };
 
     const clickedMove = (dir: number) => {
+        list.fadeIn = true;
         const i = lists.indexOf(list);
         const j = i + dir;
         if (j < 0 || j >= lists.length)

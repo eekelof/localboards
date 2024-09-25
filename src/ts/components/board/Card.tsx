@@ -29,6 +29,7 @@ export function Card(app: App_I, list: List_I, card: Card_I) {
     };
 
     const clickedMove = (dir: number) => {
+        card.fadeIn = true;
         const i = list.cards.indexOf(card);
         const j = i + dir;
         if (j < 0 || j >= list.cards.length)
@@ -39,6 +40,7 @@ export function Card(app: App_I, list: List_I, card: Card_I) {
     };
 
     const clickedMoveToList = (dir: number) => {
+        card.fadeIn = true;
         const i = app.board.lists.indexOf(list);
         const nlist = app.board.lists[i + dir];
         if (!nlist)
