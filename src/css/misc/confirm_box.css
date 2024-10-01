@@ -5,6 +5,7 @@
     width: 100%;
     height: 100%;
     background-color: #0008;
+    animation: confirmBoxAnimation var(--transitionTime);
 }
 
 .confirmBoxInner {
@@ -23,6 +24,7 @@
     font-size: 18px;
     text-align: center;
     overflow: hidden;
+    animation: confirmBoxInnerAnimation var(--transitionTime);
 }
 
 .confirmBoxText {
@@ -50,4 +52,28 @@
 .confirmBoxConfirm {
     right: 24px;
     fill: #f44;
+}
+
+@keyframes confirmBoxAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes confirmBoxInnerAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(0, 0);
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1, 1);
+    }
 }
