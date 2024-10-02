@@ -28,4 +28,12 @@ export default class Util {
     static showConfirmBox(text: string, name: string, onConfirm: () => void) {
         document.body.append(ConfirmBox(text, name, onConfirm));
     }
+    static setColor(color: number) {
+        const c = BG_COLORS[color % BG_COLORS.length];
+        const r = document.querySelector(":root") as HTMLElement;
+        r.style.setProperty('--bg', c[0]);
+        r.style.setProperty('--bgBlob1', c[1]);
+        r.style.setProperty('--bgBlob2', c[2]);
+        r.style.setProperty('--bgBlob3', c[3]);
+    }
 }
