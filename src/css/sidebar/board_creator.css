@@ -10,6 +10,7 @@
     width: calc(100% - 20px);
     height: 48px;
     background: var(--btnBgThemed);
+    background-size: 200% auto;
     margin-bottom: 5px;
 }
 
@@ -26,7 +27,9 @@
     position: relative;
     width: calc(50% - 20px);
     height: 32px;
+    display: inline-block;
     padding: 4px;
+    box-shadow: none;
 }
 
 .boardCreatorUploadBtn:hover,
