@@ -7,7 +7,8 @@
     top: 0px;
     width: 256px;
     height: 100%;
-    background: var(--listBg);
+    background: #0001;
+    backdrop-filter: blur(10px);
     transition: var(--transitionTime);
 }
 
