@@ -60,6 +60,9 @@
     background: var(--titleBg);
     border-radius: 0 0 var(--borderRadius);
     transition: var(--transitionTime);
+    border-bottom: var(--border);
+    border-right: var(--border);
+    box-sizing: border-box;
 }
 
 .hideToggle .icon {
