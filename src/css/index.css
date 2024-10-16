@@ -7,10 +7,9 @@
 @import "board/board.css";
 
 :root {
-    --transitionTime: 0.3s;
+    --transitionTime: 0.2s;
     --leftPadding: clamp(40px, 5vw, 64px);
     --borderRadius: 8px;
-    --border: none;
     --titleFont: 'Roboto', sans-serif;
     --btnBgThemed: linear-gradient(to right, var(--bg) 0%, var(--bgBlob1) 51%, var(--bg) 100%);
 
@@ -21,8 +20,10 @@
     --bgBlob3: #000;
 
     /* Theme specific styles */
+    --border: 1px solid #fff6;
     --fontColor: #111;
     --titleBg: #fff;
+    --sidebarBg: #0001;
     --listBg: #fffa;
     --inputBg: #ddd;
     --inputBgFocus: #fff;
@@ -35,15 +36,17 @@
 }
 
 .dark {
+    --border: 1px solid #fff3;
     --fontColor: #fff;
-    --titleBg: #222;
+    --titleBg: #111;
+    --sidebarBg: #0006;
     --listBg: #0006;
     --inputBg: #444;
     --inputBgFocus: #666;
     --cardBg: #333;
     --boxShadow: 0 0 8px 0 #0008;
-    --btnBg: #333a;
-    --btnBgHover: #333;
+    --btnBg: #0002;
+    --btnBgHover: #0004;
     --scrollbarColor: #fff4;
     --confirmBoxTint: #0004;
 }

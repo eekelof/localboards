@@ -9,6 +9,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     mask-image: linear-gradient(to bottom, #000 0%, #000 80%, #0000 98%);
+    border-right: var(--border);
     padding-bottom: 40%;
     box-sizing: border-box;
 }
