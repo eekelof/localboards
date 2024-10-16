@@ -10,6 +10,7 @@
     background: var(--sidebarBg);
     backdrop-filter: blur(10px);
     transition: var(--transitionTime);
+    border-right: var(--border);
 }
 
 .sidebarHidden {
