@@ -91,7 +91,7 @@
     background-color: #0000;
     color: #fff;
     font-size: 17px;
-    border: var(--border);
+    border: none;
     border-radius: var(--borderRadius);
     padding: 20px;
     margin: 0px;
