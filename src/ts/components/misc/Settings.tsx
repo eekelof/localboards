@@ -4,8 +4,8 @@ import { SmallIcon } from "./Icon";
 
 export function Settings() {
     const toggleTheme = () => {
-        document.body.classList.toggle("dark");
-        LSUtil.setTheme(document.body.classList.contains("dark"));
+        document.body.classList.toggle("light");
+        LSUtil.setTheme(document.body.classList.contains("light"));
     };
     if (LSUtil.getTheme())
         toggleTheme();

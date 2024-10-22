@@ -20,22 +20,6 @@
     --bgBlob3: #000;
 
     /* Theme specific styles */
-    --border: 1px solid #fff6;
-    --fontColor: #111;
-    --titleBg: #fff;
-    --sidebarBg: #0001;
-    --listBg: #fffa;
-    --inputBg: #ddd;
-    --inputBgFocus: #fff;
-    --cardBg: #fff;
-    --boxShadow: 0 0 0px 0 #0002;
-    --btnBg: #fffa;
-    --btnBgHover: #fff;
-    --scrollbarColor: #fffa;
-    --confirmBoxTint: #0001;
-}
-
-.dark {
     --border: 1px solid #fff3;
     --fontColor: #fff;
     --titleBg: #111;
@@ -49,4 +33,20 @@
     --btnBgHover: #0004;
     --scrollbarColor: #fff4;
     --confirmBoxTint: #0004;
+}
+
+.light {
+    --border: 1px solid #fff6;
+    --fontColor: #111;
+    --titleBg: #fff;
+    --sidebarBg: #0001;
+    --listBg: #fffa;
+    --inputBg: #ddd;
+    --inputBgFocus: #fff;
+    --cardBg: #fff;
+    --boxShadow: 0 0 0px 0 #0002;
+    --btnBg: #fffa;
+    --btnBgHover: #fff;
+    --scrollbarColor: #fffa;
+    --confirmBoxTint: #0001;
 }

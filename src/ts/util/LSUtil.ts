@@ -23,7 +23,7 @@ export default class LSUtil {
     static getTheme(): boolean {
         return JSON.parse(localStorage.getItem("theme") ?? "false");
     }
-    static setTheme(isDark: boolean) {
-        localStorage.setItem("theme", isDark.toString());
+    static setTheme(isLight: boolean) {
+        localStorage.setItem("theme", isLight.toString());
     }
 }
