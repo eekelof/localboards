@@ -7,7 +7,7 @@
         "bp": "vite build && vite preview"
     },
     "devDependencies": {
-        "vite": "^5.4.2"
+        "vite": "^6.0.1"
     },
     "dependencies": {
         "@mdi/js": "^7.4.47",
