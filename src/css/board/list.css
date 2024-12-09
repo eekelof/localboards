@@ -27,6 +27,14 @@
     right: 48px;
 }
 
+.list>.icon {
+    opacity: 0;
+}
+
+.list:hover>.icon {
+    opacity: 0.7;
+}
+
 .cards {
     overflow-x: hidden;
     overflow-y: auto;

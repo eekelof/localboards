@@ -10,6 +10,7 @@ export interface App_I {
 
 function App() {
     const app: App_I = { board: Util.getBoardOnStart() };
+
     return <div id="app">
         {Background()}
         {Board(app)}

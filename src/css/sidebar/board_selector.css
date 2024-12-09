@@ -28,6 +28,14 @@
     background: var(--btnBgHover);
 }
 
+.boardCard>.boardCardInner>.icon {
+    opacity: 0;
+}
+
+.boardCard:hover>.boardCardInner>.icon {
+    opacity: 0.7;
+}
+
 .boardCardSelected {
     background: var(--btnBgThemed);
     color: #fff;

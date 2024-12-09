@@ -16,5 +16,6 @@ export function ConfirmBox(text: string, name: string, onConfirm: () => void) {
             {SmallIcon(mdiTrashCan, "confirmBoxConfirm", clickedConfirm)}
         </div>
     </div>;
+
     return e;
 }

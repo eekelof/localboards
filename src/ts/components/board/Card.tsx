@@ -54,6 +54,7 @@ export function Card(app: App_I, list: List_I, card: Card_I) {
     card.fadeIn = false;
 
     const className = (card.color == 0 ? "card" : "card cardColored") + fadeIn;
+
     return <div id={"card-" + card.id} class={className} style={{ backgroundColor: CARD_COLORS[card.color] }}>
         {card.title}
         {SmallIcon(mdiPaletteOutline, "cardIconColor", clickedColor)}
